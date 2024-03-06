@@ -1,11 +1,11 @@
 # MANUAL LaTeX
 
 1. **[INTRODUCCIÓN](#1-introducción)**
-    1. [¿Qué es *TeX*?](#11-¿qué-es-tex?)
-    2. ¿Qué es *LaTeX*?
-    3. Instalación
-    4. Hola LaTeX
-        1. Compilación
+    1. [¿Qué es *TeX*?](#11-qué-es-tex)
+    2. [¿Qué es *LaTeX*?](#12-qué-es-latex)
+    3. [Instalación](#13-instalación)
+    4. [Hola LaTeX](#14-hola-latex)
+        1. [Compilación](#141-compilación)
 2. **[ESTRUCTURA DE UN DOCUMENTO](#2-estructura-de-un-documento)**
     1. Esqueleto básico para *pdflatex*
         1. Clase de un documento
