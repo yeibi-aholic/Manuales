@@ -174,11 +174,27 @@ Hay varios guiones validos para que *Markdown* los interprete como lista: -, *, 
 - #### Sublistas
 Se trataría de tabular al mismo nivel los elementos que se deseen que pertenezcan a un elemento de la lista concreto.
 
+~~~~
 - Primero
 - Segundo
   - Tercero
     - Cuarto
 - Quinto
+~~~~
+
+- Primero
+- Segundo
+  - Tercero
+    - Cuarto
+- Quinto
+
+~~~~
+1. Primero
+2. Segundo
+   1. Tercero
+      1. Cuarto
+3. Quinto
+~~~~
 
 1. Primero
 2. Segundo
