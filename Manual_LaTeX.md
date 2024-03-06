@@ -106,7 +106,7 @@ Aunque más adelante se verá la estructura general del código fuente de un doc
 4. La cuarta línea contiene el texto del documento. ***\LaTeX*** es un comando que produce la salida *LaTeX*.
 5. La quinta línea marca el final del documento.
 
-#### 1. Compilación
+#### 1.4.1. Compilación
 Para obtener el documento final hay que compilar el fichero fuente. Existen diferentes formas de hacerlo y en los editores anteriores suele ser tan sencillo como hacer clic en un botón o pulsar una combinación de teclas, pero en última instancia todos ellos hacen una llamada al compilador de *LaTeX* que es quien se encarga de convertir el código fuente en el documento final.
 Cada distribución de *LaTeX* viene con varios compiladores. Los más habituales son:
 - *latex* - Es el compilador más antiguo y genera documentos en formato *dvi*, que es un formato independiente creado mucho antes que el formato *pdf*.
