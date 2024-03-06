@@ -337,10 +337,10 @@ La llamada de un [encabezado](#encabezados) del propio documento se forma a part
 2. Entre paréntesis, nombre del encabezados con guiones en vez espacios y una almohadilla (#) al principio.
 
 ~~~~
-[Guía Markdown](#guía-markdown)
+[Manual Markdown](#manual-markdown)
 ~~~~
 
-[Guía Markdown](#guía-markdown)
+[Manual Markdown](#manual-markdown)
 
 > **NOTA:** las tildes en la llamada del nombre del encabezado no funcionan directamente en *Markdown*, pero sí en la preview de **Azure** o **GitHub**.
 
