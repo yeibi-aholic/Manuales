@@ -1,7 +1,7 @@
 # MANUAL LaTeX
 
 1. **[INTRODUCCIÓN](#1-introducción)**
-    1. [¿Qué es *TeX*?](#¿qué-es-tex?)
+    1. [¿Qué es *TeX*?](#11-¿qué-es-tex?)
     2. ¿Qué es *LaTeX*?
     3. Instalación
     4. Hola LaTeX
