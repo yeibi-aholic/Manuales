@@ -4242,6 +4242,7 @@ plt.show()
 
 ## **[<](#manual-python)**
 ## Librería Itertools
+---
 Este módulo implementa un número de piezas básicas iterator inspiradas en constructs de *APL*, *Haskell* y *SML*.
 
 ~~~~ python
@@ -4323,6 +4324,7 @@ combinations_with_replacement(range(3), 3) # 000 001 002 011 012 022 111 112 122
 
 ## **[<](#manual-python)**
 ## Librería Turtle
+---
 La "tortuga" es un cursor al que se le pueden dar órdenes de movimiento (avance, retroceso o giro) y que puede ir dejando un rastro sobre la pantalla. Moviendo adecuadamente la tortuga se pueden conseguir dibujar todo tipo de figuras.
 
 Python incluye un módulo llamado "turtle" que permite crear gráficos de tortuga.
@@ -4533,6 +4535,7 @@ turtle.end_fill()
 
 ## **[<](#manual-python)**
 ## Librería Tkinter
+---
 Tkinter es un *binding* de la biblioteca gráfica Tcl/Tk para Python siendo un estandar para GUI *(Graphical User Interface)*.
 
 ~~~~ python
