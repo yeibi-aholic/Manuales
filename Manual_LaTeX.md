@@ -657,8 +657,112 @@ Existe una infinidad de símbolos matemáticos que escriben mediante comandos. A
 Para escribir letras griegas se utilizan los siguientes comandos:
 
 **Minúsculas**
+~~~~ latex
+\alpha α         \theta θ         o o              \tau τ
+\beta β          \vartheta ϑ      \pi π            \upsilon υ
+\gamma γ         \iota ι          \varpi ϖ         \phi ϕ
+\delta δ         \kappa κ         \rho ρ           \varphi φ
+\epsilon ϵ       \lambda λ        \varrho ϱ        \chi χ
+\varepsilon ε    \mu µ            \sigma σ         \psi ψ
+\zeta ζ          \nu ν            \varsigma ς      \omega ω
+\eta η           \xi ξ
+~~~~
 
-**Mayúsculas**
+**Mayúsculas**  
+~~~~ latex
+\Gamma Γ         \Lambda Λ        \Sigma Σ         \Psi Ψ
+\Delta ∆         \Xi Ξ            \Upsilon Υ       \Omega Ω
+\Theta Θ         \Pi Π            \Phi Φ
+
+~~~~
+
+#### 8.1.2. Operadores aritméticos
+~~~~ latex
++ +              - −              \times ×         \cdot ·
+/ /              \div ÷           \sqrt{...} √     \pm ±
+~~~~
+
+#### 8.1.3. Relaciones
+~~~~ latex
+= =              \neq ̸=           < <              \leq ≤
+> >              \geq ≥           \approx ≈        \sim ∼
+\equiv ≡         \in ∈            \not\in ̸∈        \subset ⊂
+\not\subset ̸⊂    \subseteq ⊆     \subsetneq ⊊
+~~~~
+
+#### 8.1.4. Operadores binarios
+~~~~ latex
+\cup ∪           \cap ∩           \setminus \      \circ ◦
+~~~~
+
+#### 8.1.5. Lógica
+~~~~ latex
+\exists ∃        \forall ∀        \neg ¬           \lor ∨           \land ∧
+~~~~
+
+#### 8.1.6. Conjuntos
+~~~~ latex
+\emptyset ∅      \mathbb{N} N     \mathbb{Z} Z     \mathbb{Q} Q
+\mathbb{R} R     \mathbb{C} C
+~~~~
+
+#### 8.1.7. Flechas
+~~~~ latex
+\rightarrow →            \Rightarrow ⇒            \longrightarrow −→       \Longrightarrow =⇒
+\leftarrow ←             \Leftarrow ⇐             \longleftarrow ←−        \Longleftarrow ⇐=
+\leftrightarrow ↔        \Leftrightarrow ⇔        \longleftrightarrow ←→   \Longleftrightarrow ⇐⇒
+\uparrow ↑               \Uparrow ⇑                \downarrow ↓             \Downarrow ⇓
+\updownarrow ↕           \Updownarrow ⇕
+~~~~
+
+#### 8.1.8. Puntos suspensivos
+~~~~ latex
+\ldots           \cdots           \vdots           \ddots
+~~~~
+
+#### 8.1.9. Otros símbolos
+~~~~ latex
+\infty ∞         \partial ∂       \nabla ∇
+~~~~
+
+#### 8.1.10. Funciones
+~~~~ latex
+\sin sin         \arcsin arcsin   \csc csc         \operatorname{arccsc} arccsc
+\cos cos         \arccos arccos   \sec sec         \operatorname{arcsec} arcsec
+\tan tan         \arctan arctan   \cot cot         \operatorname{arccot} arccot
+\exp exp         \log log         \ln ln
+~~~~
+
+Es posible declarar nuevos operadores o funciones cargando el paquete *amsmath* con el comando ***\DeclareMathOperator{comando}{texto}***. Por ejemplo, para obtener las versión de la función *seno* en español se puede definir ***DeclareMathOperator{\sen}{seno}*** en el preámbulo y luego utilizar el comando ***\sen*** en el cuerpo para obtener la función *seno* en español.
+
+Otro paquete que incorpora aún más símbolos es amssymb.
+
+
+### 8.2. Subíndices y superíndices
+Para poner subíndices se utiliza el comando ***_*** y para superíndices ***^***. Si el subíndice o superíndice afecta a más de un carácter, hay que ponerlos entre llaves.
+
+##### Ejemplo
+~~~~
+% CUERPO
+\begin{document}
+Ejemplo de fórmula con subíndices
+$$
+x_i+y_j=0
+$$
+
+Ejemplo de fórmula con superíndices
+$$
+x^2+y^2=0
+$$
+
+Ejemplo de fórmula con subíndices y superíndices
+$$
+x_i^2+y_j^2=0
+$$
+
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex2.PNG)
 
 [^2]: Para un listado más exhaustivo de los símbolos matemáticos de *LaTeX*, puede consultarse el documento *[The Great, Big List of LaTeX Symbols](Fotos/Manual_LaTeX/LaTeX_symbols.pdf)*.
 
