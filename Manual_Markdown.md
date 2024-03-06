@@ -366,15 +366,15 @@ Se trata de links especiales declarados dentro del propio documento de *Markdown
 #### Documentos
 El formato es parecido al de [enlaces web](#enlaces-web) pero esta vez poniendo la dirección del documento dentro de nuestros archivos o simplemente escribiendo el nombre del documento si se encuentra en la misma ruta que el archivo actual.
 ~~~~
-[Manual de Python](ManualPython.md)
+[Manual de Python](Manual_Python.md)
 ~~~~
-[Manual de Python](ManualPython.md)
+[Manual de Python](Manual_Python.md)
 
 Si queremos ir a un apartado concreto del documento tan solo hay que aplicar la [llamada de encabezados](#llamada-de-encabezados) al final.
 ~~~~
-[Manual de Python - Tipos de datos Primitivos Simples](ManualPython.md#tipos-de-datos-primitivos-simples)
+[Manual de Python - Tipos de datos Primitivos Simples](Manual_Python.md#tipos-de-datos-primitivos-simples)
 ~~~~
-[Manual de Python - Tipos de datos Primitivos Simples](ManualPython.md#tipos-de-datos-primitivos-simples)
+[Manual de Python - Tipos de datos Primitivos Simples](Manual_Python.md#tipos-de-datos-primitivos-simples)
 > Si el archivo al que queremos acceder se encuentra una o varias carpetas más atrás, tan solo hay que poner *"../"* al comienzo de la ruta por cada carpeta que queramos retroceder.
 
 #### Imágenes
