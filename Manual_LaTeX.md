@@ -650,6 +650,18 @@ x+y=0
 ~~~~
 ![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex.PNG)
 
+### 8.1. Símbolos matemáticos
+Existe una infinidad de símbolos matemáticos que escriben mediante comandos. A continuación se muestran los más habituales [^2].
+
+#### 8.1.1. Letras griegas
+Para escribir letras griegas se utilizan los siguientes comandos:
+
+**Minúsculas**
+
+**Mayúsculas**
+
+[^2]: Para un listado más exhaustivo de los símbolos matemáticos de *LaTeX*, puede consultarse el documento *[The Great, Big List of LaTeX Symbols](Fotos/Manual_LaTeX/LaTeX_symbols.pdf)*.
+
 ## 9. ENTORNOS FLOTANTES
 ---
 
