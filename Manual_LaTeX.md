@@ -521,7 +521,7 @@ Ejemplo de listas anidadas:
 ---
 Las tablas son uno de los elementos más complejos de *LaTeX*, ya que, aunque es fácil crear una tabla sencilla, aplicarles un formato más avanzado con justificación de columnas, fusión de columnas o filas, márgenes de columnas, líneas de división, etc. suele ser bastante más difícil, aunque algunos entornos de edición facilitan la tarea. Existen multitud de paquetes para personalizar las tablas pero en esta sección solo veremos lo más básico. 
 
-Para crear una tabla se utiliza el entorno tabular. Este entorno tiene como argumento obligatorio el número de columnas de la tabla y su justificación, que se indica con una letra: 
+Para crear una tabla se utiliza el entorno **tabular**. Este entorno tiene como argumento obligatorio el número de columnas de la tabla y su justificación, que se indica con una letra: 
 - ***l*** - izquierda
 - ***r*** - derecha
 - ***c*** - centrada
@@ -763,6 +763,89 @@ $$
 \end{document}
 ~~~~
 ![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex2.PNG)
+> Se pueden escribir subíndices de subíndices o superíndices de superíndices anidando los comandos.
+
+### 8.3. Fracciones
+Para escribir fracciones simples en línea se puede usar el operador aritmético ***/*** (por ejemplo 3/4), pero para fracciones más complejas o fracciones en modo display, conviene utilizar el comando ***\frac{num}{den}***, donde **num** es el numerador y **den** el denominador.
+
+A su vez, se pueden escribir más fracciones en el numerador o el denominador, anidando este comando.
+
+##### Ejemplo
+~~~~ latex
+% CUERPO
+\begin{document}
+Ejemplo de fracción en línea $\frac{x+2}{xˆ2-2x+1}$.
+Ejemplo de fracción en modo desplegado
+$$
+\frac{\frac{x}{2}+\frac{2}{3}}{xˆ2-2x+1}
+$$
+
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex3.PNG)
+
+### 8.4. Sumatorios, productorios e integrales
+Para escribir sumatorios se utiliza el comando ***\sum_{sub}ˆ{sup}***, donde **sub** es el subíndice que indica el inicio de la suma y **sup** es el superíndice que indica el final de la suma. Si se quieren omitir los índices de inicio y final de la suma, basta con el comando ***\sum***.
+
+De manera análoga, para escribir productorios se utiliza el comando ***\prod_{sub}ˆ{sup}***, donde **sub** es el subíndice que indica el inicio del producto y **sup** es el superíndice que indica el final del producto. Si se quieren omitir los índices de inicio y final del producto, basta con el comando ***\prod***.
+
+##### Ejemplo
+~~~~ latex
+% CUERPO
+\begin{document}
+Ejemplo de sumatorio
+$$
+\sum_{i=1}ˆ{\infty} xˆi
+$$
+
+Ejemplo de productorio
+$$
+\prod_{i=1}ˆn i
+$$
+
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex4.PNG)
+
+Del mismo modo, para escribir integrales definidas se utiliza el comando ***\int_{sub}ˆ{sup}***, donde **sub** es el subíndice que indica el inicio de la integral y **sup** es el superíndice que indica el final de la integral. Para integrales indefinidas, basta con el comando ***\int***.
+
+##### Ejemplo
+~~~~ latex
+% CUERPO
+\begin{document}
+Ejemplo de integral definida
+$$
+\int_aˆb f(x)\,dx
+$$
+
+Ejemplo de integral indefinida
+$$
+\int f(x)\,dx
+$$
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex5.PNG)
+
+### 8.5. Sombreros
+Es posible poner símbolos encima de otros símbolos, más conocidos como sombreros. Los siguientes comandos sirven para poner distintos tipos de sombreros:
+- ***\bar{...}*** - Linea horizontal para un carácter.
+- ***\overline{...}*** - Línea horizontal para varios caracteres.
+- ***\hat*** - Ángulo para un carácter.
+- ***\widehat*** - Ángulo para varios caracteres.
+- ***\vec{...}*** - Flecha para un carácter.
+- ***\overrightarrow{...}*** - Flecha para varios caracteres.
+
+##### Ejemplo
+~~~~ latex
+% CUERPO
+\begin{document}
+Ejemplos de sombreros: $\overline{xy}$, $\hat{a}$, $\widehat{abc}$, $\vec{u}$.
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex6.PNG)
+
+### 8.6. Matrices
+Las matrices se crean de manera similar a como se crean las [tablas](#6-tablas), pero utilizando el entorno **array** en lugar del entorno **tabular**. Para encerrar la matriz entre paréntesis se pone el comando ***\left(*** antes del entorno y el comando ***\right)*** después.
 
 [^2]: Para un listado más exhaustivo de los símbolos matemáticos de *LaTeX*, puede consultarse el documento *[The Great, Big List of LaTeX Symbols](Fotos/Manual_LaTeX/LaTeX_symbols.pdf)*.
 
