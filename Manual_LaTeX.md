@@ -1159,7 +1159,7 @@ Esta es una página de tamaño A5 apaisada.
 \blindtext[2]
 \end{document}
 ~~~~
-![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex3.PNG)
+![](Fotos/Manual_LaTeX/12_Diseño_de_página/pdflatex.PNG)
 
 También permite definir los márgenes del documento mediante los siguientes argumentos:
 - **margin=x** - Establece los cuatro márgenes (izquierdo, derecho, superior e inferior) con tamaño **x** (es necesario indicar las unidades *pt*, *mm* o *cm*).
@@ -1182,7 +1182,7 @@ Este es una página con márgenes personalizados.
 \blindtext[7]
 \end{document}
 ~~~~
-![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex4.PNG)
+![](Fotos/Manual_LaTeX/12_Diseño_de_página/pdflatex2.PNG)
 
 ### 12.2. Encabezados y pies de página
 *LaTeX* incluye encabezados y pies de página automáticos dependiendo del tipo de documento. Para las clases **article** y **report** no hay encabezado y el pie es el número de página, mientras que para la clase book el encabezado incluye la página y la sección a la que corresponde la página. No obstante, el usuario puede definir sus propios encabezados y pies mediante el paquete **fancyhdr**.
@@ -1219,7 +1219,7 @@ Este es una página con encabezado y pie personalizado.
 \blindtext[9]
 \end{document}
 ~~~~
-![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex5.PNG) ![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex6.PNG)
+![](Fotos/Manual_LaTeX/12_Diseño_de_página/pdflatex3.PNG) ![](Fotos/Manual_LaTeX/12_Diseño_de_página/pdflatex4.PNG)
 
 Como se puede observar, por defecto **fancyhdr** introduce una línea horizontal para separar el encabezado. Es posible modificar el grosor de la línea redefiniendo los comandos ***\headrulewith*** y ***\footrulewith***. Por ejemplo, si no queremos que aparezca la línea se escribiría ***\renewcommand{\headrulewidth}{0pt}***.
 
@@ -1250,7 +1250,7 @@ Este es una página con encabezado y pie personalizado.
 \blindtext[9]
 \end{document}
 ~~~~
-![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex7.PNG)
+![](Fotos/Manual_LaTeX/12_Diseño_de_página/pdflatex5.PNG)
 
 # Bibliografía y recursos
 ### Libros
