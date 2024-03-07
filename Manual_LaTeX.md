@@ -591,7 +591,7 @@ Barcelona & 2250 & 1500 & & 2400 & 1650\\
 
 ## 7. IMÁGENES
 ---
-Para incluir una imagen o figura en un documento, además de disponer de la imagen del fichero en un formato gráfico adecuado, es necesario cargar en el preámbulo el paquete graphicx. Este paquete permite gestionar imágenes en los formatos gráficos *jpg*, *png*, *tiff*, *eps* y *pdf* (los tres primeros son formatos de mapas de bits y los dos últimos vectoriales).
+Para incluir una imagen o figura en un documento, además de disponer de la imagen del fichero en un formato gráfico adecuado, es necesario cargar en el preámbulo el paquete graphicx. Este paquete permite gestionar imágenes en los formatos gráficos *.jpg*, *.png*, *.tiff*, *.eps* y *.pdf* (los tres primeros son formatos de mapas de bits y los dos últimos vectoriales).
 
 Una vez cargado el paquete, para insertar una imagen en el documento basta con utilizar el comando ***\includegraphics[opiones]{fichero}***. Este comando tiene como argumento obligatorio es el nombre del fichero con la imagen (incluyendo la ruta en el sistema de ficheros local) y los siguientes argumentos opcionales para modificar el aspecto de la
 imagen:
@@ -1059,7 +1059,29 @@ El logotipo de latex es $\LaTeX$.\footnote{Fue creado por Leslie Lamport.}
 
 ## 11. CITAS Y REFERENCIAS BIBLIOGRÁFICAS
 ---
+Al igual que con las referencias cruzadas, *LaTeX* hace un maravilloso trabajo con las citas de referencias bibliográficas. Para ello se apoya en otro programa de gestión de referencias bibliográficas llamado *BibTeX*, que viene incluido en la distribución estándar de *LaTeX*. *[BibTeX](https://www.bibtex.org/)* permite crear una base de datos de distintos tipos de documentos que después se pueden citar en nuestro documento y después listar al final del documento las referencias bibliográficas citadas con diferentes formatos.
 
+También existe otro gestor de referencias bibliográficas llamado biber que soporta la codificación de caracteres unicode, y por tanto es más apropiado si vamos a compilar nuestro documento con *xelatex*.
+
+Para incluir referencias bibliográficas en un documento primero hay que crear una base de datos con las fuentes bibliográficas que vayamos a usar en un documento. Esa base de datos se crea en un fichero de texto independiente con el formato que requiere *BibTex* con extensión *.bib*.
+
+La sintaxis para crear una nueva entrada bibliográfica en la base de datos es un poco compleja al principio, pero afortunadamente existen bastantes aplicaciones de gestión bibliográfica, como *[Zotero](https://www.zotero.org/)*, *[Mendely](https://www.mendeley.com/)*, *[EndNote](https://endnote.com/)*, *[RefWorks](https://refworks.proquest.com/researcher/)* o *[BibSonomy](https://www.bibsonomy.org/)* que incluyen la posibilidad de exportar la bibliografía en ese formato.
+
+##### Ejemplo
+Ejemplo
+El siguiente fichero contiene una base de datos bibliográfica con dos entradas, un libro y
+un artículo de una revista.
+% Fichero bibliografia.tex
+@book{lamport_latex_1994,
+edition = {2nd},
+title = {{LaTeX}: {A} {Document} {Preparation} {System}, 2nd {Edition}},
+isbn = {978-0-201-52983-8},
+publisher = {Addison-Wesley Professional.},
+author = {Lamport, Leslie},
+month = jun,
+year = {1994}
+}
+@article{borbon_latex_2022,
 
 ## 12. DISEÑO DE PÁGINA
 ---
