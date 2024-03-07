@@ -1068,10 +1068,9 @@ Para incluir referencias bibliográficas en un documento primero hay que crear u
 La sintaxis para crear una nueva entrada bibliográfica en la base de datos es un poco compleja al principio, pero afortunadamente existen bastantes aplicaciones de gestión bibliográfica, como *[Zotero](https://www.zotero.org/)*, *[Mendely](https://www.mendeley.com/)*, *[EndNote](https://endnote.com/)*, *[RefWorks](https://refworks.proquest.com/researcher/)* o *[BibSonomy](https://www.bibsonomy.org/)* que incluyen la posibilidad de exportar la bibliografía en ese formato.
 
 ##### Ejemplo
-Ejemplo
-El siguiente fichero contiene una base de datos bibliográfica con dos entradas, un libro y
-un artículo de una revista.
-% Fichero bibliografia.tex
+El siguiente fichero contiene una base de datos bibliográfica con dos entradas, un libro y un artículo de una revista.
+~~~~ latex
+% Fichero bibliografia.bib
 @book{lamport_latex_1994,
 edition = {2nd},
 title = {{LaTeX}: {A} {Document} {Preparation} {System}, 2nd {Edition}},
@@ -1082,7 +1081,142 @@ month = jun,
 year = {1994}
 }
 @article{borbon_latex_2022,
+    title = {{LaTeX}: {Primeros} pasos},
+    journal = {Revista digital Matemática, Educación e Internet.},
+    author = {{Borbón, Alexánder} and {Mora, Walter}},
+    year = {2022},
+    pages = {2--7},
+}
+~~~~
+
+Obsérvese que cada entrada bibliográfica empieza por el tipo de documento (*book*, *article*, etc.) y está descrita por varios campos: **title** (título), **author** (autor), **journal** (revista), **year** (año), etc. El primer campo es una clave que identifica al documento de manera única y que se utilizará posteriormente para citarlo.
+
+Una vez creada la base de datos, para citar cualquier referencia contenida en ella, hay que cargar en el preámbulo el paquete **biblatex** e indicar la ubicación de la base de datos con el comando ***\addbibresource{bibliografia.bib}***, donde **bibliografia.bib** es el nombre del fichero con la base de datos bibliográfica (incluida la ruta), y luego escribir el comando ***\cite{clave}***, donde **clave** es la clave de la entrada bibliográfica en la base de datos, en el lugar donde se quiera hacer la referencia.
+
+Finalmente para listar las referencias bibliográficas citadas en el documento basta con insertar el comando ***\printbibliography***.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage{biblatex}
+\addbibresource{bibliografia.bib}
+
+% CUERPO
+\begin{document}
+El principal libro sobre latex es \cite{lamport_latex_1994}, aunque también
+es muy interesante el artículo \cite{borbon_latex_2022}
+
+\printbibliography
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex.PNG)
+
+Existen diferentes estilos para las citaciones y para el listado con las referencias bibliográficas que se pueden indicar en la carga del paquete **biblatex** con el parámetro opcional **style**. Por ejemplo si en lugar de números en las citaciones queremos que aparezca las iniciales del autor y el año, hay que seleccionar el estilo **style=alphabetic**. En el siguiente enlace existe un listado exahustivo de los diferentes [estilos de citación](https://www.overleaf.com/learn/latex/Biblatex_citation_styles).
+
+Por último si en lugar de **bibtex** se quiere usar biber para gestionar las referencias bibliográficas, hay que indicarlo también ebn la carga del paquete biblatex mediante el parámetro opcional **backend=biber**.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage[
+backend=biber, style=alphabetic]{biblatex}
+\addbibresource{bibliografia.bib}
+
+% CUERPO
+\begin{document}
+El principal libro sobre latex es \cite{lamport_latex_1994}, aunque también
+es muy interesante el artículo \cite{borbon_latex_2022}
+
+\printbibliography
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex2.PNG)
 
 ## 12. DISEÑO DE PÁGINA
 ---
+Existen distintos parámetros que determinan el aspecto final de una página con texto. En este capítulo veremos como modificar las dimensiones de la página, los márgenes, y cómo introducir encabezados y pies.
 
+### 12.1. Dimensiones y márgenes
+Aunque es posible definir el tamaño de la página como un argumento del comando que define la clase del documento ***\documentclass***, si queremos tener mayor control sobre las dimensiones del documento, así como de los márgenes, conviene utilizar el paquete **geometry**.
+
+El paquete geometry permite definir las dimensiones de la página mediante un argumento opcional con distintos tamaños de página predefinidos (**a4paper**, **a5paper**, **b1paper**, **letterpaper**, etc.), pero también es posible definir nuestras propias dimensiones con los siguientes argumentos:
+- **paperheight=x** - Establece la longitud vertical de la página en **x** (es necesario indicar las unidades *pt*, *mm* o *cm*)
+- **paperwidth=x** - Establece la longitud horizontal de la página en **x**.
+
+Por defecto la orientación del documento es vertical, pero puede ponerse en formato horizontal o apaisado con el argumento **landscape**.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage[a5paper, landscape]{geometry}
+\usepackage{blindtext}
+
+% CUERPO
+\begin{document}
+\section{Introducción}
+Esta es una página de tamaño A5 apaisada.
+\subsection{Texto de relleno}
+\blindtext[2]
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex3.PNG)
+
+También permite definir los márgenes del documento mediante los siguientes argumentos:
+- **margin=x** - Establece los cuatro márgenes (izquierdo, derecho, superior e inferior) con tamaño **x** (es necesario indicar las unidades *pt*, *mm* o *cm*).
+- **left=x** - Establece el margen izquierdo con tamaño **x**.
+- **right=x** - Establece el margen derecho con tamaño **x**.
+- **top=x** - Establece el margen superior con tamaño **x**.
+- **bottom=x** - Establece el margen inferior con tamaño **x**.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage[a4paper, left=2.5cm, right=3.5cm, top=45mm, bottom=20mm]{geometry}
+\usepackage{blindtext}
+
+% CUERPO
+\begin{document}
+\section{Introducción}
+Este es una página con márgenes personalizados.
+\subsection{Texto de relleno}
+\blindtext[7]
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex4.PNG)
+
+### 12.2. Encabezados y pies de página
+*LaTeX* incluye encabezados y pies de página automáticos dependiendo del tipo de documento. Para las clases **article** y **report** no hay encabezado y el pie es el número de página, mientras que para la clase book el encabezado incluye la página y la sección a la que corresponde la página. No obstante, el usuario puede definir sus propios encabezados y pies mediante el paquete **fancyhdr**.
+
+Una vez cargado este paquete y antes de definir el texto del encabezado y del pie, hay que cambiar el estilo de página (**plain** por defecto) a **fancy**, y para ello se utiliza el comando ***\pagestyle{fancy}*** que indica al compilador que se van a usar un encabezado y pie personalizados.
+
+A continuación hay definir el texto del encabezado y del pie. El paquete **fancyhdr** divide tanto el encabezado como el pie de página en tres areas (izquierda, centro y derecha) e incorpora comandos para escribir en cada una de ellas. El texto del área de la izquierda siempre se justifica a la izquierda, el del área del centro se justifica centrado y el del área derecha justificado a la derecha. Por otro lado, para documentos a doble cara, se distingue también entre encabezados y pies de páginas pares e impares.
+
+Para definir el encabezado y el pie de página se utilizan los comandos:
+- ***\fancyhead[opcion]{texo}*** - Añade el texto al encabezado de página en el area que se indique en el argumento opcional opcion, que puede ser L (área de la izquierda), C (área del centro) o R (área de la derecha), aunque para documentos a doble cara también se puede especificar el encabezado para páginas pares añadiendo una **E** o impares añadiendo una **O**.
+- ***\fancyfoot[opcion]{texo}*** - Añade el texto al pie en el area que se indique en el argumento opcional opcion.
+> ⚠️ **ADVERTENCIA:** El paquete **fancyhdr** no elimina los encabezados por defecto de cada tipo de documento, por lo que si se van a definir encabezados o pies personalizados, conviene utilizar los comandos ***\fancyhead{}*** y ***\fancyfoot{}*** para eliminar el encabezado y pie por defecto antes de definir los propios.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % Borra el encabezado por defecto
+\fancyhead[RO,LE]{\textbf{Mi encabezado}}
+\fancyhead[C]{Alfredo Sánchez}
+\fancyfoot{} % Borra el pie por defecto
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,RE]{\texttt{http://aprendeconalf.es}}
+
+% CUERPO
+\begin{document}
+\section{Introducción}
+Este es una página con encabezado y pie personalizado.
+
+\subsection{Texto de relleno}
+
+\blindtext[9]
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex5.PNG) ![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex6.PNG)
