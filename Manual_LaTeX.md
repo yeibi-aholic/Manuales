@@ -207,11 +207,11 @@ Antes de explicar las distintas partes de este esqueleto conviene mencionar vari
     + ***#*** : Indica el número de un argumento en la definición de comandos.
     + ***%*** : Indica el inicio de un comentarios.
     + ***&*** : Separa elementos en una tabla o fórmula.
-    + ***ˆ*** : Escribe un superíndice.
+    + ***^*** : Escribe un superíndice.
     + ***_*** : Escribe un subíndice.
     + ***~*** : Indica por dónde se puede partir una palabra al final de una línea.
   
-Para que aparezcan estos caracteres en el documento final es necesario escribirlos en el código fuente precedidos por la barra invertida (***\$, \{, \}, \#, \%, \&, \ˆ, \_, \~***) excepto la barra invertida que se
+Para que aparezcan estos caracteres en el documento final es necesario escribirlos en el código fuente precedidos por la barra invertida (***\$, \{, \}, \#, \%, \&, \^, \_, \~***) excepto la barra invertida que se
 escribe con el comando ***\backslash***.
 
 #### 2.1.1. Clase de un documento
@@ -759,7 +759,6 @@ Ejemplo de fórmula con subíndices y superíndices
 $$
 x_i^2+y_j^2=0
 $$
-
 \end{document}
 ~~~~
 ![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex2.PNG)
@@ -774,20 +773,20 @@ A su vez, se pueden escribir más fracciones en el numerador o el denominador, a
 ~~~~ latex
 % CUERPO
 \begin{document}
-Ejemplo de fracción en línea $\frac{x+2}{xˆ2-2x+1}$.
+Ejemplo de fracción en línea $\frac{x+2}{x^2-2x+1}$.
+
 Ejemplo de fracción en modo desplegado
 $$
-\frac{\frac{x}{2}+\frac{2}{3}}{xˆ2-2x+1}
+\frac{\frac{x}{2}+\frac{2}{3}}{x^2-2x+1}
 $$
-
 \end{document}
 ~~~~
 ![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex3.PNG)
 
 ### 8.4. Sumatorios, productorios e integrales
-Para escribir sumatorios se utiliza el comando ***\sum_{sub}ˆ{sup}***, donde **sub** es el subíndice que indica el inicio de la suma y **sup** es el superíndice que indica el final de la suma. Si se quieren omitir los índices de inicio y final de la suma, basta con el comando ***\sum***.
+Para escribir sumatorios se utiliza el comando ***\sum_{sub}^{sup}***, donde **sub** es el subíndice que indica el inicio de la suma y **sup** es el superíndice que indica el final de la suma. Si se quieren omitir los índices de inicio y final de la suma, basta con el comando ***\sum***.
 
-De manera análoga, para escribir productorios se utiliza el comando ***\prod_{sub}ˆ{sup}***, donde **sub** es el subíndice que indica el inicio del producto y **sup** es el superíndice que indica el final del producto. Si se quieren omitir los índices de inicio y final del producto, basta con el comando ***\prod***.
+De manera análoga, para escribir productorios se utiliza el comando ***\prod_{sub}^{sup}***, donde **sub** es el subíndice que indica el inicio del producto y **sup** es el superíndice que indica el final del producto. Si se quieren omitir los índices de inicio y final del producto, basta con el comando ***\prod***.
 
 ##### Ejemplo
 ~~~~ latex
@@ -795,19 +794,18 @@ De manera análoga, para escribir productorios se utiliza el comando ***\prod_{s
 \begin{document}
 Ejemplo de sumatorio
 $$
-\sum_{i=1}^{\infty} xˆi
+\sum_{i=1}^{\infty} x^i
 $$
 
 Ejemplo de productorio
 $$
 \prod_{i=1}^n i
 $$
-
 \end{document}
 ~~~~
 ![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex4.PNG)
 
-Del mismo modo, para escribir integrales definidas se utiliza el comando ***\int_{sub}ˆ{sup}***, donde **sub** es el subíndice que indica el inicio de la integral y **sup** es el superíndice que indica el final de la integral. Para integrales indefinidas, basta con el comando ***\int***.
+Del mismo modo, para escribir integrales definidas se utiliza el comando ***\int_{sub}^{sup}***, donde **sub** es el subíndice que indica el inicio de la integral y **sup** es el superíndice que indica el final de la integral. Para integrales indefinidas, basta con el comando ***\int***.
 
 ##### Ejemplo
 ~~~~ latex
@@ -846,6 +844,92 @@ Ejemplos de sombreros: $\overline{xy}$, $\hat{a}$, $\widehat{abc}$, $\vec{u}$.
 
 ### 8.6. Matrices
 Las matrices se crean de manera similar a como se crean las [tablas](#6-tablas), pero utilizando el entorno **array** en lugar del entorno **tabular**. Para encerrar la matriz entre paréntesis se pone el comando ***\left(*** antes del entorno y el comando ***\right)*** después.
+
+##### Ejemplo
+~~~~ latex
+% CUERPO
+\begin{document}
+Ejemplo de matriz
+$$
+\left(
+\begin{array}{rrr}
+1 & 2 & 3 \\
+x & y & z \\
+\end{array}
+\right)
+$$
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex7.PNG)
+
+El paquete **amsmath** incorpora varios entornos más específicos para matrices donde no es necesario especificar el número de columnas, y tampoco los delimitadores:
+- **matrix** - Matriz sin delimitadores (equivalente al entorno **array**)
+- **pmatrix** - Matriz encerrada entre paréntesis.
+- **vmatrix** - Matriz encerrada entre barras verticales (por ejemplo para determinates).
+- **Vmatrix** - Matriz encerrada ente dobles barras verticales.
+- **bmatrix** - Matriz encerrada entre corchetes.
+- **Bmatrix** - Matriz encerrada entre llaves.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage{amsmath}
+
+% CUERPO
+\begin{document}
+Ejemplo de determinante
+$$
+\begin{vmatrix}
+1 & x & \alpha \\
+2 & y & \beta \\
+3 & z &\gamma
+\end{vmatrix}
+$$
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex8.PNG)
+
+### 8.7. Teoremas
+Para crear denificiones, teoremas, proposiciones, corolarios y otros tipos de enunciados de sebe cargar el paquete **amsthm** y definir los tipos de enunciados en el preámbulo con el comando ***\newtheorem{entorno}{texo}***, donde **entorno** es el nombre del entorno y **texto** el texto que aparerá en el documento final como encabezado del enunciado.
+
+Estos entornos admiten como argumento opcional un texto que se utiliza para dar nombre al enunciado.
+
+Los enunciados definidos con este comando aparecen por defecto numerados para poder referenciarlos en otras partes del documento, pero se pueden definir entornos no numerados con la variante del comando anterior ***\newtheorem*{entorno}{texo}***.
+
+Para demostraciones se puede utilizar el entorno **proof**.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage{amsmath}
+\DeclareMathOperator{\sen}{sen}
+\usepackage{amsthm}
+\newtheorem{midef}{Definición}
+\newtheorem{teo}{Teorema}
+
+% CUERPO
+\begin{document}
+\begin{midef}
+Dado un triángulo rectángulo de catetos $a$, $b$ e hipotenusa $c$, se define
+el seno del ángulo $\alpha$ opuesto al cateto $b$ como
+$$
+\sen{\alpha}= \frac{b}{c}.
+$$
+\end{midef}
+
+\begin{teo}
+Para cualquier ángulo $\alpha$ se cumple
+$\sen(\alpha)^2 + \cos(\alpha)^2 = 1$.
+\end{teo}
+
+\begin{proof}
+Es una consecuencia directa del teorema de Pitágoras.
+\end{proof}
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/8_Fórmulas_matemáticas/pdflatex9.PNG)
+
+> 💡 **CONSEJO:** Se recomienda cargar los paquetes **amsmath**, **amssymb** y **amsthm** para documentos extensos o con muchas fórmulas matemáticas.
 
 [^2]: Para un listado más exhaustivo de los símbolos matemáticos de *LaTeX*, puede consultarse el documento *[The Great, Big List of LaTeX Symbols](Fotos/Manual_LaTeX/LaTeX_symbols.pdf)*.
 
