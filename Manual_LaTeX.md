@@ -935,11 +935,127 @@ Es una consecuencia directa del teorema de Pitágoras.
 
 ## 9. ENTORNOS FLOTANTES
 ---
+Hay determinados contenidos, como por ejemplo las tablas o las imágenes que son bloques indivisibles, de manera que cuando no hay espacio suficiente en la página para encajarlos, pasan a colocarse en la siguiente página, dejando en la página anterior un espacio vertical vacío poco estético.
 
+La solución consiste en incluir estos contenidos en un entorno flotante, que se ubicará automáticamente sin dejar espacios vacíos. Como estos contenidos pueden aparecer lejos de su posición en el código fuente, para que no estén descontextualizados suelen llevar asociada una leyenda.
+
+Existen dos entornos flotantes, para figuras y tablas.
+
+### 9.1. Entorno flotante para figuras
+El entorno flotante para figuras es figure tiene el siguiente esqueleto.
+~~~~ latex
+\begin{figure}[posición]
+    Código de las imágenes
+\label{etiqueta}
+\caption{leyenda}
+\end{figure}
+~~~~
+
+El argumento opcional indica la preferencia de ubicación de la figura en la página (**h** en el lugar en el que aparece en el código fuente, **t** arriba, **b** abajo). *LaTeX* intentará ubicar la figura en esa posición salvo que no sea posible.
+
+Las figuras flotantes se numeran automáticamente y el comando ***\label{...}*** asigna una etiqueta al entorno flotante para poder referenciarlo desde otras partes del documento. Por su parte, el comando ***\caption{...}*** crea la leyenda de la figura.
+~~~~ latex
+% PREÁMBULO
+\usepackage{graphicx}
+
+% CUERPO
+\begin{document}
+Ejemplo de imagen flotante. Como se puede apreciar la imagen aparece al principio de la página aunque va después de este párrafo en el código fuente.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics{img/logo-aprendeconalf.png}
+\end{center}
+\label{img-1}
+\caption{Logotipo del sitio web AprendeconAlf.}
+\end{figure}
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/9_Entornos_flotantes/pdflatex.PNG)
+> Para incluir el listado de figuras de un documento en cualquier parte se utiliza el comando ***\listoffigures***.
+
+### 9.2. Entorno flotante para tablas
+El entorno flotante para tablas es table y su esqueleto es muy parecido al del entorno para figuras.
+~~~~ latex
+\begin{table}[posición]
+    Código de la tabla
+\label{etiqueta}
+\caption{leyenda}
+\end{table}
+~~~~
+
+Las tablas, al igual que las figuras, se enumeran automáticamente y pueden referenciarse después asignándoles una etiqueta con el comando ***\label{...}***.
+~~~~ latex
+% CUERPO
+\begin{document}
+Ejemplo de tabla flotante. Como se puede apreciar la tabla aparece al principio de la página aunque va después de este párrafo en el código fuente.
+
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{|l|c|r|}
+\hline
+Nombre & Ciudad & Edad \\
+\hline
+\hline
+María & Valencia & 22 \\
+\hline
+Juan & Madrid & 50 \\
+\hline
+Carmen & Barcelona & 35 \\
+\hline
+\end{tabular}
+\end{center}
+\label{img-1}
+\caption{Tabla de clientes de una empresa.}
+\end{table}
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/9_Entornos_flotantes/pdflatex2.PNG)
+> Para incluir el listado de figuras de un documento en cualquier parte se utiliza el comando ***\listoftables***.
 
 ## 10. REFERENCIAS CRUZADAS Y NOTAS A PIE
 ---
+Otro de los puntos fuertes de *LaTeX* es la gestión de las referencias cruzadas, es decir, referencias a otras partes del documento, así como las notas a pie de página.
 
+### 10.1. Referencias cruzadas
+Como se ha visto, muchos elementos de un documento están enumerados: capítulos, secciones, figuras, tablas, ecuaciones, teoremas, páginas, etc. Para poder referenciarlos, cada elemento debe tener asignada una etiqueta única. Para asignar una etiqueta a cualquier elemento numerado se utiliza el comando ***\label{etiqueta}***. Este comando debe ubicarse justo antes o después del elemento que quiere etiquetar.
+
+Posteriormente, para hacer una referencia al elemento en otra parte del documento se utiliza el comando ***\ref{etiqueta}***.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage{amsmath}
+\DeclareMathOperator{\sen}{sen}
+\usepackage{amsthm}
+\newtheorem{teo}{Teorema}
+
+% CUERPO
+\begin{document}
+\begin{teo}\label{teo-trigo}
+Para cualquier ángulo
+$\alpha$ se cumple
+\begin{equation}\label{eq-trigo}
+\sen(\alpha)^2 + \cos(\alpha)^2 = 1.
+\end{equation}
+\end{teo}
+
+Ejemplo de referencia cruzada. La ecuación \ref{eq-trigo} del teorema \ref{teo-trigo} es una ecuación básica en trigonometría.
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/10_Referencias_cruzadas_y_notas_a_pie/pdflatex.PNG)
+
+### 10.2. Notas a pie de página
+Para insertar una nota a pié de página se utiliza el comando ***\footnote{...}***.
+
+##### Ejemplo
+~~~~ latex
+% CUERPO
+\begin{document}
+El logotipo de latex es $\LaTeX$.\footnote{Fue creado por Leslie Lamport.}
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/10_Referencias_cruzadas_y_notas_a_pie/pdflatex2.PNG)
 
 ## 11. CITAS Y REFERENCIAS BIBLIOGRÁFICAS
 ---
