@@ -795,12 +795,12 @@ De manera análoga, para escribir productorios se utiliza el comando ***\prod_{s
 \begin{document}
 Ejemplo de sumatorio
 $$
-\sum_{i=1}ˆ{\infty} xˆi
+\sum_{i=1}^{\infty} xˆi
 $$
 
 Ejemplo de productorio
 $$
-\prod_{i=1}ˆn i
+\prod_{i=1}^n i
 $$
 
 \end{document}
@@ -815,7 +815,7 @@ Del mismo modo, para escribir integrales definidas se utiliza el comando ***\int
 \begin{document}
 Ejemplo de integral definida
 $$
-\int_aˆb f(x)\,dx
+\int_a^b f(x)\,dx
 $$
 
 Ejemplo de integral indefinida
