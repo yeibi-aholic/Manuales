@@ -1204,10 +1204,10 @@ Para definir el encabezado y el pie de página se utilizan los comandos:
 \pagestyle{fancy}
 \fancyhead{} % Borra el encabezado por defecto
 \fancyhead[RO,LE]{\textbf{Mi encabezado}}
-\fancyhead[C]{Alfredo Sánchez}
+\fancyhead[C]{Javier González}
 \fancyfoot{} % Borra el pie por defecto
 \fancyfoot[LE,RO]{\thepage}
-\fancyfoot[LO,RE]{\texttt{http://aprendeconalf.es}}
+\fancyfoot[LO,RE]{\texttt{Manual LaTeX}}
 
 % CUERPO
 \begin{document}
