@@ -1220,3 +1220,49 @@ Este es una página con encabezado y pie personalizado.
 \end{document}
 ~~~~
 ![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex5.PNG) ![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex6.PNG)
+
+Como se puede observar, por defecto **fancyhdr** introduce una línea horizontal para separar el encabezado. Es posible modificar el grosor de la línea redefiniendo los comandos ***\headrulewith*** y ***\footrulewith***. Por ejemplo, si no queremos que aparezca la línea se escribiría ***\renewcommand{\headrulewidth}{0pt}***.
+
+Finalmente, el espacio entre el encabezado y el cuerpo del texto también se controla con el paquete **geometry** con la opción **headsep=x**. Del mismo modo, la separación entre el pie y el cuerpo se controla con la opción **footskip=x**.
+
+##### Ejemplo
+~~~~ latex
+% PREÁMBULO
+\usepackage{blindtext}
+\usepackage[top= 4cm, headsep=2cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % Borra el encabezado por defecto
+\fancyhead[R]{\textbf{Mi encabezado}}
+\fancyhead[C]{Javier González}
+\fancyfoot{} % Borra el pie por defecto
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\texttt{Manual LaTeX}}
+\renewcommand{\headrulewidth}{0pt}
+
+% CUERPO
+\begin{document}
+\section{Introducción}
+Este es una página con encabezado y pie personalizado.
+
+\subsection{Texto de relleno}
+
+\blindtext[9]
+\end{document}
+~~~~
+![](Fotos/Manual_LaTeX/11_Citas_y_referencias_bibliográficas/pdflatex7.PNG)
+
+# Bibliografía y recursos
+### Libros
+- *Cascales, B. y otros (2003). El libro de Latex. Pearson Educación.*
+- *Cascales, B. y otros (2000). LaTeX: una imprenta en sus manos. Aula Documental de Investigación.*
+- *Lamport, Leslie (1994). LaTeX: A Document Preparation System, 2nd Edition. 2nd ed. Addison-Wesley Professional.*
+- *Mittelbach, F. et al. (2004). LaTeX Companion, The, 2nd Edition. 2nd ed. AddisonWesley Professional.*
+- *Oetiker, T et al (2021). [The not so short introduction to LaTeX](Fotos/Manual_LaTeX/The_Not_So_Short_Introduction_to_LaTeX.pdf).*
+
+### Sitios Web
+- *[The LaTeX project](https://www.latex-project.org/). Sito web principal del proyecto LaTeX con multitud de materiales para aprender y noticias sobre el desarrollo de nuevas versiones.*
+- *[Comprehensive TEXArchive Network](https://ctan.org/). Principal repositorios de paquetes para TeX y LaTeX.*
+- *[CervanTeX](http://www.cervantex.es/). Grupos de usuarios de TeX hispanoablantes.*
+- *[Awesome LaTeX](https://project-awesome.org/egeerardyn/awesome-LaTeX). Sitio web con multitud de recursos curados para escribir documentos con LaTeX.*
+- *[Chuleta de LaTeX](Fotos/Manual_LaTeX/chulatex.pdf). Resumen de los principales comandos y entornos de LaTeX.*
