@@ -26,16 +26,16 @@
 7. **[IMÁGENES](#7-imágenes)**
 8. **[FÓRMULAS MATEMÁTICAS](#8-fórmulas-matemáticas)**
     1. [Símbolos matemáticos](#81-símbolos-matemáticos)
-        1. Letras griegas
-        2. Operadores aritméticos
-        3. Relaciones
-        4. Operadores binarios
-        5. Lógica
-        6. Conjuntos
-        7. Flechas
-        8. Puntos suspensivos
-        9. Otros símbolos
-        10. Funciones
+        1. [Letras griegas](#811-letras-griegas)
+        2. [Operadores aritméticos](#812-operadores-aritméticos)
+        3. [Relaciones](#813-relaciones)
+        4. [Operadores binarios](#814-operadores-binarios)
+        5. [Lógica](#815-lógica)
+        6. [Conjuntos](#816-conjuntos)
+        7. [Flechas](#817-flechas)
+        8. [Puntos suspensivos](#818-puntos-suspensivos)
+        9. [Otros símbolos](#819-otros-símbolos)
+        10. [Funciones](#8110-funciones)
     2. [Subíndices y superíndices](#82-subíndices-y-superíndices)
     3. [Fracciones](#83-fracciones)
     4. [Sumatorios, productorios e integrales](#84-sumatorios-productorios-e-integrales)
