@@ -36,7 +36,7 @@
         8. Puntos suspensivos
         9. Otros símbolos
         10. Funciones
-    2. [Subíndices y superíndices](#82-suníndices-y-superíndices)
+    2. [Subíndices y superíndices](#82-subíndices-y-superíndices)
     3. [Fracciones](#83-fracciones)
     4. [Sumatorios, productorios e integrales](#84-sumatorios-productorios-e-integrales)
     5. [Sombreros](#85-sombreros)
@@ -45,7 +45,7 @@
 9. **[ENTORNOS FLOTANTES](#9-entornos-flotantes)**
     1. [Entorno flotante para figuras](#91-entorno-flotante-para-figuras)
     2. [Entorno flotante para tablas](#92-entorno-flotante-para-tablas)
-10. **[REFERENCIAS CRUZADAS Y NOTAS A PIE](#referencias-cruzadas-y-notas-a-pie)**
+10. **[REFERENCIAS CRUZADAS Y NOTAS A PIE](#10-referencias-cruzadas-y-notas-a-pie)**
     1. [Referencias cruzadas](#101-referencias-cruzadas)
     2. [Notas a pie de página](#102-notas-a-pie-de-página)
 11. **[CITAS Y REFERENCIAS BIBLIOGRÁFICAS](#11-citas-y-referencias-bibliográficas)**
