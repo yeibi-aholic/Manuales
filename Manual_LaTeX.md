@@ -608,15 +608,15 @@ imagen:
 % CUERPO
 \begin{document}
 Ejemplo de imagen en línea
-\includegraphics{img/logo-aprendeconalf.png},
+\includegraphics{img/GitHubLogo.png},
 escalada
-\includegraphics[height=1cm]{img/logo-aprendeconalf.png},
+\includegraphics[height=1cm]{img/GitHubLogo.png},
 y rotada
-\includegraphics[angle=90]{img/logo-aprendeconalf.png}
+\includegraphics[angle=90]{img/GitHubLogo.png}
 
 Ejemplo de imagen centrada:
 \begin{center}
-\includegraphics{img/logo-aprendeconalf.png}
+\includegraphics{img/GitHubLogo.png}
 \end{center}
 \end{document}
 ~~~~
@@ -964,10 +964,10 @@ Ejemplo de imagen flotante. Como se puede apreciar la imagen aparece al principi
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics{img/logo-aprendeconalf.png}
+\includegraphics{img/GitHubLogo.png}
 \end{center}
 \label{img-1}
-\caption{Logotipo del sitio web AprendeconAlf.}
+\caption{Logotipo de GitHub.}
 \end{figure}
 \end{document}
 ~~~~
