@@ -27,7 +27,6 @@
 25. **[Depuración de código](#depuración-de-código)**
 26. **[Trucos y consejos](#trucos-y-consejos)**
 
-## **[<](#manual-python)**
 ## Introducción a Python
 ---
 ### ¿Qué es Python?
@@ -101,7 +100,6 @@ Hay distintos paquetes que permiten compilar a un ejecutable del sistema operati
 Hola Alf
 ~~~~
 
-## **[<](#manual-python)**
 ## Tipos de Datos Primitivos Simples
 ---
 ### Tipos de datos primitivos simples
@@ -500,7 +498,6 @@ x = None
 del x
 ~~~~
 
-## **[<](#manual-python)**
 ## Entrada y Salida por Terminal
 ---
 ### Entrada por terminal (*input()*)
@@ -561,7 +558,6 @@ Hola Alf!
 > (Confucio)
 > ~~~~
 
-## **[<](#manual-python)**
 ## Condicionales
 ---
 ### Condicionales (*if*)
@@ -604,8 +600,6 @@ Menor
 Activo
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Bucles
 ---
 ### Bucles condicionales (*while*)
@@ -694,8 +688,6 @@ n
 1, 2, 3, 4, 6, 7, 8, >>>
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Listas
 ---
 ### Listas
@@ -897,8 +889,6 @@ Para solucionar el sub-problema de referencia de la copia debemos usar *l1 = cop
 [1, 2, 3, [4, 5]]
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Tuplas
 ---
 ### Tuplas
@@ -965,8 +955,6 @@ False
 6
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Diccionarios
 ---
 ### Diccionarios
@@ -1092,8 +1080,6 @@ Existen dos formas de copiar diccionarios:
 {1:'A', 2:'B', 3:'C'}
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Funciones
 ---
 ### Funciones (def)
@@ -1487,8 +1473,6 @@ area_triangulo(base, altura)
         Un número real con el área del triángulo de base y altura especificadas.
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Programación funcional
 ---
 ### Programación funcional
@@ -1575,8 +1559,6 @@ Estas funciones se suelen asociar a una variable o parámetro desde la que hacer
 24
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Comprensión de Colecciones
 ---
 ### Comprensión de colecciones
@@ -1614,8 +1596,6 @@ Esta instrucción genera el diccionario formado por los pares cuyas claves son e
 {'Carmen': 6, 'Juan': 9, 'Mónica': 10, 'María': 7}
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Ficheros
 ---
 ### Ficheros
@@ -1766,8 +1746,6 @@ Aprende con Alf
 Este es el repositorio del sitio web Aprende con Alf: http://aprendeconalf.es
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Excepciones
 ---
 ### Control de errores mediante excepciones
@@ -1861,8 +1839,6 @@ except exception as NombreError:
 El número no puede ser negativo
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Programación Orientada a Objetos
 ---
 ### Objetos
@@ -2198,8 +2174,6 @@ class Mates(builtins.object)
  |      list of weak references to the object (if defined)
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Módulos
 ---
 ### Módulos
@@ -2416,9 +2390,6 @@ CLASSES
 --More--
 ~~~~
 
-
-
-## **[<](#manual-python)**
 ## Librería Datetime
 ---
 Para manejar fechas en Python se suele utilizar la librería *datetime* que incorpora los tipos de datos *date*, *time* y *datetime* para representar fechas y funciones para manejarlas. Algunas de las operaciones más habituales que permite son:
@@ -2547,8 +2518,6 @@ datetime.datetime(2020, 2, 1, 1, 0)
 datetime.timedelta(days=132, seconds=1826, microseconds=895590)
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Librería Numpy
 ---
 [NumPy](https://www.numpy.org/) es una librería de Python especializada en el cálculo numérico y el análisis de datos, especialmente para un gran volumen de datos.
@@ -2795,8 +2764,6 @@ Para resolver un sistema de ecuaciones lineales se utiliza la función siguiente
 [-1.  1.]
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Bases de datos (SQLite)
 SQLite es un gestor de bases de datos relacional pero con objetivos muy diferentes a los gestores como MySQL, SQLServer, Oracle, PostgreSQL etc.
 
@@ -2929,8 +2896,6 @@ cursor.execute('''
 ''')
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Librería Pandas
 ---
 [Pandas](https://pandas.pydata.org/) es una librería de Python especializada en el manejo y análisis de estructuras de datos.
@@ -3859,8 +3824,6 @@ El tipo de mezcla puede ser
 2   Luis  Hombre    18
 ~~~~ 
 
-
-## **[<](#manual-python)**
 ## Librería Matplotlib
 ---
 [Matplotlib](https://matplotlib.org/) es una librería de Python especializada en la creación de gráficos en dos dimensiones.
@@ -4239,8 +4202,6 @@ plt.show()
 
 ![](Fotos/Manual_Python/Libreria_Matplotlib/MatplotlibPandas_2.PNG)
 
-
-## **[<](#manual-python)**
 ## Librería Itertools
 ---
 Este módulo implementa un número de piezas básicas iterator inspiradas en constructs de *APL*, *Haskell* y *SML*.
@@ -4321,8 +4282,6 @@ combinations_with_replacement(range(3), 3) # 000 001 002 011 012 022 111 112 122
 ~~~~
 ### 
 
-
-## **[<](#manual-python)**
 ## Librería Turtle
 ---
 La "tortuga" es un cursor al que se le pueden dar órdenes de movimiento (avance, retroceso o giro) y que puede ir dejando un rastro sobre la pantalla. Moviendo adecuadamente la tortuga se pueden conseguir dibujar todo tipo de figuras.
@@ -4532,8 +4491,6 @@ turtle.end_fill()
 > ~~~~
 > ![](Fotos/Manual_Python/Libreria_Turtle/Fill_3.PNG)
 
-
-## **[<](#manual-python)**
 ## Librería Tkinter
 ---
 Tkinter es un *binding* de la biblioteca gráfica Tcl/Tk para Python siendo un estandar para GUI *(Graphical User Interface)*.
@@ -4842,8 +4799,6 @@ cuadroTexto.grid(row=0, column=1)
 > ~~~~
 > ![](Fotos/Manual_Python/Libreria_Tkinter/pad.PNG)
 
-
-## **[<](#manual-python)**
 ## Librería Pygame
 ---
 [Pygame](https://www.pygame.org/news) es un conjunto de módulos del lenguaje Python que permiten la creación de videojuegos en dos dimensiones de una manera sencilla. Está orientado al manejo de sprites.
@@ -4872,8 +4827,6 @@ cuadroTexto.grid(row=0, column=1)
 
 > ⚠️ Este método se puede utilizar para saber qué componente no funciona correctamente.
 
-
-## **[<](#manual-python)**
 ## Expresiones regulares
 ---
 Las expresiones regulares, también llamadas RegEX, son secuencias de caracteres que forman un patrón de búsqueda.
@@ -4989,8 +4942,6 @@ Sirven para poder especificar secuencias especiales y sets.
 'Amazon'
 ~~~~
 
-
-## **[<](#manual-python)**
 ## Depuración de código
 ---
 ### Depuración de programas
@@ -5029,8 +4980,6 @@ El usuario también puede introducir expresiones y ver cómo se evalúan durante
 
 ![](Fotos/Manual_Python/Depuracion_Codigo/DebbugerEstadoVariables.PNG)
 
-
-## **[<](#manual-python)**
 ## Trucos y consejos
 ---
 ### Operador ternario / Expresión condicional
