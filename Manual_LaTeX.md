@@ -25,7 +25,7 @@
 6. **[TABLAS](#6-tablas)**
 7. **[IMÁGENES](#7-imágenes)**
 8. **[FÓRMULAS MATEMÁTICAS](#8-fórmulas-matemáticas)**
-    1. Símbolos matemáticos
+    1. [Símbolos matemáticos](81-símbolos-matemáticos)
         1. Letras griegas
         2. Operadores aritméticos
         3. Relaciones
@@ -36,22 +36,22 @@
         8. Puntos suspensivos
         9. Otros símbolos
         10. Funciones
-    2. Subíndices y superíndices
-    3. Fracciones
-    4. Sumatorios, productorios e integrales
-    5. Sombreros
-    6. Matrices
-    7. Teoremas
+    2. [Subíndices y superíndices](82-suníndices-y-superíndices)
+    3. [Fracciones](83-fracciones)
+    4. [Sumatorios, productorios e integrales](84-sumatorios-productorios-e-integrales)
+    5. [Sombreros](85-sombreros)
+    6. [Matrices](86-matrices)
+    7. [Teoremas](87-teoremas)
 9. **[ENTORNOS FLOTANTES](#9-entornos-flotantes)**
-    1. Entorno flotante para figuras
-    2. Entorno flotante para tablas
+    1. [Entorno flotante para figuras](91-entorno-flotante-para-figuras)
+    2. [Entorno flotante para tablas](92-entorno-flotante-para-tablas)
 10. **[REFERENCIAS CRUZADAS Y NOTAS A PIE](#referencias-cruzadas-y-notas-a-pie)**
-    1. Referencias cruzadas
-    2. Notas a pie de página
+    1. [Referencias cruzadas](101-referencias-cruzadas)
+    2. [Notas a pie de página](102-notas-a-pie-de-página)
 11. **[CITAS Y REFERENCIAS BIBLIOGRÁFICAS](#11-citas-y-referencias-bibliográficas)**
 12. **[DISEÑO DE PÁGINA](#12-diseño-de-página)**
-    1. Dimensiones y márgenes
-    2. Encabezados y pies de página
+    1. [Dimensiones y márgenes](121-dimensiones-y-márgenes)
+    2. [Encabezados y pies de página](122-encabezados-y-pies-de-página)
 
 ## 1. INTRODUCCIÓN
 ---
