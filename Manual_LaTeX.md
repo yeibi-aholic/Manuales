@@ -658,26 +658,23 @@ Para escribir letras griegas se utilizan los siguientes comandos:
 
 **Minúsculas**
 ~~~~ latex
-\alpha α         \theta θ         o o              \tau τ
-\beta β          \vartheta ϑ      \pi π            \upsilon υ
-\gamma γ         \iota ι          \varpi ϖ         \phi ϕ
-\delta δ         \kappa κ         \rho ρ           \varphi φ
-\epsilon ϵ       \lambda λ        \varrho ϱ        \chi χ
-\varepsilon ε    \mu µ            \sigma σ         \psi ψ
-\zeta ζ          \nu ν            \varsigma ς      \omega ω
-\eta η           \xi ξ
+\alpha α            \beta β             \gamma γ            \delta δ            \epsilon ϵ          \zeta ζ             \eta η
+\theta θ            \iota ι             \kappa κ            \lambda λ           \mu µ               \nu ν               \xi ξ
+\pi π               \rho ρ              \sigma σ            \tau τ              \upsilon υ          \phi ϕ              \chi χ
+\psi ψ              \omega ω            \digamma ϝ
+
+\varepsilon ε       \vartheta ϑ         \varkappa ϰ         \varpi ϖ            \varrho ϱ           \varsigma ς         \varphi φ
 ~~~~
 
 **Mayúsculas**  
 ~~~~ latex
-\Gamma Γ         \Lambda Λ        \Sigma Σ         \Psi Ψ
-\Delta ∆         \Xi Ξ            \Upsilon Υ       \Omega Ω
-\Theta Θ         \Pi Π            \Phi Φ
-
+\Gamma Γ            \Delta ∆            \Theta Θ            \Lambda Λ           \Xi Ξ               \Pi Π               \Sigma Σ
+\Upsilon Υ          \Phi Φ              \Omega Ω
 ~~~~
 
 #### 8.1.2. Operadores aritméticos
 ~~~~ latex
+\                   \                   \                   \                   \                   \                   \
 + +              - −              \times ×         \cdot ·
 / /              \div ÷           \sqrt{...} √     \pm ±
 ~~~~
