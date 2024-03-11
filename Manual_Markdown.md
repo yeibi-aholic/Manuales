@@ -31,35 +31,21 @@
 ---
 Para crear un encabezado tan solo hace falta poner al principio de un párrafo el símbolo *#* y un espacio. Dependiento del número de símbolos que se empleen corresponderá a un *nivel de título*.
 
-# Título 1
 ~~~~
 # Título 1
-~~~~
-
 ## Título 2
-~~~~
-## Título 2
-~~~~
-
 ### Título 3
-~~~~
-### Título 3
-~~~~
-
 #### Título 4
-~~~~
-#### Título 4
-~~~~
-
 ##### Título 5
-~~~~
-##### Título 5
-~~~~
-
 ###### Título 6
 ~~~~
+
+# Título 1
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
 ###### Título 6
-~~~~
 
 ### Alternativas para # Título 1 y ## Título 2  
 Para estos dos casos existe la posibilidad de escribirlos con *=* y *-* estando por debajo del texto.
