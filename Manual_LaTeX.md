@@ -798,11 +798,13 @@ $$
 
 ### 8.5. Sombreros
 Es posible poner símbolos encima de otros símbolos, más conocidos como sombreros. Los siguientes comandos sirven para poner distintos tipos de sombreros:
-- ***\bar{...}*** - Linea horizontal para un carácter.
+- ***\bar{...}*** - Línea horizontal para un caracter.
 - ***\overline{...}*** - Línea horizontal para varios caracteres.
-- ***\hat*** - Ángulo para un carácter.
-- ***\widehat*** - Ángulo para varios caracteres.
-- ***\vec{...}*** - Flecha para un carácter.
+- ***\dot{...}*** - Punto para un caracter.
+- ***\ddot{...}*** - Dos puntos para un caracter. 
+- ***\hat{...}*** - Ángulo para un caracter.
+- ***\widehat{...}*** - Ángulo para varios caracteres.
+- ***\vec{...}*** - Flecha para un caracter.
 - ***\overrightarrow{...}*** - Flecha para varios caracteres.
 
 ##### Ejemplo
