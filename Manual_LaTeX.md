@@ -700,7 +700,6 @@ Para escribir letras griegas se utilizan los siguientes comandos:
 
 #### 8.1.7. Funciones
 ~~~~ latex
-\                   \                   \                   \                   \                   \                   \
 √ \sqrt{...}        sin \sin            cos \cos            tan \tan            arcsin \arcsin      arccos \arccos      arctan \arctan
 n√ \sqrt[n]{...}    csc \csc            sec \sec            cot \cot            sinh \sinh          cosh \cosh          tanh \tanh
 exp \exp            log \log            ln \ln
