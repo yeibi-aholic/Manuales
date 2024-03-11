@@ -113,12 +113,12 @@ Poner entre acentos circunflejos (\^[  ]^) el texto deseado sin espacios ni al p
 Escribir **\<ins>** y **\</ins>** entre el texto que se quiere subrayar: <ins>subrayado</ins>
 
 - ### Color
-Escribir **\<p style= "color:*'color deseado (en inglés)'*">** y **\</p>** entre el texto al que se quiere aplicar el color: 
+Escribir **\<p style="color:*'color (en inglés)'*">** y **\</p>** entre el texto al que se quiere aplicar el color: 
 <p style="color:red">rojo</p>/<p style="color:blue">azul</p>/<p style="color:green">verde</p>/<p style="color:orange">naranja</p>/<p style="color:purple">morado</p>
 
 - ### Tipografía
-Escribir **\<p style = "font-family: *'nombre de la tipografía'*">** y **\</p>** entre el texto al que se le quiere cambiar la tipografía: 
-<p style = "font-family: Papyrus"> Papyrus </p> / <p style = "font-family: Georgia"> Georgia </p> / <p style = "font-family: Arial Black"> Arial Black </p> / <p style = "font-family: Calibri"> Calibri </p> / <p style = "font-family: Script"> Script </p>
+Escribir **\<p style="font-family:*'tipografía'*">** y **\</p>** entre el texto al que se le quiere cambiar la tipografía: 
+<p style = "font-family:Papyrus">Papyrus</p> / <p style="font-family:Georgia">Georgia</p> / <p style="font-family:Arial Black">Arial Black</p> / <p style="font-family:Calibri">Calibri</p> / <p style="font-family:Script">Script</p>
 
 ## 5. LISTAS
 ---
