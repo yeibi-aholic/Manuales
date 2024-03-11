@@ -29,13 +29,10 @@
         1. [Letras griegas](#811-letras-griegas)
         2. [Operadores aritméticos](#812-operadores-aritméticos)
         3. [Relaciones](#813-relaciones)
-        4. [Operadores binarios](#814-operadores-binarios)
-        5. [Lógica](#815-lógica)
-        6. [Conjuntos](#816-conjuntos)
-        7. [Flechas](#817-flechas)
-        8. [Puntos suspensivos](#818-puntos-suspensivos)
-        9. [Otros símbolos](#819-otros-símbolos)
-        10. [Funciones](#8110-funciones)
+        4. [Conjuntos](#814-conjuntos-y-lógica)
+        5. [Delimitadores](#815-delimitadores)
+        6. [Flechas](#816-flechas)
+        7. [Funciones](#817-funciones)
     2. [Subíndices y superíndices](#82-subíndices-y-superíndices)
     3. [Fracciones](#83-fracciones)
     4. [Sumatorios, productorios e integrales](#84-sumatorios-productorios-e-integrales)
@@ -658,81 +655,60 @@ Para escribir letras griegas se utilizan los siguientes comandos:
 
 **Minúsculas**
 ~~~~ latex
-\alpha α            \beta β             \gamma γ            \delta δ            \epsilon ϵ          \zeta ζ             \eta η
-\theta θ            \iota ι             \kappa κ            \lambda λ           \mu µ               \nu ν               \xi ξ
-\pi π               \rho ρ              \sigma σ            \tau τ              \upsilon υ          \phi ϕ              \chi χ
-\psi ψ              \omega ω            \digamma ϝ
+α \alpha            β \beta             γ \gamma            δ \delta            ϵ \epsilon          ζ \zeta             η \eta
+θ \theta            ι \iota             κ \kappa            λ \lambda           µ \mu               ν \nu               ξ \xi
+π \pi               ρ \rho              σ \sigma            τ \tau              υ \upsilon          ϕ \phi              χ \chi
+ψ \psi              ω \omega            ϝ \digamma
 
-\varepsilon ε       \vartheta ϑ         \varkappa ϰ         \varpi ϖ            \varrho ϱ           \varsigma ς         \varphi φ
+ε \varepsilon       ϑ \vartheta         ϰ \varkappa         ϖ \varpi            ϱ \varrho           ς \varsigma         φ \varphi
 ~~~~
 
 **Mayúsculas**  
-~~~~ latex
-\Gamma Γ            \Delta ∆            \Theta Θ            \Lambda Λ           \Xi Ξ               \Pi Π               \Sigma Σ
-\Upsilon Υ          \Phi Φ              \Omega Ω
+~~~~ latex     
+Γ \Gamma            ∆ \Delta            Θ \Theta            Λ \Lambda           Ξ \Xi               Π \Pi               Σ \Sigma
+Υ \Upsilon          Φ \Phi              Ω \Omega
 ~~~~
 
 #### 8.1.2. Operadores aritméticos
 ~~~~ latex
-\                   \                   \                   \                   \                   \                   \
-+ +              - −              \times ×         \cdot ·
-/ /              \div ÷           \sqrt{...} √     \pm ±
+± \pm               ∓ \mp               ÷ \div              × \times            ∗ \ast
 ~~~~
 
 #### 8.1.3. Relaciones
 ~~~~ latex
-= =              \neq ̸=           < <              \leq ≤
-> >              \geq ≥           \approx ≈        \sim ∼
-\equiv ≡         \in ∈            \not\in ̸∈        \subset ⊂
-\not\subset ̸⊂    \subseteq ⊆     \subsetneq ⊊
+≡ \equiv            ̸= \neq              ≤ \leq              ≥ \geq              ≶ \lessgtr          ∼ \sim             ≃ \simeq
+≈ \approx           ∴ \therefore        ∝ \propto           ∥ \parallel         ⊥ \perp             ∠ \angle           ∡ \measuredangle
+△ \triangle        □ \square            ∞ \infty           ∇ \nabla
 ~~~~
 
-#### 8.1.4. Operadores binarios
+#### 8.1.4. Conjuntos y lógica
 ~~~~ latex
-\cup ∪           \cap ∩           \setminus \      \circ ◦
+∅ \emptyset         ∈ \in               ∋ \ni               ̸∈ \not\in           ⊂ \subset          ⊆ \subseteq         ̸⊂ \not\subset 
+∃ \exists           ∃! \exists!         ∄ \nexists          ∀ \forall           ¬ \neg              ∨ \lor              ∧ \land
+⊤ \top              ⊥ \bot
 ~~~~
 
-#### 8.1.5. Lógica
+#### 8.1.5. Delimitadores
 ~~~~ latex
-\exists ∃        \forall ∀        \neg ¬           \lor ∨           \land ∧
+⌊ \lfloor           ⌋ \rfloor            ⌈ \lceil            ⌉ \rceil             ⟨ \langle           ⟩ \rangle
 ~~~~
 
-#### 8.1.6. Conjuntos
+#### 8.1.6. Flechas
 ~~~~ latex
-\emptyset ∅      \mathbb{N} N     \mathbb{Z} Z     \mathbb{Q} Q
-\mathbb{R} R     \mathbb{C} C
+→ \rightarrow       ← \leftarrow        ↔ \leftrightarrow   ↑ \uparrow          ↓ \downarrow        ↕ \updownarrow
 ~~~~
 
-#### 8.1.7. Flechas
+#### 8.1.7. Funciones
 ~~~~ latex
-\rightarrow →            \Rightarrow ⇒            \longrightarrow −→       \Longrightarrow =⇒
-\leftarrow ←             \Leftarrow ⇐             \longleftarrow ←−        \Longleftarrow ⇐=
-\leftrightarrow ↔        \Leftrightarrow ⇔        \longleftrightarrow ←→   \Longleftrightarrow ⇐⇒
-\uparrow ↑               \Uparrow ⇑                \downarrow ↓             \Downarrow ⇓
-\updownarrow ↕           \Updownarrow ⇕
-~~~~
-
-#### 8.1.8. Puntos suspensivos
-~~~~ latex
-\ldots           \cdots           \vdots           \ddots
-~~~~
-
-#### 8.1.9. Otros símbolos
-~~~~ latex
-\infty ∞         \partial ∂       \nabla ∇
-~~~~
-
-#### 8.1.10. Funciones
-~~~~ latex
-\sin sin         \arcsin arcsin   \csc csc         \operatorname{arccsc} arccsc
-\cos cos         \arccos arccos   \sec sec         \operatorname{arcsec} arcsec
-\tan tan         \arctan arctan   \cot cot         \operatorname{arccot} arccot
-\exp exp         \log log         \ln ln
+\                   \                   \                   \                   \                   \                   \
+√ \sqrt{...}        sin \sin            cos \cos            tan \tan            arcsin \arcsin      arccos \arccos      arctan \arctan
+n√ \sqrt[n]{...}    csc \csc            sec \sec            cot \cot            sinh \sinh          cosh \cosh          tanh \tanh
+exp \exp            log \log            ln \ln
 ~~~~
 
 Es posible declarar nuevos operadores o funciones cargando el paquete *amsmath* con el comando ***\DeclareMathOperator{comando}{texto}***. Por ejemplo, para obtener las versión de la función *seno* en español se puede definir ***DeclareMathOperator{\sen}{seno}*** en el preámbulo y luego utilizar el comando ***\sen*** en el cuerpo para obtener la función *seno* en español.
 
-Otro paquete que incorpora aún más símbolos es amssymb.
+Otro paquete que incorpora aún [más símbolos](https://manualdelatex.com/) es **amssymb**.
 
 
 ### 8.2. Subíndices y superíndices
