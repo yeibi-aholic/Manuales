@@ -42,7 +42,7 @@ Fue creado por Guido van Rossum en 1990 aunque actualmente es desarrollado y man
 - Es de código abierto (certificado por la OSI).
 - Es interpretable y compilable.
 - Es fácil de aprender gracias a que su sintaxis es bastante legible para los humanos.
-- Es un lenguaje maduro (29 años).
+- Es un lenguaje maduro (+30 años).
 - Es fácilmente extensible e integrable en otros lenguajes (C, java).
 - Esta mantenido por una gran comunidad de desarrolladores y hay multitud de recursos para su aprendizaje.
 
