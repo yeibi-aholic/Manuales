@@ -1549,15 +1549,16 @@ Estas funciones se suelen asociar a una variable o parámetro desde la que hacer
 ~~~~
 
 #### Operar todos los elementos de una colección iterable (*reduce*)
-- *reduce(f, l)* : Aplicar la función *f* a los dos primeros elementos de la secuencia *l*. Con el valor obtenido vuelve a aplicar la función *f* a ese valor y el siguiente de la secuencia, y así hasta que no quedan más elementos en la lista. Devuelve el valor resultado de la última aplicación de la función *f*.  
+- *reduce(f, l, i)* : Aplicar la función *f* a los dos primeros elementos de la secuencia *l*. Con el valor obtenido vuelve a aplicar la función *f* a ese valor y el siguiente de la secuencia, y así hasta que no quedan más elementos en la lista. Devuelve el valor resultante de la última aplicación.  Si se indica un inicio *i*, emepezará entre el valor *i* y el primer elemento de la lista.
 > ⚠️ La función *reduce* está definida en el módulo *functools*.
 ~~~~ python
 >>> from functools import reduce
->>> def producto(n, m):
-...     return n * m
-...
->>> reduce(producto, range(1, 5))
-24
+>>> reduce(lambda x,y : x+y, range(1, 5))
+10
+>>> reduce(lambda x,y : x*y, range(1, 5), 5)
+120
+>>> reduce(lambda x,y : x+y, 'Python', 'Java < '))
+Java < Python
 ~~~~
 
 ## Comprensión de Colecciones
