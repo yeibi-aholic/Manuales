@@ -51,44 +51,44 @@ Fue creado por Guido van Rossum en 1990 aunque actualmente es desarrollado y man
 Se ejecuta cada instrucción que introduce el usuario de manera interactiva.
 ~~~~ python
 > python
->>> name = "Alf"
+>>> name = "Yeibi"
 >>> print("Hola", name)
-Hola Alf
+Hola Yeibi
 ~~~~
 
 #### Interpretado en fichero
 Se leen y se ejecutan una a una todas las instrucciones del fichero.
 ~~~~ python
 # Fichero hola.py
-name = "Alf"
+name = "Yeibi"
 print("Hola", name)
 ~~~~
 ~~~~ python
 > python hola.py
-Hola Alf
+Hola Yeibi
 ~~~~
 También se puede hacer el fichero ejecutable indicando en la primera línea la ruta hasta el intérprete de Python.
 ~~~~ python
 #!/usr/bin/python3
-name = "Alf"
+name = "Yeibi"
 print("Hola", name)
 ~~~~
 ~~~~ python
 > chmod +x hola.py
 > ./hola.py
-Hola Alf
+Hola Yeibi
 ~~~~
 
 #### Compilado a bytecode
 ~~~~ python
 # Fichero hola.py
-name = "Alf"
+name = "Yeibi"
 print("Hola " + name)
 ~~~~
 ~~~~ python
 > python -O -m py_compile hola.py
 > python __pycache__/hola.cpython-37.pyc
-Hola Alf
+Hola Yeibi
 ~~~~
 
 #### Compilado a ejecutable del sistema
@@ -97,7 +97,7 @@ Hay distintos paquetes que permiten compilar a un ejecutable del sistema operati
 > conda install pyinstaller
 > pyinstaller hola.py
 > ./dist/hola/hola
-Hola Alf
+Hola Yeibi
 ~~~~
 
 ## Tipos de Datos Primitivos Simples
@@ -532,15 +532,16 @@ donde:
 ~~~~ python
 >>> print('Hola')
 Hola
->>> name = 'Alf'
+>>> name = 'Yeibi'
 >>> print('Hola', name)
-Hola Alf
+Hola Yeibi
 >>> print('El valor de pi es', 3.1415)
 El valor de pi es 3.1415
 >>> print('Hola', name, sep='')
-HolaAlf
+HolaYeibi
 >>> print('Hola', name, end='!\n')
-Hola Alf!
+Hola Yeibi!
+
 ~~~~
 
 > Si se quiere escribir varios textos seguidos, para no tener que definir la función *print()* por cada línea, se pueden emplear *triples comillas* [*print("""...""")*]. Esto hará que todo lo que se encuentre entre los dos pares de triples comillas se eintrepretene como texto y como salto de línea un nuevo texto en una línea diferente.
@@ -973,9 +974,9 @@ Se caracterizan por:
 type({})
 <class 'dict'>
 # Diccionario con elementos de distintos tipos
-{'nombre':'Alfredo', 'despacho': 218, 'email':'asalber@ceu.es'}
+{'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 # Diccionarios anidados
-{'nombre_completo':{'nombre': 'Alfredo', 'Apellidos': 'Sánchez Alberca'}}
+{'nombre_completo':{'nombre': 'Javier', 'Apellidos': 'González Carreiro'}}
 ~~~~
 
 #### Acceso a los elementos de un diccionario
@@ -983,16 +984,16 @@ type({})
 - *d.get(clave, valor)* devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve valor, y si no se especifica un valor por defecto devuelve *None*.
 
 ~~~~ python
->>> a = {'nombre':'Alfredo', 'despacho': 218, 'email':'asalber@ceu.es'}
+>>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 >>> a['nombre']
-'Alfredo'
+'Javier'
 >>> a['despacho'] = 210
 >>> a
-{'nombre':'Alfredo', 'despacho': 210, 'email':'asalber@ceu.es'}
+{'nombre':'Javier', 'despacho': 210, 'email':'jgc4297@gmail.com'}
 >>> a.get('email')
-'asalber@ceu.es'
->>> a.get('universidad', 'CEU')
-'CEU'
+'jgc4297@gmail.com'
+>>> a.get('universidad', 'ETSIB')
+'ETSIB'
 ~~~~
 
 #### Operaciones que no modifican un diccionario
@@ -1006,7 +1007,7 @@ type({})
 - *d.items()* : Devuelve un iterador sobre los pares clave-valor de un diccionario.
 
 ~~~~ python
->>> a = {'nombre':'Alfredo', 'despacho': 218, 'email':'asalber@ceu.es'}
+>>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 >>> len(a)
 3
 >>> min(a)
@@ -1016,9 +1017,9 @@ True
 >>> a.keys()
 dict_keys(['nombre', 'despacho', 'email'])
 >>> a.values()
-dict_values(['Alfredo', 218, 'asalber@ceu.es'])
+dict_values(['Javier', 218, 'jgc4297@gmail.com'])
 >>> a.items()
-dict_items([('nombre', 'Alfredo'), ('despacho', 218), ('email', 'asalber@ceu.es')])
+dict_items([('nombre', 'Javier'), ('despacho', 218), ('email', 'jgc4297@gmail.com')])
 ~~~~
 
 #### Operaciones que modifican un diccionario
@@ -1030,21 +1031,21 @@ dict_items([('nombre', 'Alfredo'), ('despacho', 218), ('email', 'asalber@ceu.es'
 - *d.clear()* : Elimina todos los pares del diccionario *d* de manera que se queda vacío.
 
 ~~~~ python
->>> a = {'nombre':'Alfredo', 'despacho': 218, 'email':'asalber@ceu.es'}
->>> a['universidad'] = 'CEU'
+>>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+>>> a['universidad'] = 'ETSIB'
 >>> a
-{'nombre': 'Alfredo', 'despacho': 218, 'email': 'asalber@ceu.es', 'universidad': 'CEU'}
+{'nombre': 'Javier', 'despacho': 218, 'email': 'jgc4297@gmail.com', 'universidad': 'ETSIB'}
 >>> a.pop('despacho')
 218
 >>> a
-{'nombre': 'Alfredo', 'email': 'asalber@ceu.es', 'universidad': 'CEU'}
+{'nombre': 'Javier', 'email': 'jgc4297@gmail.com', 'universidad': 'ETSIB'}
 >>> a.popitem()
-('universidad', 'CEU')
+('universidad', 'ETSIB')
 >>> a
-{'nombre': 'Alfredo', 'email': 'asalber@ceu.es'}
+{'nombre': 'Javier', 'email': 'jgc4297@gmail.com'}
 >>> del a['email']
 >>> a
-{'nombre': 'Alfredo'}
+{'nombre': 'Javier'}
 >>> a.clear()
 >>> a
 {}
@@ -1114,8 +1115,8 @@ Los valores que se pasan a la función en una llamada o invocación concreta de 
 ...     print('¡Bienvenido a Python', nombre + '!')
 ...     return
 ...
->>> bienvenida('Alf')
-¡Bienvenido a Python Alf!
+>>> bienvenida('Yeibi')
+¡Bienvenido a Python Yeibi!
 ~~~~
 
 #### Paso de argumentos a una función
@@ -1129,10 +1130,10 @@ Los argumentos se pueden pasar de dos formas:
 ...     print('¡Bienvenido a Python', nombre, apellido + '!')
 ...     return
 ...
->>> bienvenida('Alfredo', 'Sánchez')
-¡Bienvenido a Python Alfredo Sánchez!
->>> bienvenida(apellido = 'Sánchez', nombre = 'Alfredo')
-¡Bienvenido a Python Alfredo Sánchez!
+>>> bienvenida('Javier', 'González')
+¡Bienvenido a Python Javier González!
+>>> bienvenida(apellido = 'González', nombre = 'Javier')
+¡Bienvenido a Python Javier González!
 ~~~~
 
 #### Retorno de una función
@@ -1157,10 +1158,10 @@ En la definición de una función se puede asignar a cada parámetro un argument
 ...     print('¡Bienvenido a', lenguaje, nombre + '!')
 ...     return
 ...
->>> bienvenida('Alf')
-¡Bienvenido a Python Alf!
->>> bienvenida('Alf', 'Java')
-¡Bienvenido a Java Alf!
+>>> bienvenida('Yeibi')
+¡Bienvenido a Python Yeibi!
+>>> bienvenida('Yeibi', 'Java')
+¡Bienvenido a Java Yeibi!
 ~~~~
 
 > ⚠️ Los parámetros con un argumento por defecto deben indicarse después de los parámetros sin argumentos por defectos. De lo contrario se produce un error.
@@ -1188,15 +1189,15 @@ Hoy tenemos: pasta, pizza, ensalada,
 ...         print(clave, ":", valor)
 ...     return
 ...
->>> contacto(Nombre = "Alf", Email = "asalber@ceu.es")
+>>> contacto(Nombre = "Yeibi", Email = "jgc4297@gmail.com")
 Datos del contacto
-Nombre : Alf
-Email : asalber@ceu.es
->>> contacto(Nombre = "Alf", Email = "asalber@ceu.es", Dirección = "Madrid")
+Nombre : Yeibi
+Email : jgc4297@gmail.com
+>>> contacto(Nombre = "Yeibi", Email = "jgc4297@gmail.com", Dirección = "Bilbao")
 Datos del contacto
-Nombre : Alf
-Email : asalber@ceu.es
-Dirección : Madrid
+Nombre : Yeibi
+Email : jgc4297@gmail.com
+Dirección : Bilbao
 ~~~~
 
 ### Ámbito de los parámetros y variables de una función
@@ -1210,8 +1211,8 @@ Tanto los parámetros como las variables del ámbito local de una función sólo
 ...     print('¡Bienvenido a ', lenguaje, nombre + '!')
 ...     return
 ...
->>> bienvenida('Alf')
-¡Bienvenido a Python Alf!
+>>> bienvenida('Yeibi')
+¡Bienvenido a Python Yeibi!
 >>> lenguaje
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -1256,8 +1257,8 @@ En Python las funciones son objetos como el resto de tipos de datos, de manera q
 ...     return
 ... 
 >>> bienvenida = saludo
->>> bienvenida("Alf")
-Hola Alf
+>>> bienvenida("Yeibi")
+Hola Yeibi
 ~~~~
 
 Esto permite, por tanto, pasar funciones como argumentos en la llamada a una función y que una función pueda devolver otras funciones.
@@ -1740,10 +1741,10 @@ Para leer un fichero de internet hay que utilizar la función *urlopen* del mód
 >>> f = request.urlopen('https://raw.githubusercontent.com/asalber/asalber.github.io/master/README.md')
 >>> datos = f.read()
 >>> print(datos.decode('utf-8'))
-Aprende con Alf
+Manuales de Yeibi
 ===============
 
-Este es el repositorio del sitio web Aprende con Alf: http://aprendeconalf.es
+Este es el repositorio de manuales de Yeibi: https://github.com/yeibi-aholic
 ~~~~
 
 ## Excepciones
@@ -1952,8 +1953,8 @@ Se definen como las funciones con la palabra reservada *def*. La única diferenc
 ...         return
 ... 
 >>> s = Saludo()
->>> s.saludar('Alf')
-Bienvenido Alf
+>>> s.saludar('Yeibi')
+Bienvenido Yeibi
 ~~~~
 
 La razón por la que existe el parámetro *self* es porque Python traduce la llamada a un método de un objeto *objeto.método(parámetros)* en la llamada *clase.método(objeto, parámetros)*, es decir, se llama al método definido en la clase del objeto, pasando como primer argumento el propio objeto, que se asocia al parámetro *self*.
