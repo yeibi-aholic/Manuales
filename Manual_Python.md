@@ -19,7 +19,7 @@
 17. **[Librería Numpy](#librería-numpy)**
 18. **[Librería Pandas](#librería-pandas)**
 19. **[Librería Matplotlib](#librería-matplotlib)**
-20. **[Librería Itertools](#librería-itertools)**
+20. **[Librería itertools](#librería-itertools)**
 21. **[Librería Turtle](#librería-turtle)**
 22. **[Librería Tkinter](#librería-tkinter)**
 23. **[Librería Pygame](#librería-pygame)**
@@ -4204,7 +4204,7 @@ plt.show()
 
 ![](Fotos/Manual_Python/Libreria_Matplotlib/MatplotlibPandas_2.PNG)
 
-## Librería Itertools
+## Librería itertools
 ---
 Este módulo implementa un número de piezas básicas iterator inspiradas en constructs de *APL*, *Haskell* y *SML*.
 
@@ -4215,13 +4215,14 @@ import itertools
 > ⚠️ Si queremos acceder a los valores de un iterador debemos hacerlo secuencialmente con el comando *next(iterador)*.
 
 ### Iteradores infinitos
-- *count(inicio, salto)* : Crea un iterador de una progresión aritmética con una diferencia *salto* comenzando desde el valor *inicio*. Si no se especifica ninguno de los dos parámetros toma por valores predeterminados *count(inicio=0, salto=1)*.
-- *cycle(iterable)* : Crea un iterador de copias cíclicas de los elementos de *iterable* (listas, tuplas, diccionarios, textos).
-- *repeat(elemento, n)* : Crea un iterador del mismo objeto *elemento* infinítamente si no se especifica un límite *n*.
+- *count(i, s)* : Crea un iterador de una progresión aritmética con una diferencia *s* comenzando desde el valor *i*. Si no se especifica ninguno de los dos parámetros toma por valores predeterminados *count(i=0, s=1)*.
+- *cycle(data)* : Crea un iterador de copias cíclicas de los elementos de *data* (listas, tuplas, diccionarios, textos).
+- *repeat(elem, n)* : Crea un iterador del mismo objeto *elem* infinítamente si no se especifica un límite *n*.
 
 ~~~~ python
 count(2)       #  2  3  4  5  6 ...
 count(10, 5)   # 10 15 20 25 30 ...
+count(1, 0.5)  # 1 1.5 2.0 2.5  ...
 
 cycle('XYZ')   #  X  Y  Z  X  Y ...
 
@@ -4230,19 +4231,29 @@ repeat('1', 3) #  1  1  1
 ~~~~
 
 ### Iteradores con la entrada más corta
-- *accumulate(iterable, función, inicio)* : Crea un iterador que devuelve sumas acumuladas. En caso de querer una acumulación con otra función (de 2 argumentos) se debe especificar *función*. También se puede especificar el valor inicial *inicio*.
-- *compress(data, selectores)* : Crea un iterador con los elementos de *data* correspondientes a *\<True>* en el filtro *selectores*.
-- *dropwhile(condición, iterable)* : Crea un iterador que descarta los elementos del iterable *iterable* mientras la condición *condición* sea verdadera. A partir del elemento que deje de cumplir la condición, devuelve el resto de la lista.
-- *takewhile(condición, iterable)* : Crea un iterador que retorna los elementos del iterable *iterable* mientras la condición *condición* sea verdadera. A partir del elemento que deje de cumpliar la condición, para de devolver.
-- *filterfalse(condición, iterable)* : Crea un iterador que descarta los elementos del iterable *iterable* que devuelvan *\<False>* para la condición *condición*.
-- *groupby(iterable)* : Crea un iterador que retorna claves consecutivas y grupos del iterable *iterable*. Genera un salto o un nuevo grupo cada vez que el valor de la función clave cambia. 
-- *islice(iterable, fin)* / *islice(iterable, inicio, fin, salto)* : Crea un iterador que retorna los elementos seleccionados del iterable (no admite valores negativos para *inicio*, *fin* y *salto*).
-- *zip_longest(\*iterables, relleno)* : Crea un iterador agrupando elementos de los iterables *iterables* con la misma posición. Para los elementos faltantes en un grupo al haberse terminado la correspondiente iterable, se rellena con el valor *relleno* (valor predeterminado: *\<None>*).
+- *accumulate(data, func, i)* : Crea un iterador que devuelve sumas acumuladas. En caso de querer una acumulación con otra función (de 2 argumentos) se debe especificar *func*. También se puede especificar el valor inicial *i*.
+- *batched(data, n)* : Crea un iterador que devuelve grupos de *n* elementos del iterable *data*. Si el valor *strict* se pone a *\<True>* el último grupo deberá ser del mismo tamaño que *n*, sino se devolverá un *ValueError*.
+- *chain(*datas)* : Crea un iterador que retorna elementos del primer iterable hasta que es consumido, para luego proceder con el siguiente iterable hasta el último.
+- *chain.from_iterable(data)* : Constructor alternativo para *chain()*. Crea un iterador que retorna elementos de cada elemento del iterable *data*.
+- *compress(data, filter)* : Crea un iterador con los elementos de *data* correspondientes a *\<True>* en el filtro *filter*.
+- *dropwhile(c, data)* : Crea un iterador que descarta los elementos del iterable *data* mientras la condición *c* sea verdadera. A partir del elemento que deje de cumplir la condición, devuelve el resto de la lista.
+- *takewhile(c, data)* : Crea un iterador que retorna los elementos del iterable *data* mientras la condición *c* sea verdadera. A partir del elemento que deje de cumpliar la condición, para de devolver.
+- *filterfalse(c, data)* : Crea un iterador que descarta los elementos del iterable *data* que devuelvan *\<False>* para la condición *c*.
+- *groupby(data)* : Crea un iterador que retorna claves consecutivas y grupos del iterable *data*. Genera un salto o un nuevo grupo cada vez que el valor de la función clave cambia. 
+- *islice(data, f)* / *islice(data, i, f, s)* : Crea un iterador que retorna los elementos seleccionados del iterable *data* (no admite valores negativos para *i*, *f* y *s*).
+- *pairwise(data)* : Crea un iterador de pares superpuestos consecutivos del iterable *data*. Si el iterable tiene menos de 2 elementos, la salida estára vacía.
+- *starmap(func, data)* : Crea un iterador que calcula la función *func* usando argumentos obtenidos del iterable *data*.
+- *zip_longest(\*datas, fill)* : Crea un iterador agrupando elementos de los iterables *datas* con la misma posición. Para los elementos faltantes en un grupo al haberse terminado el correspondiente iterable, se rellena con el valor *fill* (valor predeterminado: *\<None>*).
 
 ~~~~ python
 accumualte([1, 2, 3, 4, 5])                    # 1 3 6 10 15
 accumulate([6, 5, 4, 3, 2], operator.mul)      # 6 30 120 360 720
 accumulate(['o', 'l', 'a'], initial='H')       # H Ho Hol Hola
+
+batched('ABCDEFG', 3)                          # ABC DEF G
+
+chain('ABC', 'DEF')                            # A B C D E F
+chain.from_iterable(['ABC', 'DEF'])            # A B C D E F
 
 compress('ABCDEF', [1, 0, 1, 0, 1, 1])         # A C E F
 compress([1, 2, 3], [False, True, True])       # 2 3
@@ -4260,14 +4271,18 @@ islice('ABCDEFG', 2, 4)                        # C D
 islice('ABCDEFG', 2, None)                     # C D E F G
 islice('ABCDEFG', 0, None, 2)                  # A C E G
 
+pairwise('ABCDEFG')                            # AB BC CD DE EF FG
+
+starmap(pow, [(2,5), (3,2), (10,3)])           # 32 9 1000
+
 zip_longest('ABCD', 'xy', fillvalue='-')       # Ax By C- D-
 ~~~~
 
 ### Iteradores combinatorios
-- *product(\*iterables)* / *product(iterable, n)* : Crea un iterador a partir del producto cartesiano de los iterables *iterables*. Para calcular el producto de un iterable consigo mismo, se especifica el número de repeticiones con el argumento opcional *n*.
-- *permutations(iterable, d)* : Crea un iterador de permutaciones sucesivas de longitud *d* (valor predeterminado: longitud del iterable) de elementos del iterable *iterable*. 
-- *combinations(iterable, d)* : Crea un iterador de subsecuencias de longitud *n* con elementos del iterable *iterable*.
-- *combinations_with_replacement(iterable, d)* : Crea un iterador de subsecuencias de longitud *n* con elementos del iterable *iterable* permitiendo que haya elementos repetidos.
+- *product(\*datas)* / *product(data, n)* : Crea un iterador a partir del producto cartesiano de los iterables *datas*. Para calcular el producto de un iterable consigo mismo, se especifica el número de repeticiones con el argumento opcional *n*.
+- *permutations(data, d)* : Crea un iterador de permutaciones sucesivas de longitud *d* (valor predeterminado: longitud del iterable) de elementos del iterable *data*. 
+- *combinations(data, d)* : Crea un iterador de subsecuencias de longitud *n* con elementos del iterable *data*.
+- *combinations_with_replacement(data, d)* : Crea un iterador de subsecuencias de longitud *n* con elementos del iterable *data* permitiendo que haya elementos repetidos.
 
 ~~~~ python
 product('ABCD', 'xy')                      # Ax Ay Bx By Cx Cy Dx Dy
