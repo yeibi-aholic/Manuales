@@ -78,6 +78,37 @@ Cada *commit* tiene asociado un código *hash* de 40 caracteres hexadecimales qu
 
 ## Historial de cambios
 ---
+### Mostrar el estado de un repositorio
+~~~~ bash
+git status  # Muestra el estado de los cambios en el repositorio desde la última versión guardada.
+~~~~
+> ❗ En particular, muestra los ficheros con cambios en el directorio de trabajo que no se han añadido a la zona de intercambio temporal y los ficheros en la zona de intercambio temporal que no se han añadido al repositorio.
+
+### Mostrar el historial de versiones de un repositorio
+~~~~ bash
+git log            # Muestra el historial de commits (hash, autor, fecha, hora y mensaje asociado) de un repositorio ordenado cronológicamente.
+git log --oneline  # Muestra cada commit en una línea produciendo una salida más compacta.
+git log --graph    # Muestra la historia en forma de grafo.
+~~~~
+
+### Mostrar los datos de un commit
+~~~~ bash
+git show           # Muestra el usuario, día, hora y mensaje del último commit, así como las diferencias con el anterior.
+git show <commit>  # Muestra el usuario, día, hora y mensaje del commit indicado, así como las diferencias con el anterior.
+~~~~
+
+### Mostrar el historial de cambios de un fichero
+~~~~ bash
+git annotate  # Muestra el contenido de un fichero anotando cada línea con información del commit en el que se introdujo.
+~~~~
+> ℹ️ Cada línea de la salida contiene los 8 primeros dígitos del código *hash* del *commit* correspondiente al cambio, el autor de los cambios, la fecha, el número de línea del fichero y el contenido de la línea.
+
+### Mostrar las diferencias entre versiones
+~~~~ bash
+git diff           # Muestra las diferencias entre el directorio de trabajo y la zona de intercambio temporal.
+git diff --cached  # Muestra las diferencias entre la zona de intercambio temporal y el último commit.
+git diff HEAD      # Muestra la diferencia entre el directorio de trabajo y el último commit.
+~~~~
 
 ## Deshacer cambios
 ---
