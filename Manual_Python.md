@@ -1,5 +1,7 @@
 # **MANUAL PYTHON**
 
+![Python](Fotos/Manual_Python/Python_logo.png)
+
 1. **[Introducción a Python](#introducción-a-python)**
 2. **[Tipos de Datos Primitivos Simples](#tipos-de-datos-primitivos-simples)**
 3. **[Entrada y Salida por Terminal](#entrada-y-salida-por-terminal)**
