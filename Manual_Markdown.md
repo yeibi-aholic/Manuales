@@ -1,4 +1,7 @@
 # **MANUAL MARKDOWN**
+
+![MarkDown](Fotos/Manual_Markdown/Markdown_logo.png)
+
 ## ÍNDICE
 1. **[ENCABEZADOS](#1-encabezados)**
 2. **[PÁRRAFOS](#2-párrafos)**
