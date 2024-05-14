@@ -1,4 +1,6 @@
-﻿# **MANUAL SQL**
+﻿# **MANUAL MySQL**
+
+ ![MySQL](Fotos/Manual_MySQL/MySQL_logo.png)
 
 1. **[INTRODUCCIÓN](#introducción)**
     1. **[Tipos de campo](#tipos-de-campo)**
@@ -36,10 +38,8 @@
     10. **[Crear una cadena de conexión para SQL Server](#crear-una-cadena-de-conexión-para-sql-server)**
 
 
-## **[^](#manual-sql)**
 ## INTRODUCCIÓN
 ---
-### **[^](#manual-sql)**
 ### Tipos de campo
 Como sabemos una base de datos esta compuesta de tablas donde almacenamos registros catalogados en función de distintos campos (características).  
 Un aspecto previo a considerar es la naturaleza de los valores que introducimos en esos campos. Dado que una base de datos trabaja con todo tipo de informaciones, es importante especificarle qué tipo de valor le estamos introduciendo de manera a, por un lado, facilitar la búsqueda posteriormente y por otro, optimizar los recursos de memoria.
@@ -55,7 +55,6 @@ Cada base de datos introduce tipos de valores de campo que no necesariamente est
 |**Memos**|Campos alfanuméricos de longitud ilimitada. Presentan el inconveniente de no poder ser indexados.|
 |**Autoincrementables**|Campos numéricos enteros que incrementan en una unidad su valor para cada registro incorporado para servir de identificador, ya que resultan exclusivos de un registro.|
 
-### **[^](#manual-sql)**
 ### Tipos de datos
 Los tipos de datos SQL se clasifican en 13 tipos de datos primarios y de varios sinónimos válidos reconocidos por dichos tipos de datos. Los tipos de datos primarios son:
 
@@ -94,7 +93,6 @@ La siguiente tabla recoge los sinónimos de los tipos de datos definidos:
 |TEXT|ALPHANUMERIC - CHAR - CHARACTER - STRING - VARCHAR|
 |VARIANT(No admitido)|VALUE|
 
-### **[^](#manual-sql)**
 ### Tipos de sentencias y sus componentes sintácticos
 En SQL tenemos bastantes sentencias que se pueden utilizar para realizar diversas tareas.
 Dependiendo de las tareas, estas sentencias se pueden clasificar en tres grupos principales (DML, DDL,DCL), aunque nos quedaría otro grupo que a mi entender no está dentro del lenguaje SQL sino del PLSQL.
@@ -135,10 +133,8 @@ Todas comienzan por un verbo (select, insert, update, create), a continuación l
 ![](https://desarrolloweb.com/articulos/images/componentes-sentencia-sql.gif)
 
 
-## **[^](#manual-sql)**
 ## INSERCCIÓN Y MODIFICACIÓN DE DATOS
 ---
-### **[^](#manual-sql)**
 ### Creación de tablas
 En general, la mayoría de las bases de datos poseen potentes editores de bases que permiten la creación rápida y sencilla de cualquier tipo de tabla con cualquier tipo de formato.
 
@@ -193,7 +189,6 @@ Muchas son las opciones que se ofrecen al generar tablas. Algunos de los tipos d
 |BLOB|1/carácter + 2|Grandes textos no indexables.|
 |BIT / BOOLEAN|1|Almacenan un bit de información (verdadero o falso).|
 
-### **[^](#manual-sql)**
 ### Estructuras de las tablas
 En la terminología usada en SQL no se alude a las relaciones, del mismo modo que no se usa el término atributo, pero sí la palabra columna, y no se habla de tupla, sino de línea.
 
@@ -424,7 +419,6 @@ ALTER TABLE Pedidos DROP CONSTRAINT RelacionPedidos
 > Elimina el índice de la tabla Pedidos.
 
 
-### **[^](#manual-sql)**
 ### Añadir un nuevo registro
 Los registros pueden ser introducidos a partir de sentencias que emplean la instrucción INSERT.
 La sintaxis utilizada es la siguiente:
@@ -436,8 +430,6 @@ INSERT INTO nombre_tabla (nombre_columna1, nombre_columna2, ...)
 No es imprescindible rellenar todos los campos del registro. Pero puede ser que determinados campos sean necesarios. Estos campos necesarios pueden ser definidos cuando construimos nuestra tabla mediante la base de datos.
 > ⚠️ Si no insertamos uno de los campos en la base de datos se inicializará con el valor por defecto que hayamos definido a la hora de crear la tabla. Si no hay valor por defecto, probablemente se inicialice como NULL (vacío), en caso de que este campo permita valores nulos. Si ese campo no permite valores nulos (eso se define también al crear la tabla) lo más seguro es que la ejecución de la sentenca SQL nos de un error.
 
-
-### **[^](#manual-sql)**
 ### Borrar un registro
 Para borrar un registro nos servimos de la instrucción DELETE. En este caso debemos especificar cual o cuales son los registros que queremos borrar. Es por ello necesario establecer una selección que se llevara a cabo mediante la cláusula WHERE.  
 La forma de seleccionar se verá detalladamente en capítulos posteriores. Por ahora nos contentaremos de mostrar cuál es el tipo de sintaxis utilizado para efectuar estas supresiones:
@@ -448,8 +440,6 @@ DELETE FROM nombre_tabla
 
 > ⚠️ Hay que tener cuidado con esta instrucción ya que si no se especifica una condición con WHERE, se borrará todo la tabla.
 
-
-### **[^](#manual-sql)**
 ### Actualizar un registro
 UPDATE es la instrucción del lenguaje SQL que nos sirve para modificar los registros de una tabla. Como para el caso de DELETE, necesitamos especificar por medio de WHERE cuáles son los registros en los que queremos hacer efectivas nuestras modificaciones. Además, obviamente, tendremos que especificar cuáles son los nuevos valores de los campos que deseamos actualizar.
 
@@ -461,10 +451,8 @@ UPDATE nombre_tabla
 ~~~~
 
 
-## **[^](#manual-sql)**
 ## BÚSQUEDA Y SELECCIÓN DE DATOS
 ---
-### **[^](#manual-sql)**
 ### Selección de tablas
 La selección total o parcial de una tabla se lleva a cabo mediante la instrucción SELECT. En dicha selección hay que especificar (como mínimo):
 - Los campos que queremos seleccionar.
@@ -492,53 +480,48 @@ SELECT DISTINCT *
   FROM nombre_tabla
 ~~~~
 
-### **[^](#manual-sql)**
 ### Consultas de selección
-### **[^](#manual-sql)**
+
 ### Criterios de selección
-### **[^](#manual-sql)**
+
 ### Subconsultas
-### **[^](#manual-sql)**
+
 ### Consultas de Unión Internas
-### **[^](#manual-sql)**
+
 ### Consultas de Unión Externas
-### **[^](#manual-sql)**
+
 ### Consultas de acción
-### **[^](#manual-sql)**
+
 ### Optimizar prestaciones
-### **[^](#manual-sql)**
+
 ### Trucos prácticos
 
 
-## **[^](#manual-sql)**
 ## FUNCIONES
 ---
-### **[^](#manual-sql)**
 ### Funciones para búsquedas con fechas en Access
-### **[^](#manual-sql)**
+
 ### La función datepart() en Access
 
 
-## **[^](#manual-sql)**
 ## SQL SERVER O PL/SQL
 ---
-### **[^](#manual-sql)**
 ### Cursores
-### **[^](#manual-sql)**
+
 ### Emular un Cursor con un Bucle
-### **[^](#manual-sql)**
+
 ### Procedures y búsqueda de registros duplicados
-### **[^](#manual-sql)**
+
 ### Referencias Cruzadas
-### **[^](#manual-sql)**
+
 ### Introducción a freetext y contains en SQL-Server
-### **[^](#manual-sql)**
+
 ### Introducción a los Índices en MySQL
-### **[^](#manual-sql)**
+
 ### Consultas e índices de texto
-### **[^](#manual-sql)**
+
 ### Consultas con parámetros y omisión de permisos
-### **[^](#manual-sql)**
+
 ### Acceso a base de datos externas
-### **[^](#manual-sql)**
+
 ### Crear una cadena de conexión para SQL Server
