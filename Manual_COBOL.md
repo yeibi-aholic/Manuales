@@ -1,5 +1,7 @@
 # **MANUAL COBOL**
 
+![COBOL](Fotos/Manual_COBOL/COBOL_logo.png)
+
 1. **[Introducción](#introducción)**
 2. **[IDENTIFICATION DIVISION](#identification-division)**
 3. **[ENVIRONMENT DIVISION](#environment-division)**
