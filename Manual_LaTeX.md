@@ -1,5 +1,7 @@
 # MANUAL LaTeX
 
+![LaTeX](Fotos/Manual_LaTeX/LaTeX_logo.png)
+
 1. **[INTRODUCCIÓN](#1-introducción)**
     1. [¿Qué es *TeX*?](#11-qué-es-tex)
     2. [¿Qué es *LaTeX*?](#12-qué-es-latex)
