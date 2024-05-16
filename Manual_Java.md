@@ -15,12 +15,15 @@
    - [Operadores incrementales](#operadores-incrementales)
    - [Operadores relacionales](#operadores-relacionales)
    - [Operadores lógicos](#operadores-lógicos)
-   - [Operador de concatenación con cadena de caracteres '+'](#operador-de-concatenación-con-cadena-de-caracteres-'+')
+   - [Operador de concatenación con cadena de caracteres '+'](#operador-de-concatenación-con-cadena-de-caracteres-)
    - [Operadores que actúan a nivel de bits](#operadores-que-actúan-a-nivel-de-bits)
 5. [ESTRUCTURAS DE CONTROL](#estructuras-de-control)
    - [Bifurcaciones](#bifurcaciones)
    - [Bucles](#bucles)
+   - [Ramificaciones](#ramificaciones)
+   - [Excepciones](#excepciones)
 6. [CLASES](#clases)
+7. [ORGANIZAR CLASES](#organizar-clases)
 
 ## INTRODUCCIÓN A JAVA
 ---
@@ -180,7 +183,7 @@ Son operadores que nos permiten incrementar (*++*) o decrementar(*--*) las varia
 >>> ++i
 2
 ~~~~
-> Cuando el operador se utiliza en su forma de sufijo (i++) el valor de ‘i’ se incrementa sólamente después de que el valor actual de ‘i’ haya sido utilizado en la expresión.
+> Cuando el operador se utiliza en su forma de sufijo (*i++*) el valor de *i* se incrementará sólamente después de que el valor actual de *i* haya sido utilizado en la expresión. En formato prefijo (*++i*) incrementará directamente el valor.
 
 ### Operadores relacionales
 ~~~~
@@ -223,18 +226,18 @@ Permiten ejecutar código en función de una expresión evaluada
 
 #### if
 ~~~~ java
-if (ExpresionBooleana){
-   conjuntoDeSentencias
+if (expresionBooleana) {
+   sentencias
 }
 
-if (ExpresionBooleana) {
-   conjuntoDeSentencias
+if (expresionBooleana) {
+   sentencias
 } else {
    conjuntoAlternativo
 }
 
-if (ExpresionBooleana) {
-   conjuntoDeSentencias
+if (expresionBooleana) {
+   sentencias
 } else if {
    conjuntoAlternativo
 } else if {
@@ -244,25 +247,102 @@ if (ExpresionBooleana) {
 
 #### switch
 ~~~~ java
-switch (Expresion){
+switch (expresion) {
    Case valor1:
-      conjuntoDeSentencias;
+      sentencias;
       break;
    Case valor2:
-      SentenciasAlternativas;
+      sentenciasAlternativas;
       break;
    Case valor3:
-      SentenciasAlternativas2;
+      sentenciasAlternativas2;
       break;
    Case valor4:
-      SentenciasAlternativas3;
+      sentenciasAlternativas3;
       break;
 }
 ~~~~
 > La sentencia *break* al final de cada opción sirve para que no evalue el resto de opciones sino que se salga directamente del *switch*.
 
 ### Bucles
+#### for
+~~~~ java
+for (inicializacion, expresionBooleana, incremento) {
+   sentencias;
+}
+~~~~
 
+#### while
+~~~~ java
+while (expresionBooleana) {
+   sentencias;
+}
+~~~~
+
+#### do while
+~~~~ java
+do {
+   sentencias;
+} while (expresionBooleana)
+~~~~
+
+### Ramificaciones
+#### break
+Permite salirnos del bloque de sentencias (encerrado entre llaves) o el bucle que estamos ejecutando, sin ejecutar las sentencias que resten para el final o las restantes iteraciones del bucle.
+
+#### continue
+Solo es válida para bucles. Impide ejecutar las sentencias que restan para la finalización de una iteración de ese bucle, continuando después con las siguientes iteraciones del bucle.
+
+#### return
+Permite finalizar también un conjunto de sentencias, con la peculiaridad esta vez de que también finaliza el método o función en el que se encuentre. En el caso de que queramos devolver un valor desde esa función o método lo debemos poner a continuación de *return*.
+
+### Excepciones
+El tratamiento de excepciones se utiliza para detectar errores cuando se ejecutan nuestros programas y tratarlos del modo que nosotros queramos. Los errores cazados por un sistema de tratamiento de excepciones no bloquean el programa y el manejo de excepciones nos permite hacer cosas cuando esos errores ocurren.
+
+#### try
+#### catch
+#### finally
 
 ## CLASES
 ---
+Una clase es el producto de enfocar la programación a los datos más que a las funciones. Por tanto, una clase es una colección de datos con los que operar una serie de funciones propias de la clase. 
+
+~~~~ java
+permiso class NombreClase {
+   estructuraClase;
+}
+~~~~
+
+La primera palabra nos proporciona la posibilidad de dar permisos de accesos a nuestra clase.
+- **Package** : Usar este identificador en la cabecera de la clase es opcional, pues es la opción por defecto en Java.
+- **Public** : Accesible desde cualquier otra clase. No obstante, para que esto suceda debe ser primero accesible el *package* de esa clase *public*. Para que un *package* sea accesible debe de estar en el directorio que señala la variable *CLASSPATH* que definimos al instalar nuestro entorno Java y tener permiso de lectura en ese directorio.
+
+En cuanto al nombre de la clase debe de obedecer al convenio de nombres de Java y coincidir con el nombre del fichero *.java* en el que se guardará la clase.  
+Lo normal es que cada clase vaya incluida en un único fichero pero claro está, nos puede interesar por algún motivo meter varias clases en un único fichero. En este caso solo puede haber una clase public que es la que dará el nombre a dicho fichero. En caso de que no hubiese una clase public el compilador entenderá que la clase "principal" de ese fichero es la que concuerda con el nombre del mismo, por lo que evidentemente dos clases con un mismo nombre no son permitidas en un mismo fichero.
+
+Para explicar la estructura de la clase, primero se suelen declarar, al menos, las variables internas de esa clase y posteriormente se definen los constructores y los métodos que dispondrá la clase.  
+En la definición de constructores y métodos tenemos que tener en cuenta un nuevo concepto de la programación orientada a objetos. La sobrecarga. La sobrecarga consiste en poder tener varios métodos o constructores con el mismo nombre dentro de una misma clase y que no hagan las mismas cosas. Esto se consigue diferenciando entre ellos el número y tipo de parámetros que reciben.
+
+~~~~ java
+float obtenerAreaCirculo(Circulo ci) {
+   /* ... */
+}
+
+float obtenerAreaCuadrado(Cuadrado cu) {
+   /* ... */
+}
+
+/* en Java esto se puede abreviar teniendo dos métodos sobrecargados */
+
+float obtenerArea(Circulo ci) {
+   /* ... */
+}
+
+float obtenerArea(Cuadrado cu) {
+   /* ... */
+}
+
+/* A la hora de ejecutar el método obtenerArea se utilizará el que corresponda al parámetro que se le pase por cabecera */
+~~~~
+
+## ORGANIZAR CLASES
