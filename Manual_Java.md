@@ -23,7 +23,7 @@
    - [Ramificaciones](#ramificaciones)
    - [Excepciones](#excepciones)
 6. [CLASES](#clases)
-7. [ORGANIZAR CLASES](#organizar-clases)
+7. [PACKAGES](#packages)
 
 ## INTRODUCCIÓN A JAVA
 ---
@@ -315,7 +315,9 @@ permiso class NombreClase {
 
 La primera palabra nos proporciona la posibilidad de dar permisos de accesos a nuestra clase.
 - **Package** : Usar este identificador en la cabecera de la clase es opcional, pues es la opción por defecto en Java.
-- **Public** : Accesible desde cualquier otra clase. No obstante, para que esto suceda debe ser primero accesible el *package* de esa clase *public*. Para que un *package* sea accesible debe de estar en el directorio que señala la variable *CLASSPATH* que definimos al instalar nuestro entorno Java y tener permiso de lectura en ese directorio.
+- **Public** : Accesible desde cualquier otra clase, *package* o *subpackage*. 
+- **Protected** : Accesible desde la propia clase, desde el mismo *package*, desde cualquier *subpackage*, pero no desde otro *package*.
+- **Private** : Accesible solo desde la propia clase.
 
 En cuanto al nombre de la clase debe de obedecer al convenio de nombres de Java y coincidir con el nombre del fichero *.java* en el que se guardará la clase.  
 Lo normal es que cada clase vaya incluida en un único fichero pero claro está, nos puede interesar por algún motivo meter varias clases en un único fichero. En este caso solo puede haber una clase public que es la que dará el nombre a dicho fichero. En caso de que no hubiese una clase public el compilador entenderá que la clase "principal" de ese fichero es la que concuerda con el nombre del mismo, por lo que evidentemente dos clases con un mismo nombre no son permitidas en un mismo fichero.
@@ -345,4 +347,39 @@ float obtenerArea(Cuadrado cu) {
 /* A la hora de ejecutar el método obtenerArea se utilizará el que corresponda al parámetro que se le pase por cabecera */
 ~~~~
 
-## ORGANIZAR CLASES
+## PACKAGES
+---
+Java nos permite con los *packages* evitar esta situación de un modo bastante elegante y ordenado. Un *package* es básicamente una agrupación de clases, vemos por ejemplo que la versión 1.2 de Java incluye un total de 59 *packages* para organizar todo su API.
+
+Cualquier grupo de clases se puede organizar dentro de un *package* pero evidentemente lo más normal es que tus clases las organices por algún motivo. Las clases se suelen organizar según la relación entre ellas.
+
+~~~~ java
+Quicksort.class;  // Clase para ordenar arrays con el método quicksort
+Burbuja.class;    // Clase para ordenar arrays con el método de la burbuja
+Seleccion.class;  // Clase para ordenar arrays con el método de selección
+Insercion.class;  // Clase para ordenar arrays con el método de inserción directa
+~~~~
+> Podemos englobar estas clases en un *package* puesto que todas están relacionadas en su cometido. Crearemos por tanto el *package ordenaciones* para que podamos acceder a ellas de este modo:
+> ~~~~ java
+> ordenacion.Quicksort.class
+> ~~~~
+
+El uso de *packages* no solo nos permite organizar nuestras clases, sino que nos permite diferenciar clases que siendo distintas tengan que tener el mismo nombre, es decir, ayuda a Java con la resolución de nombres.
+
+Lo primero que tenemos que tener en cuenta es que todas las clases que van a pertenecer a un mismo *package* tienen que estar en un mismo directorio que debe coincidir en nombre con el nombre del *package*. Vemos que por tanto el nombre completo de una clase de un *package* equivale a su ruta desde el directorio que tomemos de base para nuestras clases.  
+El directorio de base para nuestras clases es el definido por la variable de entorno *CLASSPATH*. El convenio de nombres de Java establece también que los nombres de los *packages* empiecen por minúsculas.
+~~~~ java
+ordenacion.Quicksort.class --> $CLASSPATH/ordenacion/Quicksort.class
+~~~~
+
+En segundo lugar, para utilizar los *packages* en nuestras clases tenemos que incluir al principio del fichero de la clase, antes de cualquier otra sentencia:
+~~~~ java
+Package nombrePackage;
+~~~~
+
+Por último, la sentencia *import* que permite importar un *package* a nuestra clase Java. Esto nos permite acceder sin usar todo el nombre del *package* a cualquier clase dentro de él.
+~~~~ java
+import ordenación.*;  // Importamos todas las clases del package de ordenación 
+~~~~
+> Importando un *package* no importamos todos sus *subpackages*, sino solo todas las clases de ese *package*.
+> Podemos simplemente importar solo una clase poniendo en vez de *\** el nombre de la clase a importar.
