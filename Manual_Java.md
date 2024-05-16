@@ -13,7 +13,10 @@
    - [Operadores unarios](#operadores-unarios)
    - [Operadores InstanceOf](#operador-instanceof)
    - [Operadores incrementales](#operadores-incrementales)
-   - [Operadores relacionales]
+   - [Operadores relacionales](#operadores-relacionales)
+   - [Operadores lógicos](#operadores-lógicos)
+   - [Operador de concatenación con cadena de caracteres '+'](#operador-de-concatenación-con-cadena-de-caracteres-'+')
+   - [Operadores que actúan a nivel de bits](#operadores-que-actúan-a-nivel-de-bits)
 5. [ESTRUCTURAS DE CONTROL](#estructuras-de-control)
    - [Bifurcaciones](#bifurcaciones)
    - [Bucles](#bucles)
@@ -86,22 +89,22 @@ class      finally     long        static      void        const       float    
 ## TIPOS PRIMITIVOS Y VARIABLES
 ---
 Como tipos primitivos entendemos aquellos tipos de información más usuales y básicos. Son los habituales de otros lenguajes de programación.
-- **Boolean** : *\<True>* / *\<False>*.
-- **Char** : Usa el código *UNICODE* y ocupa cada carácter 16 bits.
+- **boolean** : *\<True>* / *\<False>*.
+- **char** : Usa el código *UNICODE* y ocupa cada carácter 16 bits.
 - **Enteros** : Difieren en las precisiones y pueden ser positivos o negativos.
-   - *Byte* : 1 byte.
-   - *Short* : 2 bytes.
-   - *Int* : 4 bytes.
-   - *Long* : 8 bytes.
+   - *byte* : 1 byte.
+   - *short* : 2 bytes.
+   - *int* : 4 bytes.
+   - *long* : 8 bytes.
 - **Reales en punto flotante**: igual que los enteros también difieren en las precisiones y pueden ser positivos o negativos.
-   - *Float* : 4 bytes.
-   - *Double* : 8 bytes.
+   - *float* : 4 bytes.
+   - *double* : 8 bytes.
 
 Una variable referenciará siempre a un tipo primitivo de Java o a cualquier otro objeto creado en nuestro programa.
 ~~~~ java
-Int a;      // declaración de una variable 'a'
+int a;      // declaración de una variable 'a'
             // inicializada a 0 (valor por defecto)
-Int b = 8;  // declaración de una variable 'b'
+int b = 8;  // declaración de una variable 'b'
             // inicializada a 8
 
 NombreClase referencia;        // declaración de una variable 'referencia' preparada para llevar un objeto de la clase 'NombreClase'
@@ -131,10 +134,133 @@ Por otro lado desde la declaración de cualquier función propia de una clase po
 ## OPERADORES
 ---
 ### Operadores aritméticos
+~~~~ java
+>>> int a = 14;
+>>> int b = 3;
+>>> int c = a + b;  // Suma
+17
+>>> int c = a - b;  // Resta
+11
+>>> int c = a * b;  // Multiplicación
+42
+>>> int c = a / b;  // División
+4
+>>> int c = a % b;  // Resto de la División
+2
+~~~~
+
+### Operadores de asignación
+~~~~
+a += b --> a = a + b
+a -= b --> a = a - b
+a *= b --> a = a * b
+a /= b --> a = a / b
+a %= b --> a = a % b
+~~~~
+
+### Operadores unarios
+El signo *-* delante de un valor para cambiarle el signo del operando
+~~~~ java
+>>> int a = 1;
+>>> -a
+-1
+>>> -a
+1
+~~~~
+
+### Operador Instanceof
+Nos permite saber si un objeto pertenece a una clase o no.
+
+### Operadores incrementales
+Son operadores que nos permiten incrementar (*++*) o decrementar(*--*) las variables en una unidad.
+~~~~ java
+>>> int i
+>>> i++
+1
+>>> ++i
+2
+~~~~
+> Cuando el operador se utiliza en su forma de sufijo (i++) el valor de ‘i’ se incrementa sólamente después de que el valor actual de ‘i’ haya sido utilizado en la expresión.
+
+### Operadores relacionales
+~~~~
+>   // Mayor que
+<   // Menor que
+==  // Iguales
+!=  // Distintos
+>=  // Mayor o igual que
+<=  // Menor o igual que
+~~~~
+> Devuelven siempre un valor boolean
+
+### Operadores lógicos
+~~~~
+&&  // Devuelve <True> si ambos operandos son <True>
+||  // Devuelve <True> si al menos uno de los operandos es <True<
+!   // Niega el operando
+~~~~
+
+### Operador de concatenación con cadena de caracteres '+'
+~~~~ java
+>>> int result = 10
+>>> "El total es"+ result + "unidades"
+El total es 10 unidades
+~~~~
+
+### Operadores que actúan a nivel de bits
+~~~~ java
+>>  // Desplazamiento a la derecha de los bits del operando
+<<  // Desplazamiento a la izquierda de los bits del operando
+&   // Operador AND a nivel de bit
+|   // Operador OR a nivel de bit
+~~~~
+
 
 ## ESTRUCTURAS DE CONTROL
 ---
 ### Bifurcaciones
+Permiten ejecutar código en función de una expresión evaluada
+
+#### if
+~~~~ java
+if (ExpresionBooleana){
+   conjuntoDeSentencias
+}
+
+if (ExpresionBooleana) {
+   conjuntoDeSentencias
+} else {
+   conjuntoAlternativo
+}
+
+if (ExpresionBooleana) {
+   conjuntoDeSentencias
+} else if {
+   conjuntoAlternativo
+} else if {
+   conjuntoAlternativo2
+}
+~~~~
+
+#### switch
+~~~~ java
+switch (Expresion){
+   Case valor1:
+      conjuntoDeSentencias;
+      break;
+   Case valor2:
+      SentenciasAlternativas;
+      break;
+   Case valor3:
+      SentenciasAlternativas2;
+      break;
+   Case valor4:
+      SentenciasAlternativas3;
+      break;
+}
+~~~~
+> La sentencia *break* al final de cada opción sirve para que no evalue el resto de opciones sino que se salga directamente del *switch*.
+
 ### Bucles
 
 
