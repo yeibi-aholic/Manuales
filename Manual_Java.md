@@ -8,6 +8,12 @@
    - [Identificadores](#identificadores)
 3. [TIPOS PRIMITIVOS Y VARIABLES](#tipos-primitivos-y-variables)
 4. [OPERADORES](#operadores)
+   - [Operadores aritméticos](#operadores-aritméticos)
+   - [Operadores de asignación](#operadores-de-asignación)
+   - [Operadores unarios](#operadores-unarios)
+   - [Operadores InstanceOf](#operador-instanceof)
+   - [Operadores incrementales](#operadores-incrementales)
+   - [Operadores relacionales]
 5. [ESTRUCTURAS DE CONTROL](#estructuras-de-control)
    - [Bifurcaciones](#bifurcaciones)
    - [Bucles](#bucles)
@@ -124,7 +130,7 @@ Por otro lado desde la declaración de cualquier función propia de una clase po
 
 ## OPERADORES
 ---
-
+### Operadores aritméticos
 
 ## ESTRUCTURAS DE CONTROL
 ---
