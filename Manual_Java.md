@@ -192,16 +192,17 @@ class      finally     long        static      void        const       float    
 ## TIPOS PRIMITIVOS Y VARIABLES
 ---
 Como tipos primitivos entendemos aquellos tipos de información más usuales y básicos. Son los habituales de otros lenguajes de programación.
-- **boolean** : *\<True>* / *\<False>*.
-- **char** : Usa el código *UNICODE* y ocupa cada carácter 16 bits.
+
+- **boolean** : *\<True>* / *\<False>*. Valor por defecto *\<False>*.
+- **char** : Usa el código *UNICODE* y ocupa cada carácter 16 bits. Valor por defecto *'u0000'*
 - **Enteros** : Difieren en las precisiones y pueden ser positivos o negativos.
-   - *byte* : 1 byte.
-   - *short* : 2 bytes.
-   - *int* : 4 bytes.
-   - *long* : 8 bytes.
+   - *byte* : 1 byte. Valor por defecto *0*.
+   - *short* : 2 bytes. Valor por defecto *0*.
+   - *int* : 4 bytes. Valor por defecto *0*.
+   - *long* : 8 bytes. Valor por defecto *0L*.
 - **Reales en punto flotante**: igual que los enteros también difieren en las precisiones y pueden ser positivos o negativos.
-   - *float* : 4 bytes.
-   - *double* : 8 bytes.
+   - *float* : 4 bytes. Valor por defecto *0.0f*.
+   - *double* : 8 bytes. Valor por defecto *0.0d*.
 
 Una variable referenciará siempre a un tipo primitivo de Java o a cualquier otro objeto creado en nuestro programa.
 ~~~~ java
@@ -231,7 +232,7 @@ public class AmbitoVariables {
 
 Hay más normas de ámbito respecto a las variables miembro de una clase. Para acceder a ellas depende si en la clase está declarada como *public* o como *private*. Las variables declaradas en una clase como *public* se acceden directamente a través de *\<NombreClase.nombreVariable*. En caso de una variable *private* solo podemos utilizarla mediante los métodos de esa clase.
 
-Por otro lado desde la declaración de cualquier función propia de una clase podemos acceder a las variables internas de esa clase directamente.
+Por otro lado, desde la declaración de cualquier función propia de una clase podemos acceder a las variables internas de esa clase directamente.
 
 
 ## OPERADORES
