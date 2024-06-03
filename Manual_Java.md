@@ -4,6 +4,7 @@
 
 1. [INTRODUCCIÓN A JAVA](#introducción-a-java)
 2. [CONCEPTOS BÁSICOS](#conceptos-básicos)
+   - [Progrmación Orientada a Objetos](#programación-orientada-a-objetos)
    - [Comentatios](#comentarios)
    - [Identificadores](#identificadores)
 3. [TIPOS PRIMITIVOS Y VARIABLES](#tipos-primitivos-y-variables)
@@ -55,6 +56,105 @@ Java presenta muchas características que lo diferencian de lenguajes similares 
 
 ## CONCEPTOS BÁSICOS
 ---
+### Programación Orientada a Objetos
+Hay una serie de conceptos básicos de la orientación a objetos que se deben manejar para poder desarrollar con este lenguaje.
+- [Objeto](#objeto)
+- [Clase](#clase)
+- [Paquete](#paquete)
+- [Interface](#interface)
+- [Herencia](#herencia)
+
+#### Objeto
+Es un elemento de software que intenta representar un objeto del mundo real. De esta forma un objeto tendrá sus propiedades y acciones a realizar con el objeto. Estas propiedades y acciones están encapsuladas dentro del objeto, cumpliendo así los principios de encapsulamiento.  
+Un objeto tiene su estado (o estados) y su comportamiento. Esto se modela mediante propiedades (o variables) y métodos. Incluso un objeto puede contener a su vez a otro tipo de objeto.  
+Cualquier concepto del mundo real se puede modelar como un objeto con su estado y comportamiento.
+
+Por ejemplo, un televisor es un objeto, cuyos estados pueden ser: *encendida, apagada*, *en el canal1*, *en el canal2*, *grabando*,… y sus acciones serán *encender televisor*, *apagar televisor*, *cambiar de canal*, *iniciar la grabación*,…
+
+Por ejemplo imaginemos una figura geométrica como podría ser un triángulo. Un triángulo podemos definirlo por varias propiedades como pueden ser: base, altura, el lado y las coordenadas x,y del centro del triángulo. Como métodos de un triángulo podemos “calcular el área del triángulo”, “calcular el perímetro del triángulo”.
+
+#### Clase
+Las clases representan los prototipos de los objetos que tenemos en el mundo real; es decir, una generalización de un conjunto de objetos.
+
+Volviendo al ejemplo del televisor, existen múltiples tipos de televisores y cada uno con sus características, bien existe un esquema o prototipo que define el televisor. Este prototipo es lo que conocemos la clase.
+
+Y siguiendo el ejemplo de los triángulos:
+~~~~ java
+class Triangulo {
+    private long base;
+    private long altura;
+
+    public Triangulo(long base, long altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    public long area() {
+        return (base * altura) / 2;
+    }
+}
+
+Triangulo t1 = new Triangulo(2, 3);
+Triangulo t2 = new Triangulo(4, 7);
+
+t1.area(); // 3
+t2.area(); // 14
+~~~~
+
+#### Paquete
+Un paquete es una forma de organizar elementos de software mediante un espacio de nombres. Así podremos afrontar desarrollos grandes de software facilitando la forma de encontrar o referirnos a un elemento.
+
+Los paquetes se definen mediante el modificador *package* seguido del nombre del paquete. El paquete lo definiremos en la primera línea de cada una de las clases.  
+Java nos proporciona un conjunto de paquetes por defecto (conocido como **API Java**) en los que se pueden encontrar múltiples utilidades del lenguaje. Por ejemplo, la clase Java que nos ayuda a manipular las cadenas de texto es la clase *String* (paquete *java.lang*).
+
+#### Interface
+Un interface es una forma de establecer un contrato entre dos elementos, indicando qué acciones son las que una determinada clase nos va a ofrecer cuando vayamos a utilizarla.
+
+Por ejemplo podríamos definir un interface *Figura* el cual indique qué métodos son obligatorios cuando vayamos a definir una figura.
+~~~~ java
+interface Figura {
+    public long area();
+    public long perimetro();
+}
+
+public Triangulo implements Figura {
+    ...
+}
+~~~~
+> Para implementar un *interface* en una determinada clase se debe utilizar el operador *implements* junto con su nombre.
+
+#### Herencia
+La herencia es una forma de estructurar el software, indicando que una clase hereda de otra; es decir, la clase extiende las capacidades (propiedades y métodos) que tenga y añade nuevas propiedades y acciones.  
+La clase superior de la que heredan las figuras puede definir una serie de propiedades y métodos que heredarán las clases hijas y que por ende podrán utilizar.
+~~~~ java
+public class Poligono {
+    private long[] lados;
+
+    public Poligono(long[] lados) {
+        this.lados = lados;
+    }
+
+    public long perimetro() {
+        ...
+    }
+}
+
+public class Triangulo extends Poligono {
+    ...
+    public Triangulo (long base, long altura, int[] lados) {
+        super(lados);
+        this.base = base;
+        this.altura = altura;
+    }
+}
+
+Triangulo t1 = new Triangulo(2, 3);
+t1.perimetro(); // 3
+~~~~
+> La herencia entre clases se indica mediante el operador *extends*.
+>  
+> El constructor de la clase que hereda (o clase hija) deberá llamar al constructor de la clase padre. Para ello se utiliza el método especial *super()*.
+
 ### Comentarios
 ~~~~ java
 // Comentario de una sola línea
