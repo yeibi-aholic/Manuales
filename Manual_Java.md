@@ -229,7 +229,7 @@ public class AmbitoVariables {
 ~~~~
 > Si intentamos ejecutar este código el compilador nos dará un error diciéndonos que la variable *\<y>* no está definida puesto que la hemos declarado en un bloque distinto de donde la pretendemos utilizar.
 
-Hay mas normas de ámbito respecto a las variables miembro de una clase. Para acceder a ellas depende si en la clase está declarada como *public* o como *private*. Las variables declaradas en una clase como *public* se acceden directamente a través de *\<NombreClase.nombreVariable*. En caso de una variable *private* solo podemos utilizarla mediante los métodos de esa clase.
+Hay más normas de ámbito respecto a las variables miembro de una clase. Para acceder a ellas depende si en la clase está declarada como *public* o como *private*. Las variables declaradas en una clase como *public* se acceden directamente a través de *\<NombreClase.nombreVariable*. En caso de una variable *private* solo podemos utilizarla mediante los métodos de esa clase.
 
 Por otro lado desde la declaración de cualquier función propia de una clase podemos acceder a las variables internas de esa clase directamente.
 
