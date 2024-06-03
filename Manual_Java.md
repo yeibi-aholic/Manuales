@@ -254,11 +254,11 @@ Por otro lado desde la declaración de cualquier función propia de una clase po
 
 ### Operadores de asignación
 ~~~~
-a += b --> a = a + b
-a -= b --> a = a - b
-a *= b --> a = a * b
-a /= b --> a = a / b
-a %= b --> a = a % b
+a += b  // a = a + b
+a -= b  // a = a - b
+a *= b  // a = a * b
+a /= b  // a = a / b
+a %= b  // a = a % b
 ~~~~
 
 ### Operadores unarios
