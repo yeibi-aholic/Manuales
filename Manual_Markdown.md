@@ -410,7 +410,7 @@ La llamada de un archivo/documento de una misma ruta se forma a partir de:
 > ~~~~
 > [Manual Python -> RegEx](./Manual_Python.md#expresiones-regulares)
 > ~~~~
-> [Manual Python](./Manual_Python.md#expresiones-regulares)
+> [Manual Python -> RegEx](./Manual_Python.md#expresiones-regulares)
 
 - ### Referencias
 Se trata de links especiales declarados dentro del propio documento de *Markdown*. Están formados a partir de dos partes:  
