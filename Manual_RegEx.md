@@ -29,8 +29,16 @@ Sirven para poder especificar secuencias especiales y sets.
 |Caracter|Descripción|Ejemplo|
 |:-:|:-|:-|
 |\\_|Secuencia especial, permite que un metacaracter funcione como caracter literal.|+*?^$\\.[]{}()\|/|
-|\000|Caracteres octales. El valor debe de ser menor o igual a 255 (\\377)|\\251 --> ©; \\275 --> ½|
-|\xFF|Caracteres hexadecimales.|\\xAE --> ®, \\xD8 --> Ø|
+|\\000|Caracteres en formato octal. El valor debe de ser menor o igual a 255 (\\377)|\\251 --> ©; \\275 --> ½|
+|\\xFF|Caracteres en formato hexadecimal.|\\xAE --> ®, \\xD8 --> Ø|
+|\\uFFFF|Caracteres en formato *unicode*.|\\u00A5 --> ¥, \\u00B2 --> ²|
+|\\u{FFFF}|Caracteres en formato extendido de *unicode*. Es necesario el *flag* /u.||
+|\\t|Tabulador.||
+|\\n|Salto de línea.||
+|\\v|Tabulador vertical.||
+|\\f|Salto de página.||
+|\\r|Retorno de carro.||
+|\\0|Valor *NULL*.||
 
 |Caracter|Descripción|Ejemplo|
 |:-:|:-|:-|
