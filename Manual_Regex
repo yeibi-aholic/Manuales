@@ -1,13 +1,6 @@
 Las expresiones regulares, también llamadas RegEX, son secuencias de caracteres que forman un patrón de búsqueda.
 
-### Coincidencia de caracteres
-- *match(comparador, c)* : Determina si el comienzo de la cadena *c* coincide con la cadena *comparador*.
-- *search(comparador, c)* : Escanea la cadena *c*, buscando la cadena *comparador* hasta encontrar una coincidencia.
-- *findall(comparador, c)* : Encuentra todas las subcadenas de caracteres de la cadena *c* donde coincide la cadena *comparador* y las retorna como una lista.
-- *finditer(comparador, c)* : Encuentra todas las subcadenas de caracteres de la cadena *c* donde coincide la cadena *comparador* y las retorna como un término iterado
-> ⚠️ Si se cumplen las condiciones de las sentencias se devuelve un *\<match object>*. En caso contrario, devuelve *\<None>*.
-
-### Metacaracteres
+# Metacaracteres
 Sirven para poder especificar secuencias especiales y sets.
 
 |Caracter|Descripción|Ejemplo|
