@@ -29,7 +29,7 @@ Sirven para poder especificar secuencias especiales y sets.
 |\\W|Caracteres no-alfanuméricos.|Equivalente a [^a-zA-z0-9_].|
 |\\d|Caracteres numéricos.|Equivalente a [0-9].|
 |\\D|Caracteres no-numéricos.|Equivalente a [^0-9].|
-|\\s|Espacios.|Equivalente a [ \t\n\r\f\v].|
+|\\s|Espacios, tabulaciones y saltos de línea.|Equivalente a [ \t\n\r\f\v].|
 |\\S|No-espacios.|Equivalente a [^ \t\n\r\f\v].|
 |\\A_|El resultado está al comienzo del texto.||
 |_\\Z|El resultado está al final del texto.||
