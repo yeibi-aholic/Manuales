@@ -408,7 +408,7 @@ La llamada de un archivo/documento de una misma ruta se forma a partir de:
 [Manual Python](./Manual_Python)
 > Si se quiere especificar una encabezado de otro archivo se añade la estructura de encabezados al final de la ruta.
 > ~~~~
-> [Manual Python](./Manual_Python.md#exrepsiones-regulares)
+> [Manual Python -> RegEx](./Manual_Python.md#exrepsiones-regulares)
 > ~~~~
 > [Manual Python](./Manual_Python#expresiones-regulares)
 
