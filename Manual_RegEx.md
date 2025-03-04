@@ -29,7 +29,8 @@ Sirven para poder especificar secuencias especiales y sets.
 |Caracter|Descripción|Ejemplo|
 |:-:|:-|:-|
 |\\_|Secuencia especial, permite que un metacaracter funcione como caracter literal.|+*?^$\\.[]{}()\|/|
-|\000|Para caracteres octales. El valor debe de ser menor o igual a 255 (\\377)|\\271 --> ©; \\275 --> ½|
+|\000|Caracteres octales. El valor debe de ser menor o igual a 255 (\\377)|\\251 --> ©; \\275 --> ½|
+|\xFF|Caracteres hexadecimales.|\\xAE --> ®, \\xD8 --> Ø|
 
 |Caracter|Descripción|Ejemplo|
 |:-:|:-|:-|
