@@ -403,12 +403,12 @@ La llamada de un archivo/documento de una misma ruta se forma a partir de:
 1. El texto que aparecerá en pantalla entre corchetes.
 2. Entre paréntesis, nombre del archivo en la ruta y "./" al principio.
 ~~~~
-[Manual Python](./Manual_Python)
+[Manual Python](./Manual_Python.md)
 ~~~~
 [Manual Python](./Manual_Python)
 > Si se quiere especificar una encabezado de otro archivo se añade la estructura de encabezados al final de la ruta.
 > ~~~~
-> [Manual Python](./Manual_Python#exrepsiones-regulares)
+> [Manual Python](./Manual_Python.md#exrepsiones-regulares)
 > ~~~~
 > [Manual Python](./Manual_Python#expresiones-regulares)
 
