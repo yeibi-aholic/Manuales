@@ -405,12 +405,12 @@ La llamada de un archivo/documento de una misma ruta se forma a partir de:
 ~~~~
 [Manual Python](./Manual_Python.md)
 ~~~~
-[Manual Python](./Manual_Python)
+[Manual Python](./Manual_Python.md)
 > Si se quiere especificar una encabezado de otro archivo se añade la estructura de encabezados al final de la ruta.
 > ~~~~
-> [Manual Python -> RegEx](./Manual_Python.md#exrepsiones-regulares)
+> [Manual Python -> RegEx](./Manual_Python.md#expresiones-regulares)
 > ~~~~
-> [Manual Python](./Manual_Python#expresiones-regulares)
+> [Manual Python](./Manual_Python.md#expresiones-regulares)
 
 - ### Referencias
 Se trata de links especiales declarados dentro del propio documento de *Markdown*. Están formados a partir de dos partes:  
