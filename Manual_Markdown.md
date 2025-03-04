@@ -27,6 +27,7 @@
 9. **[LINKS](#9-links)**  
     - **[Enlaces web](#enlaces-web)**
     - **[Llamada de encabezados](#llamada-de-encabezados)**
+    - **[Llamada de otros archivos](#llamada-de-otros-archivos)**
     - **[Notas a pie de página](#notas-a-pie-de-página)**
     - **[Referencias](#referencias)**   
     - **[Documentos](#documentos)**  
@@ -395,8 +396,21 @@ La llamada de un [encabezado](#encabezados) del propio documento se forma a part
 [Manual Markdown](#manual-markdown)
 ~~~~
 [Manual Markdown](#manual-markdown)
-
 > ⚠️ **ADVERTENCIA:** las tildes en la llamada del nombre del encabezado no funcionan directamente en *Markdown*, pero sí en la preview de **Azure** o **GitHub**.
+
+- ### Llamada de otros archivos
+La llamada de un archivo/documento de una misma ruta se forma a partir de:
+1. El texto que aparecerá en pantalla entre corchetes.
+2. Entre paréntesis, nombre del archivo en la ruta y "./" al principio.
+~~~~
+[Manual Python](./Manual_Python)
+~~~~
+[Manual Python](./Manual_Python)
+> Si se quiere especificar una encabezado de otro archivo se añade la estructura de encabezados al final de la ruta.
+> ~~~~
+> [Manual Python](./Manual_Python#exrepsiones-regulares)
+> ~~~~
+> [Manual Python](./Manual_Python#expresiones-regulares)
 
 - ### Referencias
 Se trata de links especiales declarados dentro del propio documento de *Markdown*. Están formados a partir de dos partes:  
