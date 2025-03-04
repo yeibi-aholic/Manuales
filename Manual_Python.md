@@ -4848,7 +4848,7 @@ cuadroTexto.grid(row=0, column=1)
 
 ## Expresiones regulares
 ---
-Mediante secuencias de [metacaracteres](#./Manual_RegEx "Manual RegEx") se buscan patrones de caracteres.
+Mediante secuencias de [metacaracteres](#./Manuales/Manual_RegEx "Manual RegEx") se buscan patrones de caracteres.
 
 ### Coincidencia de caracteres
 - *match(comparador, c)* : Determina si el comienzo de la cadena *c* coincide con la cadena *comparador*.
