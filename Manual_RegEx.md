@@ -18,14 +18,14 @@ Sirven para poder especificar secuencias especiales y sets.
 |\\S|No-espacios.|Equivalente a [^ \t\n\r\f\v].|
 
 ## Anclajes
-|Caracter|Descripción|Ejemplo|
-|:-:|:-|:-|
-|^_|El texto comienza con lo especificado. Si se añade el *[flag](#flags)* /m se tendrá en cuenta en cada salto de línea.||
-|_$|El texto termina con lo especificado. Si se añade el *[flag](#flags)* /m se tendrá en cuenta en cada salto de línea.||
-|\\b_ or _\\b|El resultado está al comienzo o final de una palabra.||
-|\\B_ or _\\B|El resultado no está al comienzo o final de una palabra.||
-|\\A_|El resultado está al comienzo del texto.||
-|_\\Z|El resultado está al final del texto.||
+|Caracter|Descripción|
+|:-:|:-|
+|^_|El texto comienza con lo especificado. Si se añade el *[flag](#flags)* /m se tendrá en cuenta en cada salto de línea.|
+|_$|El texto termina con lo especificado. Si se añade el *[flag](#flags)* /m se tendrá en cuenta en cada salto de línea.|
+|\\b_ or _\\b|El resultado está al comienzo o final de una palabra.|
+|\\B_ or _\\B|El resultado no está al comienzo o final de una palabra.|
+|\\A_|El resultado está al comienzo del texto.|
+|_\\Z|El resultado está al final del texto.|
 
 ## Caracteres de escape
 |Caracter|Descripción|Ejemplo|
