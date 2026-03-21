@@ -292,18 +292,24 @@ IndexError: string index out of range
 
 #### Operaciones con cadenas
 - *c1 + c2* : Devuelve la cadena resultado de concatenar las cadenas c1 y c2.
-- *c * n* : Devuelve la cadena resultado de concatenar n copias de la cadena c.
-- *c1 in c2* : Devuelve *\<True>* si c1 es una cadena concenida en c2 y *\<False>* en caso contrario.
-- *c1 not in c2* : Devuelve *\<True>* si c1 es una cadena no concenida en c2 y *\<False>* en caso contrario.
 ~~~~ python
 >>> 'Me gusta ' + 'Python'
 'Me gusta Python'
+~~~~
+- *c * n* : Devuelve la cadena resultado de concatenar n copias de la cadena c.
+~~~~ python
 >>> 'Python' * 3
 'PythonPythonPython'
+~~~~
+- *c1 in c2* : Devuelve *\<True>* si c1 es una cadena concenida en c2 y *\<False>* en caso contrario.
+~~~~ python
 >>> 'y' in 'Python'
 True
 >>> 'tho' in 'Python'
 True
+~~~~
+- *c1 not in c2* : Devuelve *\<True>* si c1 es una cadena no concenida en c2 y *\<False>* en caso contrario.
+~~~~ python
 >>> 'to' not in 'Python'
 True
 ~~~~
