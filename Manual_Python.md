@@ -805,6 +805,9 @@ IndexError: list index out of range
 ~~~~
 
 #### Operaciones que no modifican una lista
+~~~~ python
+>>> a = [1, 2, 2, 3]
+~~~~
 - *len(l)* : Devuelve el número de elementos de la lista *l*.
 ~~~~ python
 >>> a = [1, 2, 2, 3]
@@ -858,50 +861,61 @@ False
 ~~~~
 
 #### Operaciones que modifican una lista
+~~~~ python
+>>> a = [1, 3, 5]
+>>> b = [2, 4, 6]
+~~~~
 - *l1 + l2* : Crea una nueva lista concatenando los elementos de la listas *l1* y *l2*.
+~~~~ python
+>>> a + b
+[1, 3, 5, 2, 4, 6]
+~~~~
 - *l.append(dato)* : Añade *dato* al final de la lista *l*.
+~~~~ python
+>>> a.append(7)
+[1, 3, 5, 7]
+~~~~
 - *l.extend(sequencia)* : Añade los datos de *sequencia* al final de la lista *l*.
+~~~~ python
+>>> a.extend(b)
+[1, 3, 5, 2, 4, 6]
+~~~~
 - *l.insert(índice, dato)* : Inserta *dato* en la posición *índice* de la lista *l* y desplaza los elementos una posición a partir de la posición *índice*. Si la posición *índice* está fuera del rango de la lista *l*, el dato *dato* se insertará en uno de los extremos de la lista *l*.
+~~~~ python
+>>> a.insert(1, 2)
+[1, 2, 3, 5]
+>>> a.insert(6, 8)
+[1, 2, 3, 5, 8]
+>>> a.insert(-6, 0)
+[0, 1, 2, 3, 5, 8]
+~~~~
 - *l.remove(dato)* : Elimina el primer elemento con valor *dato* en la lista *l* y desplaza los que están por detrás de él una posición hacia delante.
+~~~~ python
+>>> a.remove(3)
+[1, 5]
+~~~~
 - *l.pop([índice])* : Devuelve el dato en la posición *índice* y lo elimina de la lista *l*, desplazando los elementos por detrás de él una posición hacia delante. Por defecto elimina el último valor de la lista.
+~~~~ python
+>>> b.pop()
+6
+~~~~
 - *l.sort()* : Ordena los elementos de la lista *l* de acuerdo al orden predefinido, siempre que los elementos sean comparables.
+~~~~ python
+>>> c = a + b
+>>> c.sort()
+[1, 2, 3, 4, 5, 6]
+~~~~
 - *l.reverse()* : invierte el orden de los elementos de la lista *l*.
 
 ~~~~ python
->>> a = [1, 3]
->>> b = [2, 4, 6]
->>> a+b
-[1, 2, 3, 4]
->>> a.append(5)
->>> a
-[1, 3, 5]
->>> a.remove(3)
->>> a
-[1, 5]
->>> a.insert(1, 3)
->>> a
-[1, 3, 5]
->>> a.insert(6, 8)
-[1, 3, 5, 8]
->>> a.insert(-5, 0)
-[0, 1, 3, 5, 8]
->>> b.pop()
-6
 >>> c = a + b
->>> c
-[1, 3, 5, 2, 4]
->>> c.sort()
->>> c
-[1, 2, 3, 4, 5]
 >>> c.reverse()
->>> c
-[5, 4, 3, 2, 1]
+[6, 4, 2, 5, 3, 1]
 ~~~~
 
 #### Copia de listas
 Existen dos formas de copiar listas:
 - **Copia por referencia** *l1 = l2* : Asocia la la variable *l1* la misma lista que tiene asociada la variable *l2*; es decir, ambas variables apuntan a la misma dirección de memoria. Cualquier cambio que hagamos a través de *l1* o *l2* afectará a la misma lista.
-- **Copia por valor** *l1 = list(l2)* : Crea una copia de la lista asociada a *l2* en una dirección de memoria diferente y se la asocia a *l1*. Las variables apuntan a direcciones de memoria diferentes que contienen los mismos datos. Cualquier cambio que hagamos a través de *l1* no afectará a la lista de *l2* y viceversa, salvo que la propia lista tenga una lista como valor. En este último caso, la copia de dicho valor será como una *copia por referencia*. (*l1 = l2.copy()* causará el mismo caso).
 ~~~~ python
 >>> a = [1, 2, 3]
 >>> # copia por referencia
@@ -914,6 +928,7 @@ Existen dos formas de copiar listas:
 >>> a
 [1, 3]
 ~~~~
+- **Copia por valor** *l1 = list(l2)* : Crea una copia de la lista asociada a *l2* en una dirección de memoria diferente y se la asocia a *l1*. Las variables apuntan a direcciones de memoria diferentes que contienen los mismos datos. Cualquier cambio que hagamos a través de *l1* no afectará a la lista de *l2* y viceversa, salvo que la propia lista tenga una lista como valor. En este último caso, la copia de dicho valor será como una *copia por referencia*. (*l1 = l2.copy()* causará el mismo caso).
 ~~~~ python
 >>> a = [1, 2, 3, [4, 5]]
 >>> # copia por valor
@@ -1037,16 +1052,18 @@ type({})
 ~~~~
 
 #### Acceso a los elementos de un diccionario
-- *d[clave]* devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve un error.
-- *d.get(clave, valor)* devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve valor, y si no se especifica un valor por defecto devuelve *None*.
-
 ~~~~ python
 >>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+~~~~
+- *d[clave]* devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve un error.
+~~~~ python
 >>> a['nombre']
 'Javier'
 >>> a['despacho'] = 210
->>> a
 {'nombre':'Javier', 'despacho': 210, 'email':'jgc4297@gmail.com'}
+~~~~
+- *d.get(clave, valor)* devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve valor, y si no se especifica un valor por defecto devuelve *None*.
+~~~~ python
 >>> a.get('email')
 'jgc4297@gmail.com'
 >>> a.get('universidad', 'ETSIB')
@@ -1054,68 +1071,94 @@ type({})
 ~~~~
 
 #### Operaciones que no modifican un diccionario
-- *len(d)* : Devuelve el número de elementos del diccionario *d*.
-- *min(d)* : Devuelve la mínima clave del diccionario *d* siempre que las claves sean comparables.
-- *max(d)* : Devuelve la máxima clave del diccionario *d* siempre que las claves sean comparables.
-- *sum(d)* : Devuelve la suma de las claves del diccionario *d*, siempre que las claves se puedan sumar.
-- *clave in d* : Devuelve *\<True>* si la clave *clave* pertenece al diccionario *d* y *\<False>* en caso contrario.
-- *d.keys()* : Devuelve un iterador sobre las claves de un diccionario.
-- *d.values()* : Devuelve un iterador sobre los valores de un diccionario.
-- *d.items()* : Devuelve un iterador sobre los pares clave-valor de un diccionario.
-
 ~~~~ python
 >>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+~~~~
+- *len(d)* : Devuelve el número de elementos del diccionario *d*.
+~~~~ python
 >>> len(a)
 3
+~~~~
+- *min(d)* : Devuelve la mínima clave del diccionario *d* siempre que las claves sean comparables.
+~~~~ python
 >>> min(a)
 'despacho'
+~~~~
+- *max(d)* : Devuelve la máxima clave del diccionario *d* siempre que las claves sean comparables.
+~~~~ python
+>>> max(a)
+'nombre'
+~~~~
+- *sum(d)* : Devuelve la suma de las claves del diccionario *d*, siempre que las claves se puedan sumar.
+~~~~ python
+>>> sum(a)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+~~~~
+- *clave in d* : Devuelve *\<True>* si la clave *clave* pertenece al diccionario *d* y *\<False>* en caso contrario.
+~~~~ python
 >>> 'email' in a
 True
+~~~~
+- *d.keys()* : Devuelve un iterador sobre las claves de un diccionario.
+~~~~ python
 >>> a.keys()
 dict_keys(['nombre', 'despacho', 'email'])
+~~~~
+- *d.values()* : Devuelve un iterador sobre los valores de un diccionario.
+~~~~ python
 >>> a.values()
 dict_values(['Javier', 218, 'jgc4297@gmail.com'])
+~~~~
+- *d.items()* : Devuelve un iterador sobre los pares clave-valor de un diccionario.
+~~~~ python
 >>> a.items()
 dict_items([('nombre', 'Javier'), ('despacho', 218), ('email', 'jgc4297@gmail.com')])
 ~~~~
 
 #### Operaciones que modifican un diccionario
-- *d[clave] = valor* : Añade al diccionario *d* el par formado por la clave *clave* y el valor *valor*.
-- *d.update(d2)* :: Añade los pares del diccionario *d2* al diccionario *d*.
-- *d.pop(clave, alternativo)* : Devuelve del valor asociado a la clave *clave* del diccionario *d* y lo elimina del diccionario. Si la clave no está devuelve el valor *alternativo*.
-- *d.popitem()* : Devuelve la tupla formada por la clave y el valor del último par añadido al diccionario *d* y lo elimina del diccionario.
-- *del d[clave]* : Elimina del diccionario *d* el par con la clave *clave*.
-- *d.clear()* : Elimina todos los pares del diccionario *d* de manera que se queda vacío.
-
 ~~~~ python
 >>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+~~~~
+- *d[clave] = valor* : Añade al diccionario *d* el par formado por la clave *clave* y el valor *valor*.
+~~~~ python
 >>> a['universidad'] = 'ETSIB'
->>> a
 {'nombre': 'Javier', 'despacho': 218, 'email': 'jgc4297@gmail.com', 'universidad': 'ETSIB'}
+~~~~
+- *d1.update(d2)* : Añade los pares del diccionario *d2* al diccionario *d1*.
+~~~~ python
+~~~~
+- *d.pop(clave, alternativo)* : Devuelve del valor asociado a la clave *clave* del diccionario *d* y lo elimina del diccionario. Si la clave no está devuelve el valor *alternativo*.
+~~~~ python
 >>> a.pop('despacho')
 218
->>> a
-{'nombre': 'Javier', 'email': 'jgc4297@gmail.com', 'universidad': 'ETSIB'}
->>> a.popitem()
-('universidad', 'ETSIB')
->>> a
 {'nombre': 'Javier', 'email': 'jgc4297@gmail.com'}
->>> del a['email']
->>> a
-{'nombre': 'Javier'}
+>>> a.pop('trabajo', 'No existe la clave')
+'No existe la clave'
+~~~~
+- *d.popitem()* : Devuelve la tupla formada por la clave y el valor del último par añadido al diccionario *d* y lo elimina del diccionario.
+~~~~ python
+>>> a.popitem()
+('email','jgc4297@gmail.com')
+{'nombre':'Javier', 'despacho': 218}
+~~~~
+- *del d[clave]* : Elimina del diccionario *d* el par con la clave *clave*.
+~~~~ python
+>>> del a['nombre']
+{'despacho': 218, 'email': 'jgc4297@gmail.com'}
+~~~~
+- *d.clear()* : Elimina todos los pares del diccionario *d* de manera que se queda vacío.
+~~~~ python
 >>> a.clear()
->>> a
 {}
 ~~~~
 
 #### Copia de diccionarios
 Existen dos formas de copiar diccionarios:
-- **Copia por referencia** *d1 = d2* : Asocia la la variable *d1* el mismo diccionario que tiene asociado la variable *d2*, es decir, ambas variables apuntan a la misma dirección de memoria. Cualquier cambio que hagamos a través de *l1* o *l2* afectará al mismo diccionario.
-- **Copia por valor** *d1 = dict(d2)* : Crea una copia del diccionario asociado a *d2* en una dirección de memoria diferente y se la asocia a *d1*. Las variables apuntan a direcciones de memoria diferentes que contienen los mismos datos. Cualquier cambio que hagamos a través de *l1* no afectará al diccionario de *l2* y viceversa.
-
 ~~~~ python
 >>> a = {1:'A', 2:'B', 3:'C'}
->>> # copia por referencia
+~~~~
+- **Copia por referencia** *d1 = d2* : Asocia la la variable *d1* el mismo diccionario que tiene asociado la variable *d2*, es decir, ambas variables apuntan a la misma dirección de memoria. Cualquier cambio que hagamos a través de *l1* o *l2* afectará al mismo diccionario.
+~~~~ python
 >>> b = a
 >>> b
 {1:'A', 2:'B', 3:'C'}
@@ -1125,9 +1168,8 @@ Existen dos formas de copiar diccionarios:
 >>> a
 {1:'A', 3:'C'}
 ~~~~
+- **Copia por valor** *d1 = dict(d2)* : Crea una copia del diccionario asociado a *d2* en una dirección de memoria diferente y se la asocia a *d1*. Las variables apuntan a direcciones de memoria diferentes que contienen los mismos datos. Cualquier cambio que hagamos a través de *l1* no afectará al diccionario de *l2* y viceversa.
 ~~~~ python
->>> a = {1:'A', 2:'B', 3:'C'}
->>> # copia por valor
 >>> b = dict(a)
 >>> b
 {1:'A', 2:'B', 3:'C'}
