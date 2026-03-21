@@ -806,36 +806,53 @@ IndexError: list index out of range
 
 #### Operaciones que no modifican una lista
 - *len(l)* : Devuelve el número de elementos de la lista *l*.
-- *min(l)* : Devuelve el mínimo elemento de la lista *l*, siempre que los datos sean comparables.
-- *max(l)* : Devuelve el máximo elemento de la lista *l*, siempre que los datos sean comparables.
-- *sum(l)* : Devuelve la suma de los elementos de la lista *l*, siempre que los datos se puedan sumar.
-- *dato in l* : Devuelve *\<True>* si el *dato* dato pertenece a la lista *l* y *\<False>* en caso contrario.
-- *l.index(dato)* : Devuelve la posición que ocupa en la lista *l* el primer elemento con valor *dato*. Si no encunetra nada devuelve un *ValueError*.
-- *l.count(dato)* : Devuelve el número de veces que el valor *dato* está contenido en la lista *l*.
-- *all(l)* : Devuelve *\<True>* si todos los elementos de la lista *l* son *\<True>* y *\<False>* en caso contrario.
-- *any(l)* : Devuelve *\<True>* si algún elemento de la lista *l* es *\<True>* y *\<False>* en caso contrario.
-- *separador.join(l)* : Devuelve una cadena formada por los datos de la lista *l* con el separador *separador* entre cada uno, siempre que los datos sean del tipo *string*.
-
 ~~~~ python
 >>> a = [1, 2, 2, 3]
 >>> len(a)
 4
+~~~~
+- *min(l)* : Devuelve el mínimo elemento de la lista *l*, siempre que los datos sean comparables.
+~~~~ python
 >>> min(a)
 1
+~~~~
+- *max(l)* : Devuelve el máximo elemento de la lista *l*, siempre que los datos sean comparables.
+~~~~ python
 >>> max(a)
 3
+~~~~
+- *sum(l)* : Devuelve la suma de los elementos de la lista *l*, siempre que los datos se puedan sumar.
+~~~~ python
 >>> sum(a)
 8
+~~~~
+- *dato in l* : Devuelve *\<True>* si el *dato* dato pertenece a la lista *l* y *\<False>* en caso contrario.
+~~~~ python
 >>> 3 in a
 True
+~~~~
+- *l.index(dato)* : Devuelve la posición que ocupa en la lista *l* el primer elemento con valor *dato*. Si no encunetra nada devuelve un *ValueError*.
+~~~~ python
 >>> a.index(2)
 1
+~~~~
+- *l.count(dato)* : Devuelve el número de veces que el valor *dato* está contenido en la lista *l*.
+~~~~ python
 >>> a.count(2)
 2
+~~~~
+- *all(l)* : Devuelve *\<True>* si todos los elementos de la lista *l* son *\<True>* y *\<False>* en caso contrario.
+~~~~ python
 >>> all(a)
 True
+~~~~
+- *any(l)* : Devuelve *\<True>* si algún elemento de la lista *l* es *\<True>* y *\<False>* en caso contrario.
+~~~~ python
 >>> any([0, False, 3<2])
 False
+~~~~
+- *separador.join(l)* : Devuelve una cadena formada por los datos de la lista *l* con el separador *separador* entre cada uno, siempre que los datos sean del tipo *string*.
+~~~~ python
 >>> '#'.join(['a', 'b', 'c'])
 'a#b#c'
 ~~~~
