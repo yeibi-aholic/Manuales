@@ -316,17 +316,18 @@ True
 
 #### Operaciones de comparación de cadenas
 - *c1 == c2* : Devuelve *\<True>* si la cadena *c1* es igual que la cadena *c2* y *\<False>* en caso contrario.
+- *c1 != c2* : Devuelve *\<True>* si la cadena *c1* es distinta de la cadena *c2* y *\<False>* en caso contrario.
+~~~~ python
+>>> 'Python' == 'python'
+False
+>>> 'Java' != 'Javascript'
+True 
+~~~~
 - *c1 > c2* : Devuelve *\<True>* si la cadena *c1* sucede a la cadena *c2* y *\<False>* en caso contrario.
 - *c1 < c2* : Devuelve *\<True>* si la cadena *c1* antecede a la cadena *c2* y *\<False>* en caso contrario.
 - *c1 >= c2* : Devuelve *\<True>* si la cadena *c1* sucede o es igual a la cadena *c2* y *\<False>* en caso contrario.
 - *c1 <= c2* : Devuelve *\<True>* si la cadena *c1* antecede o es igual a la cadena *c2* y *\<False>* en caso contrario.
-- *c1 != c2* : Devuelve *\<True>* si la cadena *c1* es distinta de la cadena *c2* y *\<False>* en caso contrario.
-
-> ⚠️ Utilizan el orden establecido en el *[código ASCII](https://elcodigoascii.com.ar/)*.
-
 ~~~~ python
->>> 'Python' == 'python'
-False
 >>> 'Python' < 'python'
 True
 >>> 'a' > 'Z'
@@ -336,6 +337,8 @@ False
 >>> '' < 'Python'
 True
 ~~~~
+
+> ⚠️ Utilizan el orden establecido en el *[código ASCII](https://elcodigoascii.com.ar/)*.
 
 #### Funciones de cadenas
 - *len(c)* : Devuelve el número de caracteres de la cadena *c*.
