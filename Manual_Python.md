@@ -1126,6 +1126,8 @@ dict_items([('nombre', 'Javier'), ('despacho', 218), ('email', 'jgc4297@gmail.co
 ~~~~
 - *d1.update(d2)* : Añade los pares del diccionario *d2* al diccionario *d1*.
 ~~~~ python
+>>> a.update({'trabajo': 'programador'})
+{'nombre': 'Javier', 'despacho': 218, 'email': 'jgc4297@gmail.com', trabajo': 'programador'}
 ~~~~
 - *d.pop(clave, alternativo)* : Devuelve del valor asociado a la clave *clave* del diccionario *d* y lo elimina del diccionario. Si la clave no está devuelve el valor *alternativo*.
 ~~~~ python
