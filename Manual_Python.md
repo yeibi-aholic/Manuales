@@ -698,8 +698,6 @@ Se utiliza fundamentalmente para recorrer colecciones de objetos como cadenas, l
 A menudo se usan con la instrucción *range*:
 
 - *range(fin)* : Genera una secuencia de números enteros desde *0* hasta *fin-1*.
-- *range(inicio, fin, salto)* : Genera una secuencia de números enteros desde *inicio* hasta *fin-1* con un incremento de *salto*.
-
 ~~~~ python
 >>> palabra = 'Python'
 >>> for letra in palabra:
@@ -712,11 +710,13 @@ h
 o
 n
 ~~~~
+- *range(inicio, fin, salto)* : Genera una secuencia de números enteros desde *inicio* hasta *fin-1* con un incremento de *salto*.
+
 ~~~~ python
 >>> for i in range(1, 10, 2):
 ...     print(i, end=", ")
 ...
-1, 3, 5, 7, 9, >>>
+1, 3, 5, 7, 9, 
 ~~~~
 ~~~~ python
 >>> for i in range(1, 10):
@@ -726,7 +726,7 @@ n
 ...         break
 ...     print(i, end=", ")
 ...
-1, 2, 3, 4, 6, 7, 8, >>>
+1, 2, 3, 4, 6, 7, 8, 
 ~~~~
 
 ## Listas
