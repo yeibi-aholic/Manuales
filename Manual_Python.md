@@ -342,54 +342,83 @@ True
 
 #### Funciones de cadenas
 - *len(c)* : Devuelve el número de caracteres de la cadena *c*.
-- *min(c)* : Devuelve el carácter menor de la cadena *c*.
-- *max(c)* : Devuelve el carácter mayor de la cadena *c*.
-- *c.upper()* : Devuelve la cadena con los mismos caracteres que la cadena *c* pero en mayúsculas.
-- *c.lower()* : Devuelve la cadena con los mismos caracteres que la cadena *c* pero en minúsculas.
-- *c.title()* : Devuelve la cadena con los mismos caracteres que la cadena *c* con el primer caracter de cada elemento en mayúsculas y el resto en minúsculas.
-- *c.capitalize()* : Devuelve la cadena con los mismos caracteres que la cadena *c* con el primer caracter en mayúsculas y el resto en minúsculas.
-- *c.swapcase()* :Devuelve la cadena con los mismos caracteres que la cadena *c* pero pasando las minúsculas a mayúsculas y viceversa.
-- *c.ljust(n)* / *c.rjust(n)*: Devuleve una cadena de longitud *n* con la cadena *c* a la derecha/izquierda.
-- *c.center(n)* : Devulve una cadena de longitud *n* con la cedena *c* en el centro.
-- *c1.find(c2)* : Devuelve la posición de la cadena *c2* dentro de la cadena *c1* la primera vez que aparece. Si no encuentra nada devuelve un -1.
-- *c1.rfind(c2)* : Devuelve la posición de la cadena *c2* dentro de la cadena *c1* la última vez que aparece. Si no encuentra nada devuelve un -1.
-- *c.split(delimitador)* : Devuelve la lista formada por las subcadenas que resultan de partir la cadena *c* usando como delimitador la cadena *delimitador*. Si no se especifica el delimitador utiliza por defecto el espacio en blanco.
-- *c.strip(caracteres)* : Devuelve la cadena formada tras borrar los caracteres *caracteres* de la cadena *c*. Primero borra desde la izquierda mientras haya caracteres que se encuentren en *caracteres* y después lo mismo por la derecha.
-- *c1.replace(c2 , c3)* : Devuelve una cadena a partir de reemplazar todas las cadena *c2* por la cadena *c3* dentro de la cadena *c1*.
-
 ~~~~ python
 >>> len('Python')
 6
+~~~~
+- *min(c)* : Devuelve el carácter menor de la cadena *c*.
+~~~~ python
 >>> min('Python')
 'P'
+~~~~
+- *max(c)* : Devuelve el carácter mayor de la cadena *c*.
+~~~~ python
 >>> max('Python')
 'y'
+~~~~
+- *c.upper()* : Devuelve la cadena con los mismos caracteres que la cadena *c* pero en mayúsculas.
+~~~~ python
 >>> 'Python'.upper()
 'PYTHON'
+~~~~
+- *c.lower()* : Devuelve la cadena con los mismos caracteres que la cadena *c* pero en minúsculas.
+~~~~ python
 >>> 'Python'.lower()
 'python'
+~~~~
+- *c.title()* : Devuelve la cadena con los mismos caracteres que la cadena *c* con el primer caracter de cada elemento en mayúsculas y el resto en minúsculas.
+~~~~ python
 >>> 'i love python'.title()
 'I Love Python'
+~~~~
+- *c.capitalize()* : Devuelve la cadena con los mismos caracteres que la cadena *c* con el primer caracter en mayúsculas y el resto en minúsculas.
+~~~~ python
 >>> 'i love python'.capitalize()
 'I love python'
+~~~~
+- *c.swapcase()* : Devuelve la cadena con los mismos caracteres que la cadena *c* pero pasando las minúsculas a mayúsculas y viceversa.
+~~~~ python
+>>> 'I Love Python'.swapcase()
+'i lOVE pYTHON'
+~~~~
+- *c.ljust(n)* / *c.rjust(n)*: Devuleve una cadena de longitud *n* con la cadena *c* a la derecha/izquierda.
+~~~~ python
 >>> 'left'.ljust(10)
 'left      '
 >>> 'right'.rjust(10)
 '     right'
+~~~~
+- *c.center(n)* : Devulve una cadena de longitud *n* con la cedena *c* en el centro.
+~~~~ python
 >>> 'center'.center(10)
 '  center  '
+~~~~
+- *c1.find(c2)* : Devuelve la posición de la cadena *c2* dentro de la cadena *c1* la primera vez que aparece. Si no encuentra nada devuelve un -1.
+~~~~ python
 >>> 'Hello world'.find('world')
 6
 >>> 'Hello world'.find('x')
 -1
+~~~~
+- *c1.rfind(c2)* : Devuelve la posición de la cadena *c2* dentro de la cadena *c1* la última vez que aparece. Si no encuentra nada devuelve un -1.
+~~~~ python
 >>> 'Hello world'.rfind('o')
 7
+~~~~
+- *c.split(delimitador)* : Devuelve la lista formada por las subcadenas que resultan de partir la cadena *c* usando como delimitador la cadena *delimitador*. Si no se especifica el delimitador utiliza por defecto el espacio en blanco.
+~~~~ python
 >>> 'A,B,C'.split(',')
 ['A', 'B', 'C']
 >>> 'I love Python'.split()
 ['I', 'love', 'Python']
+~~~~
+- *c.strip(caracteres)* : Devuelve la cadena formada tras borrar los caracteres *caracteres* de la cadena *c*. Primero borra desde la izquierda mientras haya caracteres que se encuentren en *caracteres* y después lo mismo por la derecha.
+~~~~ python
 >>> '***///>>>*Hola*<<<-+-+-+'.strip('*/+-')
 '>>>*Hola*<<<'
+~~~~
+- *c1.replace(c2 , c3)* : Devuelve una cadena a partir de reemplazar todas las cadena *c2* por la cadena *c3* dentro de la cadena *c1*.
+~~~~ python
 >>> 'Te quiero'.replace(' quiero' , 'quila')
 'Tequila'
 ~~~~
