@@ -161,7 +161,7 @@ Realizan operaciones algebraicas para el cálculo entre dos operandos.
 |**|Potencia|
 
 > ⚠️ Orden de prioridad de evaluación:  
->> Funciones predefinidas => Potencias => Productos y cocientes => Sumas y restas
+> Funciones predefinidas => Potencias => Productos y cocientes => Sumas y restas
 
 Se puede saltar el orden de evaluación utilizando paréntesis ( ).
 ~~~~ python
