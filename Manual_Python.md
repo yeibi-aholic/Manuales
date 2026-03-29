@@ -9,25 +9,26 @@
 5. **[Bucles](#bucles)**
 6. **[Listas](#listas)**
 7. **[Tuplas](#tuplas)**
-8. **[Diccionarios](#diccionarios)**
-9. **[Funciones](#funciones)**
-10. **[Programación funcional](#programación-funcional)**
-11. **[Comprensión de Colecciones](#comprensión-de-colecciones)**
-12. **[Ficheros](#ficheros)**
-13. **[Excepciones](#excepciones)**
-14. **[Programación Orientada a Objetos](#programación-orientada-a-objetos)**
-15. **[Módulos](#módulos)**
-16. **[Librería Datetime](#librería-datetime)**
-17. **[Librería Numpy](#librería-numpy)**
-18. **[Librería Pandas](#librería-pandas)**
-19. **[Librería Matplotlib](#librería-matplotlib)**
-20. **[Librería itertools](#librería-itertools)**
-21. **[Librería Turtle](#librería-turtle)**
-22. **[Librería Tkinter](#librería-tkinter)**
-23. **[Librería Pygame](#librería-pygame)**
-24. **[Expresiones regulares](#expresiones-regulares)**
-25. **[Depuración de código](#depuración-de-código)**
-26. **[Trucos y consejos](#trucos-y-consejos)**
+8. **[Conjuntos](#Conjuntos)**
+9. **[Diccionarios](#diccionarios)**
+10. **[Funciones](#funciones)**
+11. **[Programación funcional](#programación-funcional)**
+12. **[Comprensión de Colecciones](#comprensión-de-colecciones)**
+13. **[Ficheros](#ficheros)**
+14. **[Excepciones](#excepciones)**
+15. **[Programación Orientada a Objetos](#programación-orientada-a-objetos)**
+16. **[Módulos](#módulos)**
+17. **[Librería Datetime](#librería-datetime)**
+18. **[Librería Numpy](#librería-numpy)**
+19. **[Librería Pandas](#librería-pandas)**
+20. **[Librería Matplotlib](#librería-matplotlib)**
+21. **[Librería itertools](#librería-itertools)**
+22. **[Librería Turtle](#librería-turtle)**
+23. **[Librería Tkinter](#librería-tkinter)**
+24. **[Librería Pygame](#librería-pygame)**
+25. **[Expresiones regulares](#expresiones-regulares)**
+26. **[Depuración de código](#depuración-de-código)**
+27. **[Trucos y consejos](#trucos-y-consejos)**
 
 ## Introducción a Python
 ---
@@ -1028,6 +1029,162 @@ False
 6
 ~~~~
 
+## Conjuntos
+---
+### Conjuntos
+Los conjuntos son utilizados en *álgebra de conjuntos* para hacer operaciones sobre grupos de valores, además de ser utilizados en muchos ámbitos del cálculo. Representan un objeto capaz de almacenar elementos únicos, que además están indexados, por lo que son de gran utilidad para buscar elementos.
+
+Se construyen poniendo los elementos entre llaves *{ }* o el comando *set( )* separados por comas.
+
+Se caracterizan por:
+- No tienen orden.
+- Pueden contener elementos de distintos tipos, siempre y cuando sean *hasheables*.
+- Son mutables.
+- Se garantiza que todos sus elementos son únicos, los elementos repetidos se reducen a uno solo.
+
+~~~~ python
+# conjunto vacío
+>>> type(set())
+<class 'set'>
+# conjunto con elementos repetidos
+>>> {0, 0, 1, 1, 1, 2}
+{0, 1, 2}
+# conjunto con elementos diferentes
+>>> {1, 3.5, 'X'}
+{'X', 1, 3.5} # el orden de salida puede variar en cada ejecución
+~~~~
+
+### Operaciones con conjuntos
+~~~~ python
+>>> A = set(range(4))
+{0, 1, 2, 3}
+~~~~
+- *s.add(e)* : Añade un elemento *e* al conjunto *s*. No se garantiza ningún orden.
+~~~~ python
+>>> A.add(4)
+{0, 1, 2, 3, 4}
+~~~~
+- *s.discard(e)* : Intenta eliminar un elemento *e* del conjunto, exista o no.
+- *s.remove(e)* : Intenta eliminar un elemento *e* del conjunto *s*. Si no existe eleva un error.
+~~~~ python
+>>> A.discard(3)
+{0, 1, 2}
+>>> A.discard(5)
+{0, 1, 2}
+>>> A.remove(5)
+KeyError: 5
+~~~~
+- *s.pop()* : Devuelve y elimina un elemento arbitrario. Devuelve un error si está vacío.
+~~~~ python
+>>> A.pop()
+2
+>>> A
+{0, 1, 3}
+>>> set().pop()
+KeyError: 'pop from an empty set'
+~~~~
+- *s.clear()* :	Elimina toda la información del conjunto	*s*.
+~~~~ python
+>>> A.clear()
+set()
+~~~~
+- *s.copy()* : Devuelve una copia del conjunto *s* ajena a los cambios.
+~~~~ python
+>>> A_2 = A
+{0, 1, 2, 3}
+>>> A.clear()
+set()
+>>> A_2
+set()
+
+>>> A_2 = A.copy()
+{0, 1, 2, 3}
+>>> A.clear()
+set()
+>>> A_2
+{0, 1, 2, 3}
+~~~~
+
+### Operaciones entre conjuntos
+~~~~ python
+>>> A = {'Ana', 'Marcos', 'Carlos', 'Mario'}
+>>> B = {'Ana', 'Pedro', 'Carlos', 'Antonio'}
+>>> C = {'Ana', 'Antonio', 'Marcos', 'Pepe'}
+~~~~
+- *s1.union(s2)* : Devuelve un conjunto con todos los elementos de ambos conjuntos.
+- *s1.update(s2)* :	Aplica el resultado de *union* al conjunto *s1*.
+~~~~ python
+>>> A.union(B)
+{'Pedro', 'Carlos', 'Antonio', 'Mario', 'Ana', 'Marcos'}
+~~~~
+- *s1.difference(s2)* :	Devuelve un conjunto quitando los elementos del conjunto *s2* al conjunto *s1*.
+- *s1.difference_update(s2)* : Aplica el resultado de *difference* al conjunto *s1*.
+~~~~ python
+>>> A.difference(B)
+{'Marcos', 'Mario'}
+~~~~
+- *s1.intersection(s2)* : Devuelve un conjunto con los elementos que están en *s1* y *s2*.
+- *s1.intersection_update(s2)* : Aplica el resultado de *intersection* al conjunto *s1*.
+~~~~ python
+>>> A.intersection(B)
+{'Ana', 'Carlos'}
+~~~~
+- *s1.symmetric_difference(s2)* : Devuelve un conjunto con los elementos únicos de los conjuntos *s1* y *s2*.
+- *s1.symmetric_difference_update(s2)* : Aplica el resultado de *symmetric_difference* al conjunto *s1*.
+~~~~ python
+>>> A.symmetric_difference(B)
+{'Pedro', 'Antonio', 'Mario', 'Marcos'}
+~~~~
+- *s1.isdisjoint(s2)* : Devuelve *\<True>* si la intersección de los conjuntos sale vacía.
+~~~~ python
+>>> A.isdisjoint(B)
+False
+>>> A.isdisjoint({'Pepe'})
+True
+~~~~
+- *s1.issubset(s2)* : Devuelve *\<True>* si el conjunto *s1* es subconjunto del conjunto *s2*.
+~~~~ python
+>>> {'Ana', 'Mario'}.issubset(A)
+True
+~~~~
+- s1.issuperset(s2)* : Devuelve *\<True>* si el conjunto *s2* es subconjunto del conjunto *s1*.
+~~~~ python
+>>> A.issuperset({'Ana', 'Mario'})
+True
+~~~~
+
+> 💡 Tambien se pueden emnplear símbolos entre conjuntos que funcionarán igual que los comandos.
+~~~~ python
+>>> A | B | C          # igual que A.union(B).union(C)
+{'Ana', 'Antonio', 'Carlos', 'Marcos', 'Pepe', 'Pedro', 'Mario'}
+>>> A & B & C          # igual que A.intersection(B).intersection(C)
+{'Ana'}
+>>> A - B - C          # igual que A.difference(B).difference(C)
+{'Mario'}
+>>> A ^ B ^ C          # igual que A.symmetric_difference(B).symmetric_difference(C)
+{'Mario', 'Pepe', 'Ana', 'Pedro'}
+>>> {1, 3} < {1, 2, 3} # igual que {1, 3}.issubset({1, 2, 3})
+True
+>>> {1, 2, 3} > {1, 3} # igual que {1, 2, 3}.issuperset({1, 3})
+True
+~~~~
+
+### Frozenset
+Los conjuntos son mutables en Python, sin embargo, existe un tipo similar que son los *frozenset* (conjuntos congelados).
+
+La diferencia principal con respecto a los conjuntos es que son **inmutables** por lo que no se pueden añadir ni eliminar elementos una vez creados, pero sus características son similares:
+- Contienen elementos únicos.
+- Los elementos no se pueden alterar una vez inicializados.
+- Sus elementos no están ordenados.
+- Ocupan menos espacio que los conjuntos.
+
+~~~~ python
+>>> fs = frozenset(range(5))
+frozenset({0, 1, 2, 3, 4})
+>>> fs.add(6)
+AttributeError: 'frozenset' object has no attribute 'add'
+~~~~
+
 ## Diccionarios
 ---
 ### Diccionarios
@@ -1043,26 +1200,26 @@ Se caracterizan por:
 
 ~~~~ python
 # Diccionario vacío
-type({})
+>>> type({})
 <class 'dict'>
 # Diccionario con elementos de distintos tipos
-{'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+>>> {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 # Diccionarios anidados
-{'nombre_completo':{'nombre': 'Javier', 'Apellidos': 'González Carreiro'}}
+>>> {'nombre_completo':{'nombre': 'Javier', 'Apellidos': 'González Carreiro'}}
 ~~~~
 
 #### Acceso a los elementos de un diccionario
 ~~~~ python
 >>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 ~~~~
-- *d[clave]* devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve un error.
+- *d[clave]* : Devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve un error.
 ~~~~ python
 >>> a['nombre']
 'Javier'
 >>> a['despacho'] = 210
 {'nombre':'Javier', 'despacho': 210, 'email':'jgc4297@gmail.com'}
 ~~~~
-- *d.get(clave, valor)* devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve valor, y si no se especifica un valor por defecto devuelve *None*.
+- *d.get(clave, valor)*  : Devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve valor, y si no se especifica un valor por defecto devuelve *None*.
 ~~~~ python
 >>> a.get('email')
 'jgc4297@gmail.com'
