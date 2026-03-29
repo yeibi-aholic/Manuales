@@ -1153,7 +1153,7 @@ True
 True
 ~~~~
 
-> 💡 Tambien se pueden emnplear símbolos entre conjuntos que funcionarán igual que los comandos.
+> 💡 También se pueden emnplear símbolos entre conjuntos que funcionarán igual que los comandos.
 ~~~~ python
 >>> A | B | C          # igual que A.union(B).union(C)
 {'Ana', 'Antonio', 'Carlos', 'Marcos', 'Pepe', 'Pedro', 'Mario'}
