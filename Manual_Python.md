@@ -2211,7 +2211,7 @@ En la definición de una clase suele haber un método llamado *\_\_init__* que s
 ~~~~ python
 >>> class Tarjeta:
 ...     def __init__(self, id, cantidad = 0):    # Inicializador
-            self.id = id                         # Creación del atributo id  
+...         self.id = id                         # Creación del atributo id  
 ...         self.saldo = cantidad                # Creación del atributo saldo
 ...         return
 ...     def mostrar_saldo(self):
