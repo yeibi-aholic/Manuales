@@ -1177,7 +1177,7 @@ La diferencia principal con respecto a los conjuntos es que son **inmutables** p
 ~~~~ python
 >>> fs = frozenset(range(5))
 frozenset({0, 1, 2, 3, 4})
->>> fs.add(6)
+>>> fs.add(5)
 AttributeError: 'frozenset' object has no attribute 'add'
 ~~~~
 
