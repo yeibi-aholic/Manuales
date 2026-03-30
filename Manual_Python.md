@@ -269,8 +269,6 @@ También se pueden utilizar índices negativos para recorrer la cadena del final
 >>> 'Python'[-1]
 'n'
 >>> 'Python'[6]
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
 IndexError: string index out of range
 ~~~~
 
@@ -782,8 +780,6 @@ Se utilizan los mismos operadores de acceso que para cadenas de caracteres.
 >>> a[5]
 'n'
 >>> a[6]
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
 IndexError: list index out of range
 >>> a[-1]
 'n'
@@ -1472,8 +1468,6 @@ Tanto los parámetros como las variables del ámbito local de una función sólo
 >>> bienvenida('Yeibi')
 ¡Bienvenido a Python Yeibi!
 >>> lenguaje
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
 NameError: name 'lenguaje' is not defined
 ~~~~
 
@@ -1931,8 +1925,6 @@ Cuando se termina de trabajar con un fichero conviene cerrarlo, sobre todo si se
 ¡Hasta pronto!
 >>> f.close()  # Cierre del fichero
 >>> print(f.read())  # Produce un error
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
 ValueError: I/O operation on closed file.
 ~~~~
 
@@ -1954,8 +1946,6 @@ Esta estructura abre el fichero con la ruta *ruta* en el modo *modo* (*'w'* para
 ... 
 Hola de nuevo
 >>> print(f.read())  # Produce un error al estar el fichero cerrado
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
 ValueError: I/O operation on closed file.
 ~~~~
 
@@ -2014,8 +2004,6 @@ Python utiliza un objeto especial llamado **excepción** para controlar cualquie
 Cuando ocurre un error durante la ejecución de un programa, Python crea una excepción. Si no se controla esta excepción la ejecución del programa se detiene y se muestra el error (*traceback*).
 ~~~~ python
 >>> print(1 / 0)  # Error al intentar dividir por 0.
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
 ZeroDivisionError: division by zero
 ~~~~
 
@@ -5293,8 +5281,6 @@ Bruce Wayne en realidad es Batman, y su enemigo es Joker
 > A, 1, X
 > B, 2, Y
 > C, 3, Z
-> Traceback (most recent call last):
->   File "<stdin>", line 1, in <module>
 > ValueError: zip() argument 2 is longer than argument 1
 > ~~~~
 
