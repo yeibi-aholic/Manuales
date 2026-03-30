@@ -2123,7 +2123,7 @@ PYTHON
 ~~~~
 > **Ejemplo.** Las listas tienen un método *append* que convierte añade un elemento al final de la lista. Para aplicar este método a la lista *l* se utiliza la instrucción *l.append(<elemento>)*.
 ~~~~ python
->>> l =  [1, 2, 3]     
+>>> l = [1, 2, 3] 
 >>> l.append(4)         # Llamada al método append del objeto l (lista)
 >>> print(l)
 [1, 2, 3, 4]
