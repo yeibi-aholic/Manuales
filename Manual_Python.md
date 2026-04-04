@@ -2125,7 +2125,6 @@ PYTHON
 ~~~~ python
 >>> l = [1, 2, 3] 
 >>> l.append(4)         # Llamada al método append del objeto l (lista)
->>> print(l)
 [1, 2, 3, 4]
 ~~~~
 
@@ -2144,7 +2143,8 @@ Los atributos se definen igual que las variables mientras que los métodos se de
 > **Ejemplo.** El siguiente código define la clase *Saludo* sin atributos ni métodos. La palabra reservada *pass* indica que la clase está vacía.
 ~~~~ python
 >>> class Saludo:
-...     pass        # Clase vacía sin atributos ni métodos.
+...     pass        # Clase vacía sin atributos ni métodos
+...
 >>> print(Saludo)
 <class '__main__.Saludo'>
 ~~~~
@@ -2180,9 +2180,9 @@ Para crear un objeto de una determinada clase se utiliza el nombre de la clase s
 Cuando se crea un objeto de una clase se dice que el objeto es una instancia de la clase.
 ~~~~ python
 >>> class Saludo:
-...     pass        # Clase vacía sin atributos ni métodos.
->>> s = Saludo()    # Creación del objeto mediante instanciación de la clase.
->>> s
+...     pass        # Clase vacía sin atributos ni métodos
+...
+>>> s = Saludo()    # Creación del objeto mediante instanciación de la clase
 <__main__.Saludo object at 0x7fcfc7756be0>      # Dirección de memoria donde se crea el objeto
 >>> type(s)
 <class '__main__.Saludo'>     # Clase del objeto
@@ -2195,6 +2195,7 @@ Se definen como las funciones con la palabra reservada *def*. La única diferenc
 ~~~~ python
 >>> class Saludo:
 ...     mensaje = "Bienvenido "            # Definición de un atributo
+...
 ...     def saludar(self, nombre):         # Definición de un método   
 ...         print(self.mensaje + nombre)
 ...         return
@@ -2214,9 +2215,11 @@ En la definición de una clase suele haber un método llamado *\_\_init__* que s
 ...         self.id = id                         # Creación del atributo id  
 ...         self.saldo = cantidad                # Creación del atributo saldo
 ...         return
+...
 ...     def mostrar_saldo(self):
 ...         print('El saldo es', self.saldo, '€')
 ...         return
+...
 >>> t = Tarjeta('1111111111', 1000)     # Creación de un objeto con argumentos             
 >>> t.mostrar_saldo()
 El saldo es 1000 €
@@ -2228,8 +2231,10 @@ Los atributos que se crean dentro del método *\_\_init__* se conocen como atrib
 ~~~~ python
 >>> class Circulo:
 ...     pi = 3.14159                     # Atributo de clase
+...
 ...     def __init__(self, radio):
 ...         self.radio = radio           # Atributo de instancia
+...
 ...     def area(self):
 ...         return Circulo.pi * self.radio ** 2
 ... 
@@ -2253,8 +2258,10 @@ Otro método especial es el método llamado *\_\_str__* que se invoca cada vez q
 ...         self.numero = numero
 ...         self.saldo = cantidad
 ...         return
+...
 ...     def __str__(self):
 ...         return 'Tarjeta número {} con saldo {:.2f}€'.format(self.numero, str(self.saldo))
+...
 >>> t = Tarjeta('0123456789', 1000) 
 >>> print(t)
 Tarjeta número 0123456789 con saldo 1000.00€
@@ -2272,6 +2279,7 @@ Para crear un clase a partir de otra existente se utiliza la misma sintaxis que 
 ...         self.id = id
 ...         self.saldo = cantidad
 ...         return
+...
 ...     def mostrar_saldo(self):       # Método de la clase Tarjeta que hereda la clase Tarjeta_descuento
 ...         print('El saldo es ', self.saldo, '€.')
 ...         return
@@ -2282,6 +2290,7 @@ Para crear un clase a partir de otra existente se utiliza la misma sintaxis que 
 ...         self.descuento = descuento
 ...         self.saldo = cantidad
 ...         return
+...
 ...     def mostrar_descuento(self):   # Método exclusivo de la clase Tarjeta_descuento
 ...         print('Descuento de ', self.descuento, '% en los pagos.')
 ...         return
@@ -2330,20 +2339,25 @@ De este modo, aunque un objeto de la clase hija y otro de la clase madre pueden 
 ...         self.id = id
 ...         self.saldo = cantidad
 ...         return
+...
 ...     def mostrar_saldo(self):
 ...         print('El saldo es {:.2f}€.'.format(self.saldo))
 ...         return
+...
 ...     def pagar(self, cantidad):
 ...         self.saldo -= cantidad
 ...         return
+...
 >>> class Tarjeta_Oro(Tarjeta):
 ...     def __init__(self, id, descuento, cantidad = 0):
 ...         self.id = id
 ...         self.descuento = descuento
 ...         self.saldo = cantidad
 ...         return
+...
 ...     def pagar(self, cantidad):
 ...         self.saldo -= cantidad * (1 - self.descuento / 1...00)
+...
 >>> t1 = Tarjeta('1111111111', 1000)
 >>> t2 = Tarjeta_Oro('2222222222', 1, 1000)
 >>> t1.pagar(100)
@@ -2795,16 +2809,13 @@ Las dimensiones de un array también se conocen como **ejes**.
 ~~~~ python
 >>> # Array de una dimensión
 >>> a1 = np.array([1, 2, 3])
->>> print(a1)
 [1 2 3]
 >>> # Array de dos dimensiones
 >>> a2 = np.array([[1, 2, 3], [4, 5, 6]])
->>> print(a2)
 [[1 2 3]
  [4 5 6]]
 >>> # Array de tres dimensiones
 >>> a3 = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
->>> print(a3)
 [[[ 1  2  3]
   [ 4  5  6]]
 
@@ -2880,7 +2891,7 @@ Los operadores mamemáticos *+*, *-*, *\**, */*, *%*, *\*\** se utilizan para la
 ~~~~ python
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[1, 1, 1], [2, 2, 2]])
->>> print(a + b )
+>>> print(a + b)
 [[2 3 4]
  [6 7 8]]
 >>> print(a / b)
