@@ -2356,7 +2356,7 @@ De este modo, aunque un objeto de la clase hija y otro de la clase madre pueden 
 ...         return
 ...
 ...     def pagar(self, cantidad):
-...         self.saldo -= cantidad * (1 - self.descuento / 1...00)
+...         self.saldo -= cantidad * (1 - self.descuento / 100)
 ...
 >>> t1 = Tarjeta('1111111111', 1000)
 >>> t2 = Tarjeta_Oro('2222222222', 1, 1000)
