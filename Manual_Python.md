@@ -2128,7 +2128,23 @@ PYTHON
 [1, 2, 3, 4]
 ~~~~
 
-### Clases (*class*)
+### Principios de la programación orientada a objetos
+La programación orientada a objetos se basa en los siguientes principios:
+
+- **Encapsulación** : Agrupar datos (atributos) y procedimientos (métodos) en unidades lógicas (objetos) y evitar maninupar los atributos accediendo directamente a ellos, usando, en su lugar, métodos para acceder a ellos.
+- **Abstracción** : Ocultar al usuario de la clase los detalles de implementación de los métodos. Es decir, el usuario necesita saber *qué* hace un método y con qué parámetros tiene que invocarlo (*interfaz*), pero no necesita saber *cómo* lo hace.
+- **Herencia** : Evitar la duplicación de código en clases con comportamientos similares, definiendo los métodos comunes en una clase madre y los métodos particulares en clases hijas.
+- **Polimorfismo** : Redefinir los métodos de la clase madre en las clases hijas cuando se requiera un comportamiento distinto. Así, un mismo método puede realizar operaciones distintas dependiendo del objeto sobre el que se aplique.
+
+Resolver un problema siguiendo el paradigma de la programación orientada a objetos requiere un cambio de mentalidad con respecto a como se resuelve utilizando el paradigma de la programación procedimental.
+
+La programación orientada a objetos es más un proceso de modelado, donde se identifican las entidades que intervienen en el problema y su comportamiento, y se definen clases que modelizan esas entidades. Por ejemplo, las entidades que intervienen en el pago con una tarjeta de crédito serían la tarjeta, el terminal de venta, la cuenta corriente vinculada a la tarjeta, el banco, etc. Cada una de ellas daría lugar a una clase.
+
+Después se crean objetos con los datos concretos del problema y se hace que los objetos interactúen entre sí, a través de sus métodos, para resolver el problema. Cada objeto es responsable de una subtarea y colaboran entre ellos para resolver la tarea principal. Por ejemplo, la terminal de venta accede a los datos de la tarjeta y da la orden al banco para que haga un cargo en la cuenta vinculada a la tarjeta.
+
+De esta forma se pueden abordar problemas muy complejos descomponiéndolos en pequeñas tareas que son más fáciles de resolver que el problema principal (*¡divide y vencerás!*).
+
+### Clases
 Los objetos con los mismos atributos y métodos se agrupan **clases**. Las clases definen los atributos y los métodos, y por tanto, la semántica o comportamiento que tienen los objetos que pertenecen a esa clase. Se puede pensar en una clase como en un *molde* a partir del cuál se pueden crear objetos.
 
 Para declarar una clase se utiliza la palabra clave *class* seguida del nombre de la clase y dos puntos, de acuerdo a la siguiente sintaxis:
@@ -2225,7 +2241,7 @@ En la definición de una clase suele haber un método llamado *\_\_init__* que s
 El saldo es 1000 €
 ~~~~
 
-#### Atributos de instancia vs atributos de clase
+#### Tipos de atributos
 Los atributos que se crean dentro del método *\_\_init__* se conocen como atributos del objeto, mientras que los que se crean fuera de él se conocen como atributos de la clase. Mientras que los primeros son propios de cada objeto y por tanto pueden tomar valores distintos, los valores de los atributos de la clase son los mismos para cualquier objeto de la clase.
 > ⚠️ En general, no deben usarse atributos de clase, excepto para almacenar valores constantes.
 ~~~~ python
@@ -2249,6 +2265,28 @@ Los atributos que se crean dentro del método *\_\_init__* se conocen como atrib
 >>> print(c2.pi)
 3.14159
 ~~~~
+
+Entre los atributos de instancia pueden crearse atributos "protegidos" o "privados".
+- *Atributos protegidos* : Se declaran con un guión bajo (*_atributo*) y se utilizan para indicar que no deben ser accedidos directamente desde fuera de la clase, aunque no se impide su acceso.
+- *Atributos privados* : Se declaran con un doble guión bajo (*__atributo*) y se utilizan para indicar que no deben ser accedidos directamente desde fuera de la clase, e incluso se impide su acceso.
+
+~~~~ python
+>>> class Usuario:
+...     def __init__(self, usuario, password):
+...         self._usuario = usuario     # Atributo protegido
+...         self.__password = password  # Atributo privado
+...
+>>> u = Usuario('yeibi', '1234')
+>>> print(u._usuario)       # Se puede acceder al atributo protegido
+yeibi
+>>> print(u.__password)     # No se puede acceder al atributo privado
+AttributeError: 'Usuario' object has no attribute '__password'
+~~~~
+> :warning: Aunque no se puede acceder directamente a un atributo privado, sí se puede acceder a él con la sintaxis *objeto._Clase__atributo*.
+> ~~~~ python
+> >>> print(u._Usuario__password)
+> 1234
+> ~~~~
 
 #### El método *\_\_str__*
 Otro método especial es el método llamado *\_\_str__* que se invoca cada vez que se llama a las funciones *print* o *str*. Devuelve siempre una cadena que se suele utilizar para dar una descripción informal del objeto. Si no se define en la clase, cada vez que se llama a estas funciones con un objeto de la clase, se muestra por defecto la posición de memoria del objeto.
@@ -2368,21 +2406,55 @@ El saldo es 900.00€.
 El saldo es 901.00€.
 ~~~~
 
-### Principios de la programación orientada a objetos
-La programación orientada a objetos se basa en los siguientes principios:
+### Decorador *@property*
+Este *decorador* instalado por defecto en Python, permite definir métodos que se comportan como atributos o propiedad, de manera que para acceder a ellos no hace falta escribir los paréntesis de la llamada al método, sino que basta con escribir su nombre como si fuese un atributo.
 
-- **Encapsulación** : Agrupar datos (atributos) y procedimientos (métodos) en unidades lógicas (objetos) y evitar maninupar los atributos accediendo directamente a ellos, usando, en su lugar, métodos para acceder a ellos.
-- **Abstracción** : Ocultar al usuario de la clase los detalles de implementación de los métodos. Es decir, el usuario necesita saber *qué* hace un método y con qué parámetros tiene que invocarlo (*interfaz*), pero no necesita saber *cómo* lo hace.
-- **Herencia** : Evitar la duplicación de código en clases con comportamientos similares, definiendo los métodos comunes en una clase madre y los métodos particulares en clases hijas.
-- **Polimorfismo** : Redefinir los métodos de la clase madre en las clases hijas cuando se requiera un comportamiento distinto. Así, un mismo método puede realizar operaciones distintas dependiendo del objeto sobre el que se aplique.
+~~~~ python
+>>> class Planeta:
+...     def __init__(self, nombre, gravedad):
+...         self.nombre = nombre
+...         self.__gravedad = gravedad
+...
+...     @property
+...     def gravedad(self):
+...         return self.__gravedad
+...
+>>> Tierra = Planeta('Tierra', 9.80665)
+>>> Tierra.gravedad
+9.80665
+>>> Tiera.gravedad() # Es un atributo, no un método
+TypeError: 'float' object is not callable
+~~~~
 
-Resolver un problema siguiendo el paradigma de la programación orientada a objetos requiere un cambio de mentalidad con respecto a como se resuelve utilizando el paradigma de la programación procedimental.
+Esta característica es muy útil para definir métodos que calculan un valor a partir de otros atributos, para acceder a él como si fuese un atributo más. También sirve para proteger un atributo de la clase, de manera que no se pueda modificar directamente, sino a través de un método específico para ello.
 
-La programación orientada a objetos es más un proceso de modelado, donde se identifican las entidades que intervienen en el problema y su comportamiento, y se definen clases que modelizan esas entidades. Por ejemplo, las entidades que intervienen en el pago con una tarjeta de crédito serían la tarjeta, el terminal de venta, la cuenta corriente vinculada a la tarjeta, el banco, etc. Cada una de ellas daría lugar a una clase.
+#### Decorador *@setter*
+Este decorador se utiliza junto con el decorador *@property* para definir un método que se comporta como un atributo de escritura, de manera que para modificar su valor no hace falta escribir los paréntesis de la llamada al método, sino que basta con escribir su nombre como si fuese un atributo.
 
-Después se crean objetos con los datos concretos del problema y se hace que los objetos interactúen entre sí, a través de sus métodos, para resolver el problema. Cada objeto es responsable de una subtarea y colaboran entre ellos para resolver la tarea principal. Por ejemplo, la terminal de venta accede a los datos de la tarjeta y da la orden al banco para que haga un cargo en la cuenta vinculada a la tarjeta.
-
-De esta forma se pueden abordar problemas muy complejos descomponiéndolos en pequeñas tareas que son más fáciles de resolver que el problema principal (*¡divide y vencerás!*).
+~~~~ python
+>>> class Planeta:
+...     def __init__(self, nombre, gravedad):
+...         self.nombre = nombre
+...         self.__gravedad = gravedad
+...
+...     @property
+...     def gravedad(self):
+...         return self.__gravedad
+...
+...     @gravedad.setter
+...     def gravedad(self, valor):
+...         if valor <= 0:
+...             print('¡La gravedad no puede ser negativa o cero!')
+...         else:
+...             self.__gravedad = valor
+...
+>>> Tierra = Planeta('Tierra', 9.80665)
+>>> Tierra.gravedad = 0
+¡La gravedad no puede ser negativa o cero!
+>>> Tierra.gravedad = 10
+>>> Tierra.gravedad
+10
+~~~~
 
 ### Documentación de clases
 Al igual que las funciones, se puede definir una descripción de ayuda.
