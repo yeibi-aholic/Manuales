@@ -2439,7 +2439,7 @@ Este decorador se utiliza junto con el decorador *@property* para definir un mé
 ...
 ...     @property
 ...     def gravedad(self):
-...         return self.__gravedad
+...         return f"g = {self.__gravedad} m/s^2"
 ...
 ...     @gravedad.setter
 ...     def gravedad(self, valor):
@@ -2447,13 +2447,15 @@ Este decorador se utiliza junto con el decorador *@property* para definir un mé
 ...             print('¡La gravedad no puede ser negativa o cero!')
 ...         else:
 ...             self.__gravedad = valor
+...             print('Gravedad actualizada a', valor)
 ...
 >>> Tierra = Planeta('Tierra', 9.80665)
 >>> Tierra.gravedad = 0
 ¡La gravedad no puede ser negativa o cero!
 >>> Tierra.gravedad = 10
+Gravedad actualizada a 10
 >>> Tierra.gravedad
-10
+g = 10 m/s^2
 ~~~~
 
 ### Documentación de clases
