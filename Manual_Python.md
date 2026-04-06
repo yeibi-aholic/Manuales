@@ -2185,7 +2185,7 @@ Los atributos se definen igual que las variables mientras que los métodos se de
 >>> print(Saludo)
 <class '__main__.Saludo'>
 ~~~~
- > :warning: Es una buena práctica comenzar el nombre de una clase con mayúsculas.
+ > :bulb: Es una buena práctica comenzar el nombre de una clase con mayúsculas.
 
 #### Clases primitivas
 En Python existen clases predefinidas para los tipos de datos primitivos:
