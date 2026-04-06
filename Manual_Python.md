@@ -464,6 +464,32 @@ Los marcadores de posición, a parte de indicar la posición de los valores de r
 'Pi vale   3.1416'
 ~~~~
 
+#### Cadenas f
+Otra forma de formatear cadenas es mediante las cadenas f, que se introducen con una f antes de las comillas y permiten incluir expresiones dentro de las llaves *{}* que se evaluarán e incluirán en la cadena resultante.
+~~~~ python
+>>> name = 'Yeibi'
+>>> age = 20
+>>> f"Me llamo {name} y tengo {age} años"
+Me llamo Yeibi y tengo 20 años
+>>> f"El valor de pi es {3.14159:.2f}"
+El valor de pi es 3.14
+~~~~
+> :memo: Las cadenas f también permiten incluir expresiones o llamadas a funciones dentro de las llaves.
+> ~~~~ python
+> >>> x = 10
+> >>> y = 5
+> >>> f"{x} + {y} = {x + y}"
+> 10 + 5 = 15
+> ~~~~
+
+> :bulb: Se puede imprimir el nombre del identificador junto con su valor.
+> ~~~~ python
+> >>> x = 10
+> >>> y = 20
+> >>> f"{x =}, {y =}"
+> x = 10, y = 20
+> ~~~~
+
 ### Datos lógicos o booleanos (*bool*)
 Contiene únicamente dos elementos *\<True>* y *\<False>* que representan los valores lógicos verdadero y falso respectivamente.
 
@@ -497,18 +523,18 @@ True
 ### Conversión de datos primitivos simples
 Las siguientes funciones convierten un dato de un tipo en otro, siempre y cuando la conversión sea posible.
 
-- int() convierte a entero.
+- *int()* : Convierte a entero.
 > int('12') => 12  
 > int(True) => 1  
 > int('c') => Error
-- float() convierte a real.
+- *float()* : Convierte a real.
 > float('3.14') => 3.14  
 > float(True) => 1.0  
 > float('III') => Error
-- str() convierte a cadena.
+- *str()* : Convierte a cadena.
 > str(3.14) => '3.14'  
 > str(True) => 'True'
-- bool() convierte a lógico.
+- *bool()* : Convierte a lógico.
 > bool('0') => False  
 > bool('3.14') => True  
 > bool('') => False  
@@ -647,6 +673,31 @@ Menor
 ...
 Activo
 ~~~~
+
+### Condicionales (*match*)
+De forma similar a la instrucción *switch* de otros lenguajes, permite evaluar el valor de una variable y ejecutar un bloque de código asociado a dicho valor de forma similar a una secuencia de *if-elif-else*.
+~~~~ python
+match variable:
+    case valor1:
+        caso1
+    case valor2:
+        caso2
+    ... 
+    case _:
+        caso por defecto
+~~~~
+> :bulb: Se pueden usar patrones más complejos que simplemente un valor, como por ejemplo patrones de secuencia, patrones de mapeo o patrones \<or> mediante *|*.
+> ~~~~ python
+> match variable:
+>   case [x, y]:                        # Patrón de secuencia
+>       print(f"Es una lista con dos elementos: {x} y {y}")
+>   case {"name": name, "age": age}:    # Patrón de mapeo
+>       print(f"Es un diccionario con nombre {name} y edad {age}")
+>   case 0 | 1:                         # Patrón or
+>       print("Es un número binario")
+>   case _:                             # Patrón por defecto
+>       print("No coincide con ningún patrón")
+> ~~~~
 
 
 
@@ -5766,14 +5817,11 @@ Podemos separar también las *keys* más repetidas.
 ~~~~
 
 ### Fusionar diccionarios
-Si tenemos varios diccionarios que queremos juntar tan solo hay que declar un nuevo diccionario poniendo <**> detrás de cada uno de ellos.
+Si tenemos varios diccionarios que queremos juntar tan solo hay que declar un nuevo diccionario poniendo <**> detrás de cada uno de ellos o con *|* (OR bit a bit) entre ellos.
 ~~~~ python
 >>> d1 = {'nombre': 'Javier', 'edad': 26}
 >>> d2 = {'nombre': 'Javier', 'oficio': 'programador'}
->>> d3 = {'nombre': 'Nacho', 'edad': 33}
->>>
->>> d4 = {**d1, **d2}
->>> d4
+>>> d3 = {**d1, **d2}           # d1 | d2
 {'nombre': 'Javier', 'edad': 26, 'oficio': 'programador'}
 ~~~~
 
@@ -5782,11 +5830,10 @@ Pero si incluimos otro diccionario con una misma *key* en común pero diferente 
 >>> d1 = {'nombre': 'Javier', 'edad': 26}
 >>> d2 = {'nombre': 'Javier', 'oficio': 'programador'}
 >>> d3 = {'nombre': 'Nacho', 'edad': 33}
->>>
->>> d4 = {**d1, **d2, **d3}
->>> d4
+>>> d4 = {**d1, **d2, **d3}     # d1 | d2 | d3
 {'nombre': 'Nacho', 'edad': 33, 'oficio': 'programador'}
 ~~~~
+> :warning: Si se quiere evitar que se sobrescriban los valores de las *keys* comunes, solo hay que incluir el diccionario con los valores a conservar al final de la declaración.
 
 ### Rellenar con ceros
 Si quisieramos rellenar con ceros un texto hasta alcanzar una longitud *n* podemos usar el comando *.zfill(n)*.
@@ -5801,3 +5848,23 @@ Si quisieramos rellenar con ceros un texto hasta alcanzar una longitud *n* podem
 > >>> txt.zfill(3)
 > 12345
 > ~~~~
+
+### Inicializar diccionario de contadores
+La forma habitual de hacer recuento de palabras/valores de un texto es: 
+1. Comprueba si la clave existe en el diccionario.
+2. Si es así, incrementa el valor en 1.
+3. Si no es así, añádelo y establece el valor en 1.
+~~~~ python
+>>> for palabra in texto:
+...     if palabra in contador:
+...         contador[palabra] += 1
+...     else:
+...         contador[palabra] = 1
+~~~~
+
+Una forma más concisa de hacerlo es utilizar el método *setdefault()* en tu objeto diccionario.
+~~~~ python
+>>> for palabra in texto:
+...     contador.setdefault(palabra, 0)
+...     contador[palabra] += 1
+~~~~
