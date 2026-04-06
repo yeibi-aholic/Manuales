@@ -30,6 +30,8 @@
 26. **[Depuración de código](#depuración-de-código)**
 27. **[Trucos y consejos](#trucos-y-consejos)**
 
+
+
 ## Introducción a Python
 ---
 ### ¿Qué es Python?
@@ -103,6 +105,8 @@ Hay distintos paquetes que permiten compilar a un ejecutable del sistema operati
 Hola Yeibi
 ~~~~
 
+
+
 ## Tipos de Datos Primitivos Simples
 ---
 ### Tipos de datos primitivos simples
@@ -152,7 +156,7 @@ Secuencia de dígitos (pueden incluir el - para negativos y el . para decimales)
 Realizan operaciones algebraicas para el cálculo entre dos operandos.
 
 |Operadores|Equivalencia|
-|:-:|:-|
+| :-: | :- |
 |+|Suma|
 |-|Resta|
 |*|Producto|
@@ -161,7 +165,7 @@ Realizan operaciones algebraicas para el cálculo entre dos operandos.
 |%|Resto de la disvisión|
 |**|Potencia|
 
-> ⚠️ Orden de prioridad de evaluación:  
+> :warning: Orden de prioridad de evaluación:  
 > Funciones predefinidas => Potencias => Productos y cocientes => Sumas y restas
 
 Se puede saltar el orden de evaluación utilizando paréntesis ( ).
@@ -179,13 +183,13 @@ Se puede saltar el orden de evaluación utilizando paréntesis ( ).
 >>> (2+3)**2
 25
 ~~~~
-> ⚠️ Para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
+> :warning: Para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
 
 #### Operadores de asignación
 Asignan a una variable un valor, pudiéndose mezclar con operadores aritméticos y bit a bit
 
 |Operador|Equivalencia|
-|:-:|:-|
+| :-: | :- |
 |=|Otorga valor a una variable|
 |+=| a = a + n|
 |-=| a = a - n|
@@ -204,7 +208,7 @@ Asignan a una variable un valor, pudiéndose mezclar con operadores aritméticos
 Realizan operaciones en los operandos bit a bit (en binario)
 
 |Operador|Equivalencia|
-|:-:|:-|
+| :-: | :- |
 |\||**OR** bit a bit|
 |^|**XOR** bit a bit|
 |&|**AND** bit a bit|
@@ -249,17 +253,17 @@ Secuencia de caracteres alfanuméricos que representan texto. Se escriben entre 
 Cada carácter tiene asociado un índice que permite acceder a él.
 
 |Cadena|P|y|t|h|o|n|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |Índice positivo|0|1|2|3|4|5|
 |Índice negativo|-6|-5|-4|-3|-2|-1|
 
 - *c[i]* devuelve el carácter de la cadena *c* con el índice *i*.
 
-> ⚠️ El índice del primer carácter de la cadena es *0*.
+> :exclamation: El índice del primer carácter de la cadena es *0*.
 
 También se pueden utilizar índices negativos para recorrer la cadena del final al principio.
 
-> ⚠️ El índice del último carácter de la cadena es *-1*.
+> :exclamation: El índice del último carácter de la cadena es *-1*.
 
 ~~~~ python
 >>> 'Python'[0]
@@ -337,7 +341,7 @@ False
 True
 ~~~~
 
-> ⚠️ Utilizan el orden establecido en el *[código ASCII](https://elcodigoascii.com.ar/)*.
+> :warning: Utilizan el orden establecido en el *[código ASCII](https://elcodigoascii.com.ar/)*.
 
 #### Funciones de cadenas
 - *len(c)* : Devuelve el número de caracteres de la cadena *c*.
@@ -473,7 +477,7 @@ False tiene asociado el valor *0* y *\<True>* tiene asociado el valor *1*.
 
 #### Tabla de verdad
 |x|y|not x|x and y|x or y|
-|:-:|:-:|:-:|:-:|:-:|
+| :-: | :-: | :-: | :-: | :-: |
 |False|False|True|False|False|
 |False|True|True|False|True|
 |True|False|False|False|True|
@@ -537,6 +541,8 @@ x = None
 del x
 ~~~~
 
+
+
 ## Entrada y Salida por Terminal
 ---
 ### Entrada por terminal (*input()*)
@@ -544,7 +550,7 @@ Para asignar a una variable un valor introducido por el usuario en la consola se
 
 - *input(mensaje)* : Muestra la cadena *mensaje* por la terminal y devuelve una cadena con la entrada del usuario.
 
-> ⚠️ El valor devuelto siempre es una cadena, incluso si el usuario introduce un dato numérico.
+> :memo: El valor devuelto siempre es una cadena, incluso si el usuario introduce un dato numérico.
 
 ~~~~ python
 >>> language = input('¿Cuál es tu lenguaje favorito? ')
@@ -598,6 +604,8 @@ Hola Yeibi!
 > (Confucio)
 > ~~~~
 
+
+
 ## Condicionales
 ---
 ### Condicionales (*if*)
@@ -615,7 +623,7 @@ Evalúa la expresión lógica *condición1* y ejecuta el primer bloque de códig
 
 Pueden aparecer varios bloques *elif* pero solo uno else al final.
 
-> ⚠️ Los bloques de código deben estar indentados por 4 espacios.
+> :warning: Los bloques de código deben estar indentados por 4 espacios.
 
 La instrucción condicional permite evaluar el estado del programa y tomar decisiones sobre qué código ejecutar en función del mismo.
 
@@ -640,6 +648,8 @@ Menor
 Activo
 ~~~~
 
+
+
 ## Bucles
 ---
 ### Bucles condicionales (*while*)
@@ -652,7 +662,7 @@ Repite la ejecución del bloque de código mientras la expresión lógica *condi
 
 Se puede interrumpir en cualquier momento la ejecución del bloque de código con la instrucción *break*.
 
-> ⚠️ El bloque de código debe estar indentado por 4 espacios.
+> :warning: El bloque de código debe estar indentado por 4 espacios.
 
 ~~~~ python
 >>> # Pregunta al usuario por un número hasta que introduce 0.
@@ -690,7 +700,7 @@ Repite la ejecución del bloque de código para cada elemento de la secuencia *s
 
 Se puede interrumpir en cualquier momento la ejecución del bloque de código con la instrucción *break* o saltar la ejecución para un determinado elemento de la secuencia con la instrucción *continue*.
 
-> ⚠️ El bloque de código debe estar indentado por 4 espacios.
+> :warning: El bloque de código debe estar indentado por 4 espacios.
 
 Se utiliza fundamentalmente para recorrer colecciones de objetos como cadenas, listas, tuplas o diccionarios.
 
@@ -727,6 +737,8 @@ n
 ...
 1, 2, 3, 4, 6, 7, 8, 
 ~~~~
+
+
 
 ## Listas
 ---
@@ -771,7 +783,7 @@ Se utilizan los mismos operadores de acceso que para cadenas de caracteres.
 
 - *l[i]* : Devuelve el elemento de la lista *l* con el índice *i*.
 
-> ⚠️ El índice del primer elemento de la lista es *0*.
+> :exclamation: El índice del primer elemento de la lista es *0*.
 
 ~~~~ python
 >>> a = ['P', 'y', 't', 'h', 'o', 'n']
@@ -959,6 +971,8 @@ Para solucionar el sub-problema de referencia de la copia debemos usar *l1 = cop
 [1, 2, 3, [4, 5]]
 ~~~~
 
+
+
 ## Tuplas
 ---
 ### Tuplas
@@ -1024,6 +1038,8 @@ False
 >>> b[1][2]
 6
 ~~~~
+
+
 
 ## Conjuntos
 ---
@@ -1181,6 +1197,8 @@ frozenset({0, 1, 2, 3, 4})
 AttributeError: 'frozenset' object has no attribute 'add'
 ~~~~
 
+
+
 ## Diccionarios
 ---
 ### Diccionarios
@@ -1335,6 +1353,8 @@ Existen dos formas de copiar diccionarios:
 {1:'A', 2:'B', 3:'C'}
 ~~~~
 
+
+
 ## Funciones
 ---
 ### Funciones (def)
@@ -1351,7 +1371,6 @@ def <nombre-funcion> (<parámetros>):
 ~~~~ python
 >>> def bienvenida():
 ...     print('¡Bienvenido a Python!')
-...     return
 ...
 >>> type(bienvenida)
 <class 'function'>
@@ -1367,7 +1386,6 @@ Los valores que se pasan a la función en una llamada o invocación concreta de 
 ~~~~ python
 >>> def bienvenida(nombre):
 ...     print('¡Bienvenido a Python', nombre + '!')
-...     return
 ...
 >>> bienvenida('Yeibi')
 ¡Bienvenido a Python Yeibi!
@@ -1382,7 +1400,6 @@ Los argumentos se pueden pasar de dos formas:
 ~~~~ python
 >>> def bienvenida(nombre, apellido):
 ...     print('¡Bienvenido a Python', nombre, apellido + '!')
-...     return
 ...
 >>> bienvenida('Javier', 'González')
 ¡Bienvenido a Python Javier González!
@@ -1410,7 +1427,6 @@ En la definición de una función se puede asignar a cada parámetro un argument
 ~~~~ python
 >>> def bienvenida(nombre, lenguaje = 'Python'):
 ...     print('¡Bienvenido a', lenguaje, nombre + '!')
-...     return
 ...
 >>> bienvenida('Yeibi')
 ¡Bienvenido a Python Yeibi!
@@ -1418,7 +1434,7 @@ En la definición de una función se puede asignar a cada parámetro un argument
 ¡Bienvenido a Java Yeibi!
 ~~~~
 
-> ⚠️ Los parámetros con un argumento por defecto deben indicarse después de los parámetros sin argumentos por defectos. De lo contrario se produce un error.
+> :warning: Los parámetros con un argumento por defecto deben indicarse después de los parámetros sin argumentos por defectos. De lo contrario se produce un error.
 
 ### Pasar un número indeterminado de argumentos
 Por último, es posible pasar un número variable de argumentos a un parámetro. Esto se puede hacer de dos formas:
@@ -1429,7 +1445,6 @@ Por último, es posible pasar un número variable de argumentos a un parámetro.
 ...     print('Hoy tenemos: ', end='')
 ...     for plato in platos:
 ...         print(plato, end=', ')
-...     return
 ...
 >>> menu('pasta', 'pizza', 'ensalada')
 Hoy tenemos: pasta, pizza, ensalada,
@@ -1441,7 +1456,6 @@ Hoy tenemos: pasta, pizza, ensalada,
 ...     print('Datos del contacto')
 ...     for clave, valor in info.items():
 ...         print(clave, ":", valor)
-...     return
 ...
 >>> contacto(Nombre = "Yeibi", Email = "jgc4297@gmail.com")
 Datos del contacto
@@ -1462,8 +1476,7 @@ Tanto los parámetros como las variables del ámbito local de una función sólo
 ~~~~ python
 >>> def bienvenida(nombre):
 ...     lenguaje = 'Python'
-...     print('¡Bienvenido a ', lenguaje, nombre + '!')
-...     return
+...     print('¡Bienvenido a', lenguaje, nombre + '!')
 ...
 >>> bienvenida('Yeibi')
 ¡Bienvenido a Python Yeibi!
@@ -1478,7 +1491,6 @@ Si en el ámbito local de una función existe una variable que también existe e
 >>> def bienvenida():
 ...     lenguaje = 'Python'
 ...     print('¡Bienvenido a', lenguaje + '!')
-...     return
 ...
 >>> bienvenida()
 ¡Bienvenido a Python!
@@ -1493,7 +1505,6 @@ En Python los argumentos se pasan a una función por asignación, es decir, se a
 >>> primer_curso = ['Matemáticas', 'Física']
 >>> def añade_asignatura(curso, asignatura):
 ...     curso.append(asignatura)
-...     return
 ...
 >>> añade_asignatura(primer_curso, 'Química')
 >>> print(primer_curso)
@@ -1506,7 +1517,6 @@ En Python las funciones son objetos como el resto de tipos de datos, de manera q
 ~~~~ python
 >>> def saludo(nombre):
 ...     print("Hola", nombre)
-...     return
 ... 
 >>> bienvenida = saludo
 >>> bienvenida("Yeibi")
@@ -1519,6 +1529,7 @@ Esto permite, por tanto, pasar funciones como argumentos en la llamada a una fun
 >>> def impuesto(porcentaje):
 ...     def aplicar(base):
 ...             return base * porcentaje / 100
+...
 ...     return aplicar
 ... 
 >>> iva = impuesto(21)
@@ -1592,7 +1603,7 @@ def <nombre-generador>(<parametros>):
 #### Llamar a los elementos de un generador
 - *next(i)* : Devuelve el siguiente elemento de un iterador *i*. 
 - *next(i, ifin)* : Devuelve el siguiente elemento de un iterador *i*. Cuando se llega al final del iterador *i* se devuelve el valor *ifin*.
-> ⚠️ Cuando se llama a la función *next()* para una lista *i*, la próxima que se emplee la función para la misma lista *i* el valor que devuelva será el siguiente al anterior valor devuleto. Por defecto, cuando se llega al final de la lista *i*, se devuelve el error *StopIteration*.
+> :warning: Cuando se llama a la función *next()* para una lista *i*, la próxima que se emplee la función para la misma lista *i* el valor que devuelva será el siguiente al anterior valor devuleto. Por defecto, cuando se llega al final de la lista *i*, se devuelve el error *StopIteration*.
 
 ~~~~ python
 >>> def pares():    # generador de números pares
@@ -1726,6 +1737,8 @@ area_triangulo(base, altura)
         Un número real con el área del triángulo de base y altura especificadas.
 ~~~~
 
+
+
 ## Programación funcional
 ---
 ### Programación funcional
@@ -1780,7 +1793,7 @@ Estas funciones se suelen asociar a una variable o parámetro desde la que hacer
 
 #### Filtrar los elementos de una colección iterable (*filter*)
 - *filter(f, c)* : Devuelve una objeto iterable con los elementos de la colección *c* que devuelven *\<True>* al aplicarles la función *f*. Para convertir el objeto en una lista, tupla o diccionario hay que aplicar explícitamente las funciones *list()*, *tuple()* o *dic()* respectivamente.
-> ⚠️ *f* debe ser una función que recibe un argumento y devuelve un valor booleano.
+> :memo: *f* debe ser una función que recibe un argumento y devuelve un valor booleano.
 ~~~~ python
 >>> def par(n):
 ...     return n % 2 == 0
@@ -1802,7 +1815,7 @@ Estas funciones se suelen asociar a una variable o parámetro desde la que hacer
 
 #### Operar todos los elementos de una colección iterable (*reduce*)
 - *reduce(f, l, i)* : Aplicar la función *f* a los dos primeros elementos de la secuencia *l*. Con el valor obtenido vuelve a aplicar la función *f* a ese valor y el siguiente de la secuencia, y así hasta que no quedan más elementos en la lista. Devuelve el valor resultante de la última aplicación.  Si se indica un inicio *i*, emepezará entre el valor *i* y el primer elemento de la lista.
-> ⚠️ La función *reduce* está definida en el módulo *functools*.
+> :memo: La función *reduce* está definida en el módulo *functools*.
 ~~~~ python
 >>> from functools import reduce
 >>> reduce(lambda x,y : x+y, range(1, 5))
@@ -1812,6 +1825,8 @@ Estas funciones se suelen asociar a una variable o parámetro desde la que hacer
 >>> reduce(lambda x,y : x+y, 'Python', 'Java < '))
 Java < Python
 ~~~~
+
+
 
 ## Comprensión de Colecciones
 ---
@@ -1850,6 +1865,8 @@ Esta instrucción genera el diccionario formado por los pares cuyas claves son e
 {'Carmen': 6, 'Juan': 9, 'Mónica': 10, 'María': 7}
 ~~~~
 
+
+
 ## Ficheros
 ---
 ### Ficheros
@@ -1867,7 +1884,7 @@ Las operaciones más habituales con ficheros son:
 Para crear un fichero nuevo se utiliza la siguiente función:
 
 - *open(ruta, 'w')* : Crea el fichero con la ruta *ruta*, lo abre en modo escritura (el argumento *‘w’* significa *write*) y devuelve un objeto que lo referencia.
-> ⚠️ Si el fichero indicado por la ruta ya existe en el sistema, se reemplazará por el nuevo.
+> :exclamation: Si el fichero indicado por la ruta ya existe en el sistema, se reemplazará por el nuevo.
 
 Una vez creado el fichero, para escribir datos en él se utiliza el siguiente método:
 - *f.write(c)* : Escribe la cadena *c* en el fichero referenciado por *f* y devuelve el número de caracteres escritos.
@@ -1996,6 +2013,8 @@ Manuales de Yeibi
 Este es el repositorio de manuales de Yeibi: https://github.com/yeibi-aholic
 ~~~~
 
+
+
 ## Excepciones
 ---
 ### Control de errores mediante excepciones
@@ -2087,6 +2106,8 @@ except exception as NombreError:
 El número no puede ser negativo
 ~~~~
 
+
+
 ## Programación Orientada a Objetos
 ---
 ### Objetos
@@ -2164,7 +2185,7 @@ Los atributos se definen igual que las variables mientras que los métodos se de
 >>> print(Saludo)
 <class '__main__.Saludo'>
 ~~~~
- > ⚠️ Es una buena práctica comenzar el nombre de una clase con mayúsculas.
+ > :warning: Es una buena práctica comenzar el nombre de una clase con mayúsculas.
 
 #### Clases primitivas
 En Python existen clases predefinidas para los tipos de datos primitivos:
@@ -2207,43 +2228,52 @@ Cuando se crea un objeto de una clase se dice que el objeto es una instancia de 
 #### Definición de métodos
 Los métodos de una clase son las funciones que definen el comportamiento de los objetos de esa clase.
 
-Se definen como las funciones con la palabra reservada *def*. La única diferencia es que su primer parámetro es especial y se denomina *self*. Este parámetro hace siempre referencia al objeto desde donde se llama el método, de manera que para acceder a los atributos o métodos de una clase en su propia definición se puede utilizar la sintaxis *self.atributo* o *self.método*.
+- **Métodos de instancia** : Se definen sin ningún decorador y su primer parámetro es especial y se denomina *self*. Este parámetro hace siempre referencia al objeto desde donde se llama el método, de manera que para acceder a los atributos o métodos de un objeto en su propia definición se puede utilizar la sintaxis *self.atributo* o *self.método*.
 ~~~~ python
->>> class Saludo:
-...     mensaje = "Bienvenido "            # Definición de un atributo
+>>> class Persona:
+...     peso = 80               # Definición de un atributo de clase
 ...
-...     def saludar(self, nombre):         # Definición de un método   
-...         print(self.mensaje + nombre)
-...         return
+...     def __init__(self, peso):
+...         self.peso = peso    # Definición de un atributo de instancia
+...
+...     def pesaje(self):       # Definición de un método de instancia
+...         print('La persona pesa', self.peso, 'kg.')
 ... 
->>> s = Saludo()
->>> s.saludar('Yeibi')
-Bienvenido Yeibi
+>>> p = Persona(75)
+>>> p.pesaje()
+La persona pesa 75 kg.
 ~~~~
-
-La razón por la que existe el parámetro *self* es porque Python traduce la llamada a un método de un objeto *objeto.método(parámetros)* en la llamada *clase.método(objeto, parámetros)*, es decir, se llama al método definido en la clase del objeto, pasando como primer argumento el propio objeto, que se asocia al parámetro *self*.
-
-#### El método *\_\_init__*
-En la definición de una clase suele haber un método llamado *\_\_init__* que se conoce como inicializador. Este método es un método especial que se llama cada vez que se instancia una clase y sirve para inicializar el objeto que se crea. Este método crea los atributos que deben tener todos los objetos de la clase y por tanto contiene los parámetros necesarios para su creación, pero no devuelve nada. Se invoca cada vez que se instancia un objeto de esa clase.
+- **Métodos de clase** : Se definen con el decorador *@classmethod* y su primer parámetro es especial y se denomina *cls*. Este parámetro hace siempre referencia a la clase desde donde se llama el método, de manera que para acceder a los atributos o métodos de la clase en su propia definición se puede utilizar la sintaxis *cls.atributo* o *cls.método*.
 ~~~~ python
->>> class Tarjeta:
-...     def __init__(self, id, cantidad = 0):    # Inicializador
-...         self.id = id                         # Creación del atributo id  
-...         self.saldo = cantidad                # Creación del atributo saldo
-...         return
+>>> class Persona:
+...     peso = 80               # Definición de un atributo de clase
 ...
-...     def mostrar_saldo(self):
-...         print('El saldo es', self.saldo, '€')
-...         return
+...     def __init__(self, peso):
+...         self.peso = peso    # Definición de un atributo de instancia
 ...
->>> t = Tarjeta('1111111111', 1000)     # Creación de un objeto con argumentos             
->>> t.mostrar_saldo()
-El saldo es 1000 €
+...     @classmethod
+...     def pesaje(cls):        # Definición de un método de clase
+...         print('La persona pesa', cls.peso, 'kg.')
+...
+>>> p = Persona(75)
+>>> p.pesaje()
+La persona pesa 80 kg.
+~~~~
+- **Métodos estáticos** : Se definen con el decorador *@staticmethod* y no tienen ningún parámetro especial. No hacen referencia ni a la clase ni a los objetos de la clase, por lo que no pueden acceder a los atributos o métodos de la clase.
+~~~ python
+>>> class Persona:
+...     @staticmethod
+...     def pesaje():           # Definición de un método estático
+...         print('El peso es una medida de la masa de un cuerpo.')
+...
+>>> p = Persona()
+>>> p.pesaje()
+El peso es una medida de la masa de un cuerpo.
 ~~~~
 
 #### Tipos de atributos
 Los atributos que se crean dentro del método *\_\_init__* se conocen como atributos del objeto, mientras que los que se crean fuera de él se conocen como atributos de la clase. Mientras que los primeros son propios de cada objeto y por tanto pueden tomar valores distintos, los valores de los atributos de la clase son los mismos para cualquier objeto de la clase.
-> ⚠️ En general, no deben usarse atributos de clase, excepto para almacenar valores constantes.
+> :warning: En general, no deben usarse atributos de clase, excepto para almacenar valores constantes.
 ~~~~ python
 >>> class Circulo:
 ...     pi = 3.14159                     # Atributo de clase
@@ -2282,20 +2312,33 @@ yeibi
 >>> print(u.__password)     # No se puede acceder al atributo privado
 AttributeError: 'Usuario' object has no attribute '__password'
 ~~~~
-> :warning: Aunque no se puede acceder directamente a un atributo privado, sí se puede acceder a él con la sintaxis *objeto._Clase__atributo*.
+> :memo: Aunque no se puede acceder directamente a un atributo privado, sí se puede acceder a él con la sintaxis *objeto._Clase__atributo*.
 > ~~~~ python
 > >>> print(u._Usuario__password)
 > 1234
 > ~~~~
 
-#### El método *\_\_str__*
-Otro método especial es el método llamado *\_\_str__* que se invoca cada vez que se llama a las funciones *print* o *str*. Devuelve siempre una cadena que se suele utilizar para dar una descripción informal del objeto. Si no se define en la clase, cada vez que se llama a estas funciones con un objeto de la clase, se muestra por defecto la posición de memoria del objeto.
+#### Métodos especiales
+Los métodos especiales son métodos que tienen un nombre especial y se invocan automáticamente en determinadas situaciones. Estos métodos permiten personalizar el comportamiento de los objetos de una clase en esas situaciones.
+- *\_\_init__* : Se invoca cada vez que se instancia un objeto de la clase y sirve para inicializar el objeto que se crea.
 ~~~~ python
 >>> class Tarjeta:
 ...     def __init__(self, numero, cantidad = 0):
 ...         self.numero = numero
 ...         self.saldo = cantidad
-...         return
+...
+>>> t = Tarjeta('0123456789', 1000)
+>>> print(t.numero)
+0123456789
+>>> print(t.saldo)
+1000
+~~~~
+- *\_\_str__* : Se invoca cada vez que se llama a la función *print()* con un objeto de la clase y debe devolver una cadena.
+~~~~ python
+>>> class Tarjeta:
+...     def __init__(self, numero, cantidad = 0):
+...         self.numero = numero
+...         self.saldo = cantidad
 ...
 ...     def __str__(self):
 ...         return 'Tarjeta número {} con saldo {:.2f}€'.format(self.numero, str(self.saldo))
@@ -2304,6 +2347,88 @@ Otro método especial es el método llamado *\_\_str__* que se invoca cada vez q
 >>> print(t)
 Tarjeta número 0123456789 con saldo 1000.00€
 ~~~~
+> :bulb: Se suele utilizar para dar una descripción informal del objeto.
+- *\_\_repr__* : Se invoca cada vez que se muestra un objeto en la terminal sin usar la función *print y debe devolver una cadena. Si no se define en la clase, cada vez que se llama a estas funciones con un objeto de la clase, se muestra por defecto la posición de memoria del objeto.
+~~~~ python
+>>> class Tarjeta:
+...     def __init__(self, numero, cantidad = 0):
+...         self.numero = numero
+...         self.saldo = cantidad
+...
+...     def __repr__(self):
+...         return 'Tarjeta({}, {})'.format(self.numero, self.saldo)
+...
+>>> t = Tarjeta('0123456789', 1000)
+>>> t
+Tarjeta(0123456789, 1000)
+~~~~
+> :bulb: Se suele utilizar para dar una descripción formal del objeto.
+
+> :exclamation: Si no se define en la clase, se muestra por defecto la posición de memoria del objeto.
+- *\_\_name__* : Devuelve el nombre de la clase a la que pertenece el objeto.
+~~~~ python
+>>> class Tarjeta:
+...     pass
+...
+>>> Tarjeta.__name__
+Tarjeta
+>>> t = Tarjeta()
+>>> t.__class__.__name__
+Tarjeta
+~~~~
+> :memo: El método *\_\_name__* también se puede utilizar para obtener el nombre de una función o de un módulo.
+> ~~~~ python
+> >>> def funcion():
+> ...     pass
+> ...
+> >>> funcion.__name__
+> funcion
+> ~~~~
+- *\_\_doc__* : Devuelve la cadena de documentación de la clase, función o módulo a la que se aplica. Esta cadena se suele utilizar para describir el propósito y el uso de la clase, función o módulo.
+~~~~ python
+>>> class Tarjeta:
+...     """Clase para representar una tarjeta de crédito."""
+...     pass
+...
+>>> Tarjeta.__doc__
+Clase para representar una tarjeta de crédito.
+>>> import math
+>>> math.__doc__
+This module provides access to the mathematical functions
+defined by the C standard.
+~~~~
+> :bulb: Para mostrar la documentación de una clase, función o módulo también se puede utilizar la función *help()*.
+- *\_\_dict__* : Devuelve un diccionario con los atributos y métodos de la clase, función o módulo a la que se aplica. Las claves del diccionario son los nombres de los atributos y métodos, mientras que los valores son los objetos correspondientes a esos nombres.
+~~~~ python
+>>> class Tarjeta:
+...     def __init__(self, numero, cantidad = 0):
+...         self.numero = numero
+...         self.saldo = cantidad
+...
+>>> Tarjeta.__dict__
+mappingproxy({'__module__': '__main__', '__init__': <function Tarjeta.__init__ at 0x7fcfc7756c10>, '__dict__': <attribute '__dict__' of 'Tarjeta' objects>, '__weakref__': <attribute '__weakref__' of 'Tarjeta' objects>, '__doc__': None})
+>>> t = Tarjeta('0123456789', 1000)
+>>> t.__dict__
+{'numero': '0123456789', 'saldo': 1000}
+~~~~
+> :bulb: Para mostrar los atributos y métodos de una clase, función o módulo también se puede utilizar la función *dir()*.
+- *\_\_call__* : Se invoca cada vez que se llama a un objeto de la clase como si fuese una función.
+~~~~ python
+>>> class Tarjeta:
+...     def __init__(self, numero, cantidad = 0):
+...         self.numero = numero
+...         self.saldo = cantidad
+...
+...     def __call__(self, cantidad):
+...         self.saldo += cantidad
+...
+>>> t = Tarjeta('0123456789', 1000)
+>>> t(500)
+>>> print(t.saldo)
+1500
+~~~~
+
+> :memo: Consultar la documentación de Python para ver la [lista de métodos especiales](https://docs.python.org/3/reference/datamodel.html#special-method-names).
 
 ### Herencia
 Una de las características más potentes de la programación orientada a objetos es la herencia, que permite definir una especialización de una clase añadiendo nuevos atributos o métodos. La nueva clase se conoce como *clase hija* y hereda los atributos y métodos de la clase original que se conoce como *clase madre*.
@@ -2316,22 +2441,18 @@ Para crear un clase a partir de otra existente se utiliza la misma sintaxis que 
 ...     def __init__(self, id, cantidad = 0):
 ...         self.id = id
 ...         self.saldo = cantidad
-...         return
 ...
 ...     def mostrar_saldo(self):       # Método de la clase Tarjeta que hereda la clase Tarjeta_descuento
-...         print('El saldo es ', self.saldo, '€.')
-...         return
+...         print('El saldo es', self.saldo, '€.')
 ... 
 >>> class Tarjeta_descuento(Tarjeta):
 ...     def __init__(self, id, descuento, cantidad = 0):
 ...         self.id = id
 ...         self.descuento = descuento
 ...         self.saldo = cantidad
-...         return
 ...
 ...     def mostrar_descuento(self):   # Método exclusivo de la clase Tarjeta_descuento
-...         print('Descuento de ', self.descuento, '% en los pagos.')
-...         return
+...         print('Descuento de', self.descuento, '% en los pagos.')
 ... 
 >>> t = Tarjeta_descuento('0123456789', 2, 1000)
 >>> t.mostrar_saldo()
@@ -2339,6 +2460,17 @@ El saldo es 1000€.
 >>> t.mostrar_descuento()
 Descuento de 2% en los pagos.
 ~~~~
+> :bulb: Podemos ver que Tarjeta_descuento es hija de Tarjeta con el comando *\_\_bases__*.
+> ~~~~ python
+> >>> Tarjeta_descuento.__bases__
+> (<class '__main__.Tarjeta'>,)
+> ~~~~
+>
+> De manera similar podemos ver que hijas tiene Tarjeta con *\_\_subclasses__()*.
+> ~~~~ python
+> >>> Tarjeta.__subclasses__()
+> [<class '__main__.Tarjeta_descuento'>]
+> ~~~~
 
 La principal ventaja de la herencia es que evita la repetición de código y por tanto los programas son más fáciles de mantener.
 
@@ -2368,7 +2500,7 @@ True
 ~~~~
 
 #### Sobrecarga y polimorfismo
-Los objetos de una clase hija heredan los atributos y métodos de la clase madre y, por tanto, a priori tienen tienen el mismo comportamiento que los objetos de la clase madre. Pero la clase hija puede definir nuevos atributos o métodos o reescribir los métodos de la clase madre de manera que sus objetos presenten un comportamiento distinto. Esto último se conoce como **sobrecarga**.
+Los objetos de una clase hija heredan los atributos y métodos de la clase madre y, por tanto, a priori, tienen el mismo comportamiento que los objetos de la clase madre. Pero la clase hija puede definir nuevos atributos o métodos o reescribir los métodos de la clase madre de manera que sus objetos presenten un comportamiento distinto. Esto último se conoce como **sobrecarga**.
 
 De este modo, aunque un objeto de la clase hija y otro de la clase madre pueden tener un mismo método, al invocar ese método sobre el objeto de la clase hija, el comportamiento puede ser distinto a cuando se invoca ese mismo método sobre el objeto de la clase madre. Esto se conoce como **polimorfismo** y es otra de las características de la programación orientada a objetos.
 ~~~~ python
@@ -2376,22 +2508,18 @@ De este modo, aunque un objeto de la clase hija y otro de la clase madre pueden 
 ...     def __init__(self, id, cantidad = 0):
 ...         self.id = id
 ...         self.saldo = cantidad
-...         return
 ...
 ...     def mostrar_saldo(self):
 ...         print('El saldo es {:.2f}€.'.format(self.saldo))
-...         return
 ...
 ...     def pagar(self, cantidad):
 ...         self.saldo -= cantidad
-...         return
 ...
 >>> class Tarjeta_Oro(Tarjeta):
 ...     def __init__(self, id, descuento, cantidad = 0):
 ...         self.id = id
 ...         self.descuento = descuento
 ...         self.saldo = cantidad
-...         return
 ...
 ...     def pagar(self, cantidad):
 ...         self.saldo -= cantidad * (1 - self.descuento / 100)
@@ -2405,6 +2533,140 @@ El saldo es 900.00€.
 >>> t2.mostrar_saldo()
 El saldo es 901.00€.
 ~~~~
+
+#### Función *super()*
+Cuando se redefine un método de la clase madre en la clase hija, es posible que se quiera conservar parte del comportamiento del método de la clase madre. Para ello se puede llamar al método de la clase madre desde el método redefinido de la clase hija con la función *super().funcion_madre()*.
+
+~~~~ python
+>>> class Tarjeta:
+...     def __init__(self, id, saldo = 0):
+...         self.id = id
+...         self.saldo = saldo
+...
+...     def mostrar_saldo(self):
+...         print('El saldo es {:.2f}€.'.format(self.saldo))
+...
+...     def pagar(self, cantidad):
+...         self.saldo -= cantidad
+...
+>>> class Tarjeta_Oro(Tarjeta):
+...     def __init__(self, id, descuento, saldo = 0):
+...         super().__init__(id, saldo) # Llamada al método __init__ de la clase madre Tarjeta
+...         self.descuento = descuento
+...
+...     def pagar(self, cantidad):
+...         super().pagar(cantidad)     # Llamada al método pagar de la clase madre Tarjeta
+...         self.saldo -= cantidad * self.descuento / 100
+...
+>>> t1 = Tarjeta('1111111111', 1000)
+>>> t2 = Tarjeta_Oro('2222222222', 1, 1000)
+>>> t1.pagar(100)
+>>> t1.mostrar_saldo()
+El saldo es 900.00€.
+>>> t2.pagar(100)
+>>> t2.mostrar_saldo()
+El saldo es 899.00€.
+~~~~
+
+#### Herencia múltiple
+En Python es posible que una clase hija herede de varias clases madre a la vez, lo que se conoce como **herencia múltiple**. Para ello se ponen entre paréntesis los nombres de todas las clases madre de las que se quiere heredar, separados por comas.
+
+~~~~ python
+>>> class Animal:
+...     def __init__(self, habitat, dieta):
+...         self.habitat = habitat
+...         self.dieta = dieta
+...
+...     def comer(self):
+...         print(f"El <{self.especie} {self.tipo}> es <{self.dieta}>")
+...
+...     def vivir(self):
+...		    print(f"El <{self.especie} {self.tipo}> vive en <{self.habitat}>")
+...
+>>> class Pez(Animal):
+...     def __init__(self, habitat, dieta, especie):
+...         super().__init__(habitat, dieta)
+...         self.especie = especie
+...
+>>> class Depredador:
+...     def __init__(self, presa):
+...         self.presa = presa
+...
+...     def comer(self):
+...         print(f"El <{self.especie} {self.tipo}> se alimenta de:")
+...		    for p in self.presa:
+...			    print('    -', p)
+...
+>>> class Tiburon(Pez, Depredador):
+...     def __init__(self, habitat, dieta, especie, tipo, presa):
+...         Pez.__init__(self, habitat, dieta, especie)
+...         Depredador.__init__(self, presa)
+...         self.tipo = tipo
+...
+>>> t = Tiburon('mar', 'carnívoro', 'tiburón', 'blanco', ['peces', 'focas', 'cangrejos', 'pulpos', 'tiburones pequeños'])
+>>> t.comer()               # El método comer de la clase Animal tiene prioridad sobre el de la clase Depredador
+El <tiburón blanco> es <carnívoro>
+>>> t.vivir()               # El método vivir de la clase Animal se hereda sin redefinirlo
+El <tiburón blanco> vive en <mar>
+>>> t.Depredador.comer()    # Para llamar al método comer de la clase Depredador hay que especificar la clase
+El <tiburón blanco> se alimenta de:
+    - peces
+    - focas
+    - cangrejos
+    - pulpos
+    - tiburones pequeños
+~~~~
+> :memo: Si hay métodos con el mismo nombre en varias clases madre, el método que se ejecuta es el de la clase madre que aparece primero en la declaración de la clase hija. Para llamar a un método de una clase madre concreta, hay que especificar el nombre de la clase seguido del nombre del método.
+> ~~~~ python
+> >>> class Madre1:
+> ...     def metodo(self):
+> ...         print('Método de la clase Madre1')
+> ...
+> >>> class Madre2:
+> ...     def metodo(self):
+> ...         print('Método de la clase Madre2')
+> ...
+> >>> class Hija(Madre1, Madre2):
+> ...     pass
+> ...
+> >>> h = Hija()
+> >>> h.metodo()        # Se ejecuta el método de la clase Madre1 porque es la primera clase madre que aparece en la declaración de la clase Hija
+> Método de la clase Madre1
+> >>> h.Madre2.metodo() # Para llamar al método de la clase Madre2 hay que especificar la clase
+> Método de la clase Madre2
+> ~~~~
+
+> :warning: La función *super()* también se puede utilizar para llamar a un método de una clase madre en caso de herencia múltiple, pero solo funcionará con la primera clase Madre declarada en la clase hija.
+
+#### *Method Order Resolution (MRO)*
+Cuando una clase hereda de varias clases madre, el orden en el que se buscan los métodos en las clases madre se conoce como *Method Order Resolution (MRO)*. En Python, el orden de búsqueda de los métodos en caso de herencia múltiple se determina con el algoritmo C3 Linearization, que sigue el siguiente orden: 
+1. Se busca el método en la clase hija.
+2. Se busca el método en cada clase madre declarada en la clase hija.
+3. Se busca el método en las clases madre de cada clase madre, siguiendo el mismo orden que en el paso 2. 
+~~~~ python
+>>> Tiburon.__mro__ # devuelve una tupla
+(<class '__main__.Tiburon'>, <class '__main__.Pez'>, <class '__main__.Animal'>, <class '__main__.Depredador'>, <class 'object'>)
+>>> Tinuron.mro()   # devuelve una lista
+[<class '__main__.Tiburon'>, <class '__main__.Pez'>, <class '__main__.Animal'>, <class '__main__.Depredador'>, <class 'object'>]
+~~~~
+
+> :exclamation: En caso de herencia múltiple, si una clase hija hereda de varias clases madre que a su vez heredan de una misma clase ancestro, el método de la clase ancestro se ejecutará solo una vez, aunque se llame desde varias clases madre. Esto se conoce como *diamond problem* o problema del diamante.
+> ~~~~ python
+> >>> class A:
+> ...     pass
+> ...
+> >>> class B1(A):
+> ...     pass
+> ...
+> >>> class B2(A):
+> ...     pass
+> ...
+> >>> class C(B1, B2):
+> ...     pass
+> ...
+> >>> C.mro()
+> [<class '__main__.C'>, <class '__main__.B1'>, <class '__main__.B2'>, <class '__main__.A'>, <class 'object'>]
+> ~~~~
 
 ### Decorador *@property*
 Este *decorador* instalado por defecto en Python, permite definir métodos que se comportan como atributos o propiedad, de manera que para acceder a ellos no hace falta escribir los paréntesis de la llamada al método, sino que basta con escribir su nombre como si fuese un atributo.
@@ -2425,11 +2687,13 @@ Este *decorador* instalado por defecto en Python, permite definir métodos que s
 >>> Tiera.gravedad() # Es un atributo, no un método
 TypeError: 'float' object is not callable
 ~~~~
+> :bulb: Esta característica es muy útil para definir métodos que calculan un valor a partir de otros atributos, para acceder a él como si fuese un atributo más. También sirve para proteger un atributo de la clase, de manera que no se pueda modificar directamente, sino a través de un método específico para ello.
 
-Esta característica es muy útil para definir métodos que calculan un valor a partir de otros atributos, para acceder a él como si fuese un atributo más. También sirve para proteger un atributo de la clase, de manera que no se pueda modificar directamente, sino a través de un método específico para ello.
-
-#### Decorador *@setter*
-Este decorador se utiliza junto con el decorador *@property* para definir un método que se comporta como un atributo de escritura, de manera que para modificar su valor no hace falta escribir los paréntesis de la llamada al método, sino que basta con escribir su nombre como si fuese un atributo.
+#### Decoradores *setter*, *getter* y *deleter*
+Los siguientes decoradores se utilizan junto con el decorador *@property* para definir métodos que se comportan como atributos de escritura, lectura o eliminación, respectivamente, de manera que para acceder a ellos no hace falta escribir los paréntesis de la llamada al método, sino que basta con escribir su nombre como si fuese un atributo.
+- *propiedad.setter* : Define un método que se comporta como un atributo de escritura. Para modificar su valor basta con escribir *objeto.propiedad = valor*.
+- *propiedad.getter* : Define un método que se comporta como un atributo de lectura. Para acceder a su valor basta con escribir *objeto.propiedad*. Realmente , el decorador *@property* ya define un método que se comporta como un atributo de lectura, por lo que no es necesario usar este decorador extra a no ser que se quiera redefinir el método de lectura.
+- *propiedad.deleter* : Define un método que se comporta como un atributo de eliminación. Para eliminarlo basta con escribir *del objeto.propiedad*. 
 
 ~~~~ python
 >>> class Planeta:
@@ -2439,7 +2703,7 @@ Este decorador se utiliza junto con el decorador *@property* para definir un mé
 ...
 ...     @property
 ...     def gravedad(self):
-...         return f"g = {self.__gravedad} m/s^2"
+...         pass
 ...
 ...     @gravedad.setter
 ...     def gravedad(self, valor):
@@ -2449,13 +2713,28 @@ Este decorador se utiliza junto con el decorador *@property* para definir un mé
 ...             self.__gravedad = valor
 ...             print('Gravedad actualizada a', valor)
 ...
+...     @gravedad.getter
+...     def gravedad(self):
+...         return f"g = {self.__gravedad} m/s^2"
+...
+...     @gravedad.deleter
+...     def gravedad(self):
+... 	    del self.__gravedad
+...         print('Gravedad eliminada')
+...
 >>> Tierra = Planeta('Tierra', 9.80665)
 >>> Tierra.gravedad = 0
 ¡La gravedad no puede ser negativa o cero!
+>>> Tierra.gravedad
+g = 9.80665 m/s^2
 >>> Tierra.gravedad = 10
 Gravedad actualizada a 10
 >>> Tierra.gravedad
 g = 10 m/s^2
+>>> del Tierra.gravedad
+Gravedad eliminada
+>>> Tierra.gravedad
+AttributeError: 'Planeta' object has no attribute '_Planeta__gravedad'
 ~~~~
 
 ### Documentación de clases
@@ -2510,6 +2789,8 @@ class Mates(builtins.object)
  |      list of weak references to the object (if defined)
 ~~~~
 
+
+
 ## Módulos
 ---
 ### Módulos
@@ -2527,7 +2808,7 @@ Python permite importar un módulo completo o sólo algunas partes de él. Cuand
 - *from M import f, g, ...* : Ejecuta el código que contiene *M* y crea referencias a los objetos *f, g, ...*, de manera que pueden ser invocados por su nombre. De esta manera para invocar cualquiera de estos objetos no hace falta precederlos por el nombre del módulo, basta con escribir su nombre.
 - *from M import \** : Ejecuta el código que contiene *M* y crea referencias a todos los objetos públicos (aquellos que no empiezan por el carácter *_*) definidos en el módulo, de manera que pueden ser invocados por su nombre.
 
-> ⚠️ Cuando se importen módulos de esta manera hay que tener cuidado de que no haya coincidencias en los nombres de funciones, variables u otros objetos.
+> :warning: Cuando se importen módulos de esta manera hay que tener cuidado de que no haya coincidencias en los nombres de funciones, variables u otros objetos.
 ~~~~ python
 >>> import calendar
 >>> print(calendar.month(2019, 4))
@@ -2545,7 +2826,7 @@ Mo Tu We Th Fr Sa Su
 -1.0
 ~~~~
 
-> ⚠️ Por defecto, el módulo que queremos utilizar debe estar en la misma dirección que el programa en el que queremos emplear el código o en la *sys.path*, un conjunto de directorios predeterminado en Python.
+> :memo: Por defecto, el módulo que queremos utilizar debe estar en la misma dirección que el programa en el que queremos emplear el código o en la *sys.path*, un conjunto de directorios predeterminado en Python.
 ~~~~ python
 >>> import sys
 # imprimir todos los directorios
@@ -2608,7 +2889,7 @@ paquete/
         modulo32.py
 ~~~~
 
-> ⚠️ Pasa lo mismo con la ruta de los paquetes que pasa con los mósulos.
+> :warning: Pasa lo mismo con la ruta de los paquetes que pasa con los módulos.
 
 #### Importación de modulos
 - *import P.M* : Ejecuta el código que contiene *M* en la ruta de carpetas *P* y crea una referencia a él, de manera que pueden invocarse un objeto o función *f* definida en él mediante la sintaxis *P.M.f*.
@@ -2725,6 +3006,8 @@ CLASSES
     
 --More--
 ~~~~
+
+
 
 ## Librería Datetime
 ---
@@ -2854,6 +3137,8 @@ datetime.datetime(2020, 2, 1, 1, 0)
 datetime.timedelta(days=132, seconds=1826, microseconds=895590)
 ~~~~
 
+
+
 ## Librería Numpy
 ---
 [NumPy](https://www.numpy.org/) es una librería de Python especializada en el cálculo numérico y el análisis de datos, especialmente para un gran volumen de datos.
@@ -2878,7 +3163,7 @@ Las dimensiones de un array también se conocen como **ejes**.
     + Para una lista de listas de listas de valores se crea un array de tres dimensiones, también conocido como **cubo**.
     + Y así sucesivamente. No hay límite en el número de dimensiones del array más allá de la memoria disponible en el sistema.
 
- > ⚠️ Los elementos de la lista o tupla deben ser del mismo tipo.
+ > :warning: Los elementos de la lista o tupla deben ser del mismo tipo.
 
 ~~~~ python
 >>> # Array de una dimensión
@@ -3115,7 +3400,7 @@ Podemos conocer otras empresas famosas que hacen uso de SQLite visitando el [sit
 SQLite es Open Source y colabora con el almacenamiento de datos cuando hacemos aplicaciones con lenguajes como Python, Java, C#, C, C++, Delphi etc.
 
 |Ventajas|Inconvenientes|
-|:-|:-|
+| :- | :- |
 |Ocupa muy poco espacio en disco y memoria.|No admite clausulas anidadas (where).|
 |Muy eficiente y rápido.|No existen usuarios (no acceso simultáneo por parte de varios usuarios a la vez).|
 |Multiplataforma.|Falta de clave foránea cuando se crea en modo consola.|
@@ -3198,7 +3483,7 @@ conexion.commit()
 curosr.close()
 conexion.close()
 ~~~~
-> ⚠️ Si se quiere que una clave se autogestione automáticamente, hay que declarar *AUTOINCREMENT* después de declarar su tipo de dato. Normalmente se suele declarar como *'ID'* de valor entero. 
+> :memo: Si se quiere que una clave se autogestione automáticamente, hay que declarar *AUTOINCREMENT* después de declarar su tipo de dato. Normalmente se suele declarar como *'ID'* de valor entero. 
 Después de esta declaración, al insertar, la columna de la clave autoincrementada debe contener el valor *NULL*.
 > ~~~~ python
 > cursor.execute('''
@@ -3228,6 +3513,8 @@ cursor.execute('''
         SECCION VARCHAR(20))
 ''')
 ~~~~
+
+
 
 ## Librería Pandas
 ---
@@ -3507,7 +3794,7 @@ Un DataFrame contiene dos índices, uno para las filas y otro para las columnas,
 Para crear un DataFrame a partir de un diccionario cuyas claves son los nombres de las columnas y los valores son listas con los datos de las columnas se utiliza el método:
 - *DataFrame(data=diccionario, index=filas, columns=columnas, dtype=tipos)* : Devuelve un objeto del tipo DataFrame cuyas columnas son las listas contenidas en los valores del diccionario *diccionario*, los nombres de filas indicados en la lista *filas*, los nombres de columnas indicados en la lista *columnas* y los tipos indicados en la lista *tipos*. La lista *filas* tiene que tener el mismo tamaño que las listas del diccionario, mientras que las listas *columnas* y *tipos* tienen que tener el mismo tamaño que el diccionario. Si no se pasa la lista de filas se utilizan como nombres los enteros empezando en 0. Si no se pasa la lista de columnas se utilizan como nombres las claves del diccionario. Si no se pasa la lista de tipos, se infiere.
  
-> ⚠️ Los valores asociados a las claves del diccionario deben ser listas del mismo tamaño.
+> :warning: Los valores asociados a las claves del diccionario deben ser listas del mismo tamaño.
 ~~~~ python
 >>> import pandas as pd
 >>> datos = {'nombre':['María', 'Luis', 'Carmen', 'Antonio'],
@@ -3527,7 +3814,7 @@ Para crear un DataFrame a partir de un diccionario cuyas claves son los nombres 
 #### Creación de un DataFrame a partir de una lista de listas
 Para crear un DataFrame a partir de una lista de listas con los datos de las columnas se utiliza el siguiente método:
 - *DataFrame(data=listas, index=filas, columns=columnas, dtype=tipos)* : Devuelve un objeto del tipo DataFrame cuyas columnas son los valores de las listas de la lista *listas*, los nombres de filas indicados en la lista *filas*, los nombres de columnas indicados en la lista *columnas* y los tipos indicados en la lista *tipos*. La lista *filas*, tiene que tener el mismo tamaño que la lista *listas* mientras que las listas *columnas* y *tipos* tienen que tener el mismo tamaño que las listas anidadas en *listas*. Si no se pasa la lista de filas o de columnas se utilizan enteros empezando en 0. Si no se pasa la lista de tipos, se infiere.
-> ⚠️ Si las listas anidadas en *listas* no tienen el mismo tamaño, las listas menores se rellenan con valores *NaN*.
+> :warning: Si las listas anidadas en *listas* no tienen el mismo tamaño, las listas menores se rellenan con valores *NaN*.
 ~~~~ python
 >>> import pandas as pd
 >>> df = pd.DataFrame([['María', 18], ['Luis', 22], ['Carmen', 20]], columns=['Nombre', 'Edad'])
@@ -3541,7 +3828,7 @@ Para crear un DataFrame a partir de una lista de listas con los datos de las col
 #### Creación de un DataFrame a partir de una lista de diccionarios
 Para crear un DataFrame a partir de una lista de diccionarios con los datos de las filas, se utiliza el siguiente método:
 - *DataFrame(data=diccionarios, index=filas, columns=columnas, dtype=tipos)* : Devuelve un objeto del tipo DataFrame cuyas filas contienen los valores de los diccionarios de la lista *diccionarios*, los nombres de filas indicados en la lista *filas*, los nombres de columnas indicados en la lista *columnas* y los tipos indicados en la lista *tipos*. La lista *filas* tiene que tener el mismo tamaño que la lista *lista*. Si no se pasa la lista de filas se utilizan enteros empezando en 0. Si no se pasa la lista de columnas se utilizan las claves de los diccionarios. Si no se pasa la lista de tipos, se infiere.
-> ⚠️ Si los diccionarios no tienen las mismas claves, las claves que no aparecen en el diccionario se rellenan con valores *NaN*.
+> :warning: Si los diccionarios no tienen las mismas claves, las claves que no aparecen en el diccionario se rellenan con valores *NaN*.
 ~~~~ python
 >>> import pandas as pd
 >>> df = pd.DataFrame([{'Nombre':'María', 'Edad':18}, {'Nombre':'Luis', 'Edad':22}, {'Nombre':'Carmen'}])
@@ -4066,7 +4353,7 @@ Dos o más DataFrames pueden combinarse en otro DataFrame. La combinación puede
 Para concatenar dos o más DataFrames se utiliza el siguiente método:
 - *df.concat(dataframes, axis = eje)* : Devuelve el DataFrame que resulta de concatenar los DataFrames de la lista *dataframes*. Si eje es *0* (valor por defecto) la concatenación se realiza por filas, y si *eje* es 1 se realiza por columnas.
 
-> ⚠️ Si los DataFrames que se concatenan por filas no tienen el mismo índice de columnas, el DataFrame resultante incluirá todas las columnas existentes en los DataFrames y rellenará con valores *NaN* los datos no disponibles. Si los DataFrames que se concatenan por columnas no tienen el mismo índice de filas, el DataFrame resultante incluirá todas las filas existentes en los DataFrames y rellenará con valores *NaN* los datos no disponibles.
+> :memo: Si los DataFrames que se concatenan por filas no tienen el mismo índice de columnas, el DataFrame resultante incluirá todas las columnas existentes en los DataFrames y rellenará con valores *NaN* los datos no disponibles. Si los DataFrames que se concatenan por columnas no tienen el mismo índice de filas, el DataFrame resultante incluirá todas las filas existentes en los DataFrames y rellenará con valores *NaN* los datos no disponibles.
 
 ~~~~ python
 >>> import pandas as pd
@@ -4156,6 +4443,8 @@ El tipo de mezcla puede ser
 1  Pedro     NaN    30
 2   Luis  Hombre    18
 ~~~~ 
+
+
 
 ## Librería Matplotlib
 ---
@@ -4448,7 +4737,7 @@ Para añadir una leyenda a un gráfico se utiliza el siguiente método:
     + *'lower left'* (abajo izquierda)
     + *'lower center'* (abajo centro)
     + *'lower right'* (abajo derecha). 
-> ⚠️ Se puede omitir la lista *leyendas* si se indica la leyenda de cada serie en la función que la dibuja mediante el parámetro *label*.
+> :bulb: Se puede omitir la lista *leyendas* si se indica la leyenda de cada serie en la función que la dibuja mediante el parámetro *label*.
 ~~~~ python
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
@@ -4505,7 +4794,7 @@ Matplotlib se integra a la perfección con la librería Pandas, permitiendo dibu
     + *'density'* (densidad)
     + *'area'* (area)
     + *'pie'* (sectores). 
-> ⚠️ Es posible pasar otros parámetros para indicar el color, el marcador o el estilo de línea como se vió en los apartados anteriores.
+> :memo: Es posible pasar otros parámetros para indicar el color, el marcador o el estilo de línea como se vió en los apartados anteriores.
 ~~~~ python
 import pandas as pd 
 import matplotlib.pyplot as plt
@@ -4535,6 +4824,8 @@ plt.show()
 
 ![](Fotos/Manual_Python/Libreria_Matplotlib/MatplotlibPandas_2.PNG)
 
+
+
 ## Librería itertools
 ---
 Este módulo implementa un número de piezas básicas iterator inspiradas en constructs de *APL*, *Haskell* y *SML*.
@@ -4543,7 +4834,7 @@ Este módulo implementa un número de piezas básicas iterator inspiradas en con
 import itertools
 ~~~~
 
-> ⚠️ Si queremos acceder a los valores de un iterador debemos hacerlo secuencialmente con el comando *next(iterador)*.
+> :memo: Si queremos acceder a los valores de un iterador debemos hacerlo secuencialmente con el comando *next(iterador)*.
 
 ### Iteradores infinitos
 - *count(i, s)* : Crea un iterador de una progresión aritmética con una diferencia *s* comenzando desde el valor *i*. Si no se especifica ninguno de los dos parámetros toma por valores predeterminados *count(i=0, s=1)*.
@@ -4628,7 +4919,8 @@ combinations(range(4), 3)                  # 012 013 023 123
 combinations_with_replacement('ABCD', 2)   # AA AB AC AD BB BC BD CC CD DD
 combinations_with_replacement(range(3), 3) # 000 001 002 011 012 022 111 112 122 222
 ~~~~
-### 
+
+
 
 ## Librería Turtle
 ---
@@ -4641,15 +4933,15 @@ import turtle
 
 ### Ventana
 - *setup(ancho, alto, posicionX, posicionY)* : Permite definir el tamaño y la posición inicial de la ventana. Todas las medidas en píxeles.
-> ⚠️ Los valores positivos de la posición se miden desde la parte superior izquierda de la pantalla, los negativos desde la parte inferior derecha.
+> :exclamation: Los valores positivos de la posición se miden desde la parte superior izquierda de la pantalla, los negativos desde la parte inferior derecha.
 ~~~~ python
 turtle.setup(400,400,100,100)
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Turtle/Setup.PNG)
 
-> ⚠️ Si no se usa la función *setup()*, la ventana se crea en el centro de la pantalla (para que se cree la ventana tiene que aparecer alguna función del módulo turtle):
+> :exclamation: Si no se usa la función *setup()*, la ventana se crea en el centro de la pantalla (para que se cree la ventana tiene que aparecer alguna función del módulo turtle):
 
-> ⚠️ El tamaño de la ventana de dibujo se puede modificar a lo largo de un programa, sin que se pierda el dibujo realizado anteriormente.
+> :memo: El tamaño de la ventana de dibujo se puede modificar a lo largo de un programa, sin que se pierda el dibujo realizado anteriormente.
 - *title()* : Permite definir el título de la ventana, que se muestra en el borde superior de la ventana.
 ~~~~ python
 turtle.title("Titulo")
@@ -4657,7 +4949,7 @@ turtle.title("Titulo")
 ![](Fotos/Manual_Python/Libreria_Turtle/Titulo.PNG)
 
 - *screensize(ancho, alto)* : Permite definir el tamaño del área de dibujo, en píxeles. De forma predeterminada tiene un tamaño de *400x300* píxeles.
-> ⚠️ El tamaño del área de dibujo se puede modificar a lo largo de un programa, sin que se pierda el dibujo realizado anteriormente.
+> :memo: El tamaño del área de dibujo se puede modificar a lo largo de un programa, sin que se pierda el dibujo realizado anteriormente.
 
 ### Dibujar
 Dibujar gráficos de tortuga es similar a dibujar con un lápiz sobre papel. Las instrucciones de gráficos de tortuga permiten dibujar líneas y puntos, mover el lápiz de un sitio a otro, cambiar el color y grosor del trazo, colorear el interior de las figuras, etc.
@@ -4736,7 +5028,7 @@ turtle.goto(50, -50)
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Turtle/Pencolor.PNG)
 
-> ⚠️ También se pueden utilizar los [nombres de colores de Tk](https://www.mclibre.org/consultar/python/lecciones/python-tk-colores.html), que incluyen entre otros los nombres de colores *SVG*, en cuyo caso no hace falta utilizar la función *colormode()*.
+> :memo: También se pueden utilizar los [nombres de colores de Tk](https://www.mclibre.org/consultar/python/lecciones/python-tk-colores.html), que incluyen entre otros los nombres de colores *SVG*, en cuyo caso no hace falta utilizar la función *colormode()*.
 > ~~~~ python
 > pencolor("red")
 > goto(100, 50)
@@ -4789,9 +5081,9 @@ turtle.circle(80, 180)  # semi-circulo de radio = 80
 turtle.circle(80, 360, 5)   # circulo de radio = 80 con solo 5 puntos uniformemente distribuidos (pentágono)
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Turtle/Circulo_3.GIF)
-> ⚠️ Si no se dibuja una "curva" completa (360º), el puntero permancerá en la posición y giro finales.
+> :exclamation: Si no se dibuja una "curva" completa (360º), el puntero permancerá en la posición y giro finales.
 
-> ⚠️ Si se indica el número de pasos (polígono) y la curva es cerrada (360º), el puntero se encontrará en la misma posición y ángulo que al comienzo de dibujar la curva, aunque el tramo final sea una línea recta.
+> :bulb: Si se indica el número de pasos (polígono) y la curva es cerrada (360º), el puntero se encontrará en la misma posición y ángulo que al comienzo de dibujar la curva, aunque el tramo final sea una línea recta.
 
 
 ### Rellenar
@@ -4825,7 +5117,7 @@ turtle.end_fill()
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Turtle/Fill_2.PNG)
 
-> ⚠️ Realmente no es necesario dibujar la figura completa ya que Python rellena la figura aunque no se cierre la figura (es como si Python uniera el último punto de la figura con el primero).
+> :bulb: Realmente no es necesario dibujar la figura completa ya que Python rellena la figura aunque no se cierre la figura (es como si Python uniera el último punto de la figura con el primero).
 > ~~~~ python
 > turtle.hideturtle()
 > 
@@ -4839,6 +5131,8 @@ turtle.end_fill()
 > ~~~~
 > ![](Fotos/Manual_Python/Libreria_Turtle/Fill_3.PNG)
 
+
+
 ## Librería Tkinter
 ---
 Tkinter es un *binding* de la biblioteca gráfica Tcl/Tk para Python siendo un estandar para GUI *(Graphical User Interface)*.
@@ -4849,7 +5143,7 @@ import tkinter as tk
 raiz = tk.Tk()  # abre un ventana
 raiz.mainloop() # mantiene la ventana abierta indefinidamente
 ~~~~
-> ⚠️ *mainloop()* debe ir al final del código para que no se cierre la ventana.
+> :warning: *mainloop()* debe ir al final del código para que no se cierre la ventana.
 
 ![](Fotos/Manual_Python/Libreria_Tkinter/Ventana.PNG)
 
@@ -4884,7 +5178,7 @@ Contenedor donde se plasmarán los widgets. Pueden haber más de uno en una sola
 frame = tk.Frame(raiz , parámetros)         # Crear el frame y asignarlo a la ventana
 frame.pack()                                # Se empaqueta el frame en la ventana creada
 ~~~~
-> ⚠️ Si no definimos el tamaño de la ventana, ésta se adaptará al frame, pero solo al tamaño inicial. Si está activado la redimensión de la ventana, el frame permanecerá del mismo tamaño y centrado en la parte superior de la ventana.
+> :exclamation: Si no definimos el tamaño de la ventana, ésta se adaptará al frame, pero solo al tamaño inicial. Si está activado la redimensión de la ventana, el frame permanecerá del mismo tamaño y centrado en la parte superior de la ventana.
 
 ### Widget
 #### Entry
@@ -4930,7 +5224,7 @@ box2.pack()
 root.mainloop()
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Tkinter/Pack.PNG)
-> ⚠️ El punto de origen de coordenadas (x,y) es la esquina superior izquierda.  
+> :memo: El punto de origen de coordenadas (x,y) es la esquina superior izquierda.  
 > ![](Fotos/Manual_Python/Libreria_Tkinter/PackCoordenadas.PNG)
 
 #### Text
@@ -4940,7 +5234,7 @@ Texto = tk.Text(frame , parámetros)
 ~~~~
 
 Mismos *parámetros* que *Label*.
-> ⚠️ Si el texto supera el tamaño predeterminado del cuadro, el widget hace scroll vertical automaticamente pero no hay barra de scroll inicialmente.
+> :warning: Si el texto supera el tamaño predeterminado del cuadro, el widget hace scroll vertical automaticamente pero no hay barra de scroll inicialmente.
 > Para introducir una barra de movimiento al cuadro de texto tenemos que crearla.
 > ~~~~ python
 > barra_movimiento = ScrollBar(frame, command=Texto.yview)
@@ -5004,7 +5298,7 @@ menu.add_cascade(label="Ayuda", menu=menuAyuda)
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Tkinter/Menu_1.PNG)
 ![](Fotos/Manual_Python/Libreria_Tkinter/Menu_2.PNG)
-> ⚠️ Si se quiere separar los distintos submenús dentro de un misco menú para crear y diferenciar grupos de opciones, tan solo hay que añadir entre los submenús a separar el código:
+> :bulb: Si se quiere separar los distintos submenús dentro de un misco menú para crear y diferenciar grupos de opciones, tan solo hay que añadir entre los submenús a separar el código:
 > ~~~~ python
 > menu.add_command(label="Submenu1")
 > menu.add_separator()
@@ -5037,7 +5331,7 @@ from tkinter import filedialog
 filedialog.askopenfilename(title="Titulo", initialdir="C:/", filetypes=(("Ficheros de Excel" , "*xlsx"), ("Ficheros de texto" , "*.txt")))  # devuelve la ruta del fichero seleccionado
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Tkinter/FileDialog.PNG)
-> ⚠️ Por defecto, se abre la ruta *📄 > Este equipo > Documentos*
+> :bulb: Por defecto, se abre la ruta *:page_facing_up: > Este equipo > Documentos*
 
 #### Comandos de configuración
 - *.place(x=posiciónx, y=posicioy)* : Permite indicar a los widgets dónde colocarse dentro del *frame* con coordenadas *(posicionx,posiciony)* respecto de la esquina superior izquierda en píxeles.
@@ -5046,7 +5340,7 @@ variableLabel.place(x=50, y=50)
 cuadroTexto.place(x=100, y=50)
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Tkinter/place_1.PNG)
-> ⚠️ Si x,y son iguales en dos elementos, la salida los colocará uno al lado del otro por orden de declaración. Pero si una posición de un elemento está dentro del espacio de otro, la salida los superpondrá según el orden en los que hayan sido declarados.  
+> :memo: Si x,y son iguales en dos elementos, la salida los colocará uno al lado del otro por orden de declaración. Pero si una posición de un elemento está dentro del espacio de otro, la salida los superpondrá según el orden en los que hayan sido declarados.  
 > ~~~~ python
 > cuadroTexto.place(x=100, y=50)
 > variableLabel.place(x=110, y=50)
@@ -5059,7 +5353,7 @@ variableLabel.grid(row=0, column=0)
 cuadroTexto.grid(row=0, column=1)
 ~~~~
 ![](Fotos/Manual_Python/Libreria_Tkinter/grid.PNG)
-> ⚠️ Si se quiere que los elementos se organicen en un dirección (texto pegado arriba, derecha, abajo-izquierda, etc) solo hay que añadir el parámetro *sticky=*. Funciona igual que *anchor*.
+> :memo: Si se quiere que los elementos se organicen en un dirección (texto pegado arriba, derecha, abajo-izquierda, etc) solo hay que añadir el parámetro *sticky=*. Funciona igual que *anchor*.
 
 - *.pack()* : Empaqueta el widget dentro del frame *frame* asignado y permite modificar la posición, espacio y relleno de los widgets.
 > + *ipadx* / *ipady* : Rellena internamente los widgets horizontalmente y verticalmente.
@@ -5147,6 +5441,8 @@ cuadroTexto.grid(row=0, column=1)
 > ~~~~
 > ![](Fotos/Manual_Python/Libreria_Tkinter/pad.PNG)
 
+
+
 ## Librería Pygame
 ---
 [Pygame](https://www.pygame.org/news) es un conjunto de módulos del lenguaje Python que permiten la creación de videojuegos en dos dimensiones de una manera sencilla. Está orientado al manejo de sprites.
@@ -5155,7 +5451,7 @@ cuadroTexto.grid(row=0, column=1)
 - *init()* : Inicializa todos los módulos de pygame importados.
 > Si algún módulo no se puede importar, no se mostrará ninguna excepción, pero se devolverá una tupla. El primer elemento es el número de módulos importados correctamente y el segundo elemento es el número de importaciones fallidas.
 
-> ⚠️ Tal vez se desee inicializar diferentes módulos por separado para mejorar la velocidad de ejecución del programa, o no cargar módulos que no se utilizan temporalmente.
+> :exclamation: Tal vez se desee inicializar diferentes módulos por separado para mejorar la velocidad de ejecución del programa, o no cargar módulos que no se utilizan temporalmente.
 
 > Está bien llamar al método init () repetidamente, y no habrá efectos negativos. Incluso si ha llamado a pygame.quit (), es posible desinstalar todos los módulos.
 
@@ -5173,7 +5469,9 @@ cuadroTexto.grid(row=0, column=1)
 - *get_sdl_version()* : Obtiene el número de versión de SDL.
 > Devuelve los 3 dígitos de la versión relevante de la biblioteca SDL. Esta versión se genera en tiempo de compilación. 
 
-> ⚠️ Este método se puede utilizar para saber qué componente no funciona correctamente.
+> :memo: Este método se puede utilizar para saber qué componente no funciona correctamente.
+
+
 
 ## Expresiones regulares
 ---
@@ -5184,7 +5482,7 @@ Mediante secuencias de [metacaracteres](./Manual_RegEx.md "Manual RegEx") se bus
 - *search(comparador, c)* : Escanea la cadena *c*, buscando la cadena *comparador* hasta encontrar una coincidencia.
 - *findall(comparador, c)* : Encuentra todas las subcadenas de caracteres de la cadena *c* donde coincide la cadena *comparador* y las retorna como una lista.
 - *finditer(comparador, c)* : Encuentra todas las subcadenas de caracteres de la cadena *c* donde coincide la cadena *comparador* y las retorna como un término iterado
-> ⚠️ Si se cumplen las condiciones de las sentencias se devuelve un *\<match object>*. En caso contrario, devuelve *\<None>*.
+> :bulb: Si se cumplen las condiciones de las sentencias se devuelve un *\<match object>*. En caso contrario, devuelve *\<None>*.
 
 ~~~~ python
 >>> import re
@@ -5248,6 +5546,8 @@ None
 'Amazon'
 ~~~~
 
+
+
 ## Depuración de código
 ---
 ### Depuración de programas
@@ -5285,6 +5585,8 @@ Durante la ejecución del programa, se puede ver el contenido de las variables d
 El usuario también puede introducir expresiones y ver cómo se evalúan durante la ejecución del programa en la ventana de vista de expresiones.
 
 ![](Fotos/Manual_Python/Depuracion_Codigo/DebbugerEstadoVariables.PNG)
+
+
 
 ## Trucos y consejos
 ---
@@ -5357,7 +5659,7 @@ Clark Kent en realidad es Superman, y su enemigo es Lex Luthor
 Wade Wilson en realidad es Deadpool, y su enemigo es Taskmaster
 Bruce Wayne en realidad es Batman, y su enemigo es Joker
 ~~~~
-> ⚠️ Si se quiere forzar la necesidad de que todas las listas tengan el mismo tamaño, solo es necesario incluir el comando *strict=True* al final.
+> :memo: Si se quiere forzar la necesidad de que todas las listas tengan el mismo tamaño, solo es necesario incluir el comando *strict=True* al final.
 > ~~~~ python
 > >>> listas = [['A','B','C'],[1,2,3,4],['X','Y','Z']]
 > >>> for val1, val2, val3 in zip(*listas, strict=True):
@@ -5392,7 +5694,7 @@ Parecido al caso anterior, si queremos asignar más de un valor (una lista) al d
 >>> d
 6
 ~~~~
-> ⚠️ Si se emplease <*_> en la declaración de variables esto haría que se ignorasen los conjuntos sobrantes.
+> :memo: Si se emplease <*_> en la declaración de variables esto haría que se ignorasen los conjuntos sobrantes.
 > ~~~~ python
 > >>> a, *_, b = (1,2,3,4)
 > >>> a
@@ -5478,7 +5780,7 @@ Si quisieramos rellenar con ceros un texto hasta alcanzar una longitud *n* podem
 >>> txt.zfill(10)
 0000000123
 ~~~~
-> ⚠️ Si la longitud del texto original es superior a la lingitud *n* especificada, no pasará nada.
+> :exclamation: Si la longitud del texto original es superior a la lingitud *n* especificada, no pasará nada.
 > ~~~~ python
 > >>> txt = '12345'
 > >>> txt.zfill(3)
