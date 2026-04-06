@@ -141,7 +141,7 @@ La clase a la que pertenece un dato se obtiene con el comando *type()*.
 <class 'tuple'>
 ~~~~
 
-### Números (clases *int* y *float*)
+### Números (*int* y *float*)
 Secuencia de dígitos (pueden incluir el - para negativos y el . para decimales) que representan números. Pueden ser enteros (*int*) o reales (*float*).
 ~~~~ python
 >>> type(1)
@@ -233,7 +233,7 @@ Realizan operaciones en los operandos bit a bit (en binario)
 -11
 ~~~~
 
-### Cadenas (clase *str*)
+### Cadenas (*str*)
 Secuencia de caracteres alfanuméricos que representan texto. Se escriben entre comillas sencillas ’ o dobles “.
 ~~~~ python
 'Python'
@@ -464,7 +464,7 @@ Los marcadores de posición, a parte de indicar la posición de los valores de r
 'Pi vale   3.1416'
 ~~~~
 
-### Datos lógicos o booleanos (clase *bool*)
+### Datos lógicos o booleanos (*bool*)
 Contiene únicamente dos elementos *\<True>* y *\<False>* que representan los valores lógicos verdadero y falso respectivamente.
 
 False tiene asociado el valor *0* y *\<True>* tiene asociado el valor *1*.
@@ -742,7 +742,7 @@ n
 
 ## Listas
 ---
-### Listas
+### Listas (*list*)
 Una *lista* es una secuencia ordenada de objetos de distintos tipos.
 
 Se construyen poniendo los elementos entre corchetes *[ ]* separados por comas.
@@ -975,7 +975,7 @@ Para solucionar el sub-problema de referencia de la copia debemos usar *l1 = cop
 
 ## Tuplas
 ---
-### Tuplas
+### Tuplas (*tuple*)
 Una tupla es una secuencia ordenada de objetos de distintos tipos.
 
 Se construyen poniendo los elementos entre corchetes *( )* separados por comas.
@@ -1039,11 +1039,27 @@ False
 6
 ~~~~
 
+#### Tuplas vs Listas
+Ambas son iterables, permiten la indexación y el almacenamiento de tipos de datos heterogéneos. Sin embargo, hay situaciones en las que es preferible utilizar una tupla en lugar de una lista.
+
+Las listas son más adecuadas cuando se necesita una colección de datos que pueda ser modificada, ya que permiten agregar, eliminar o cambiar elementos. Por otro lado, las tuplas son ideales para representar datos que no deben cambiar a lo largo del programa, como coordenadas, fechas o registros de datos.
+
+Por este motivo, las tuplas son más eficientes en cuanto a memoria, ya que Python puede asignar el bloque de memoria adecuado que se requiere para los datos. Las listas necesitan memoria adicional en caso de que se necesite modificar su tamaño, lo que puede generar una sobrecarga de memoria.
+~~~~ python
+>>> import sys
+>>> lst = [1, 2, 3, 4, 5]
+>>> tup = (1, 2, 3, 4, 5)
+>>> f"List size: {sys.getsizeof(lst)} bytes"
+List size: 52 bytes
+>>> f"Tuple size: {sys.getsizeof(tup)} bytes"
+Tuple size: 40 bytes
+~~~~
+
 
 
 ## Conjuntos
 ---
-### Conjuntos
+### Conjuntos (*set*)
 Los conjuntos son utilizados en *álgebra de conjuntos* para hacer operaciones sobre grupos de valores, además de ser utilizados en muchos ámbitos del cálculo. Representan un objeto capaz de almacenar elementos únicos, que además están indexados, por lo que son de gran utilidad para buscar elementos.
 
 Se construyen poniendo los elementos entre llaves *{ }* o el comando *set( )* separados por comas.
@@ -1181,7 +1197,7 @@ True
 True
 ~~~~
 
-### Frozenset
+### Frozenset (*frozenset*)
 Los conjuntos son mutables en Python, sin embargo, existe un tipo similar que son los *frozenset* (conjuntos congelados).
 
 La diferencia principal con respecto a los conjuntos es que son **inmutables** por lo que no se pueden añadir ni eliminar elementos una vez creados, pero sus características son similares:
@@ -1201,7 +1217,7 @@ AttributeError: 'frozenset' object has no attribute 'add'
 
 ## Diccionarios
 ---
-### Diccionarios
+### Diccionarios (*dict*)
 Un diccionario es una colección de pares formados por una clave y un valor asociado a la clave.
 
 Se construyen poniendo los pares entre llaves *{ }* separados por comas, y separando la clave del valor con dos puntos *:*.
@@ -1357,7 +1373,7 @@ Existen dos formas de copiar diccionarios:
 
 ## Funciones
 ---
-### Funciones (def)
+### Funciones (*def*)
 Una función es un bloque de código que tiene asociado un nombre, de manera que cada vez que se quiera ejecutar el bloque de código basta con invocar el nombre de la función.
 
 Para declarar una función se utiliza la siguiente sintaxis:
@@ -2017,7 +2033,7 @@ Este es el repositorio de manuales de Yeibi: https://github.com/yeibi-aholic
 
 ## Excepciones
 ---
-### Control de errores mediante excepciones
+### Control de errores mediante excepciones (*try-except*)
 Python utiliza un objeto especial llamado **excepción** para controlar cualquier error que pueda ocurrir durante la ejecución de un programa.
 
 Cuando ocurre un error durante la ejecución de un programa, Python crea una excepción. Si no se controla esta excepción la ejecución del programa se detiene y se muestra el error (*traceback*).
@@ -2110,7 +2126,7 @@ El número no puede ser negativo
 
 ## Programación Orientada a Objetos
 ---
-### Objetos
+### Objetos (*object*)
 Python también permite la *programación orientada a objetos*, que es un paradigma de programación en la que los datos y las operaciones que pueden realizarse con esos datos se agrupan en unidades lógicas llamadas **objetos**.
 
 Los objetos suelen representar conceptos del dominio del programa, como un estudiante, un coche, un teléfono, etc. Los datos que describen las características del objeto se llaman **atributos** y son la parte estática del objeto, mientras que las operaciones que puede realizar el objeto se llaman **métodos** y son la parte dinámica del objeto.
@@ -2165,7 +2181,7 @@ Después se crean objetos con los datos concretos del problema y se hace que los
 
 De esta forma se pueden abordar problemas muy complejos descomponiéndolos en pequeñas tareas que son más fáciles de resolver que el problema principal (*¡divide y vencerás!*).
 
-### Clases
+### Clases (*class*)
 Los objetos con los mismos atributos y métodos se agrupan **clases**. Las clases definen los atributos y los métodos, y por tanto, la semántica o comportamiento que tienen los objetos que pertenecen a esa clase. Se puede pensar en una clase como en un *molde* a partir del cuál se pueden crear objetos.
 
 Para declarar una clase se utiliza la palabra clave *class* seguida del nombre de la clase y dos puntos, de acuerdo a la siguiente sintaxis:
@@ -2793,7 +2809,7 @@ class Mates(builtins.object)
 
 ## Módulos
 ---
-### Módulos
+### Módulos y librerías
 El código de un programa en Python puede reutilizarse en otro importándolo. Cualquier fichero con código de Python reutilizable se conoce como *módulo* o *librería*.
 
 Los módulos suelen contener objetos (funciones, clases, excepciones, etc) reutilizables, pero también pueden definir variables con datos simples o compuestos (listas, diccionarios, etc), o cualquier otro código válido en Python.
@@ -2853,7 +2869,7 @@ Python viene con una [biblioteca de módulos predefinidos](https://docs.python.o
 
 #### Otras librerías imprescindibles
 Estas librerías no vienen en la distribución estándar de Python y necesitan instalarse. También puede optarse por la distribución [Anaconda](https://www.anaconda.com/) que incorpora la mayoría de estas librerías.
-- *[NumPy](https://www.numpy.org/)* : Funciones matemáticas avanzadas y arrays.
+- *[NumPy](https://www.numpy.org/)* : Funciones matemáticas avanzadas y *arrays*.
 - *[SciPy](https://www.scipy.org/)* : Más funciones matemáticas para aplicaciones científicas.
 - *[matplotlib](https://matplotlib.org/)* : Análisis y representación gráfica de datos.
 - *[Pandas](https://pandas.pydata.org/)* : Funciones para el manejo y análisis de estructuras de datos.
@@ -3019,7 +3035,7 @@ Para manejar fechas en Python se suele utilizar la librería *datetime* que inco
 - Hacer aritmética de fechas (sumar o restar fechas).
 - Comparar fechas.
 
-### Los tipos de datos date, time y datetime
+### Los tipos de datos *date*, *time* y *datetime*
 - *date(año, mes, dia)* : Devuelve un objeto de tipo *date* que representa la fecha con el *año*, *mes* y *dia* indicados.
 - *time(hora, minutos, segundos, microsegundos)* : Devuelve un objeto de tipo time que representa un tiempo la *hora*, *minutos*, *segundos* y *microsegundos* indicados.
 - *datetime(año, mes, dia, hora, minutos, segundos, microsegundos)* : Devuelve un objeto de tipo *datetime* que representa una fecha y hora con el *año*, *mes*, *dia*, *hora*, *minutos*, *segundos* y *microsegundos* indicados.
@@ -3145,11 +3161,11 @@ datetime.timedelta(days=132, seconds=1826, microseconds=895590)
 
 Incorpora una nueva clase de objetos llamados **arrays** que permite representar colecciones de datos de un mismo tipo en varias dimensiones, y funciones muy eficientes para su manipulación.
 
-La ventaja de Numpy frente a las listas predefinidas en Python es que el procesamiento de los arrays se realiza mucho más rápido (hasta 50 veces más) que las listas, lo cual la hace ideal para el procesamiento de vectores y matrices de grandes dimensiones.
+La ventaja de Numpy frente a las listas predefinidas en Python es que el procesamiento de los *arrays* se realiza mucho más rápido (hasta 50 veces más) que las listas, lo cual la hace ideal para el procesamiento de vectores y matrices de grandes dimensiones.
 
 ![](Fotos/Manual_Python/Libreria_Numpy/NumpyLogo.PNG)
 
-### La clase de objetos *array*
+### La clase de objetos array
 Un array es una estructura de datos de un mismo tipo organizada en forma de tabla o cuadrícula de distintas dimensiones.
 
 Las dimensiones de un array también se conocen como **ejes**.
@@ -3182,7 +3198,7 @@ Las dimensiones de un array también se conocen como **ejes**.
   [10 11 12]]]
 ~~~~
 
-Otras funciones útiles que permiten generar arrays son:
+Otras funciones útiles que permiten generar *arrays* son:
 
 - *np.empty(dimensiones)* : Crea y devuelve una referencia a un array vacío con las dimensiones especificadas en la tupla *dimensiones*.
 - *np.zeros(dimensiones)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son todos ceros.
@@ -3230,7 +3246,7 @@ También es posible obtener subarrays con el operador dos puntos *:* indicando e
  [4 5]]
  ~~~~
 
- ### Filtrado de elementos de un array
+### Filtrado de elementos de un array
 Una característica muy útil de los arrays es que es muy fácil obtener otro array con los elementos que cumplen una condición.
 - *a[condicion]* : Devuelve una lista con los elementos del array *a* que cumplen la condición *condicion*.
 ~~~~ python
@@ -3241,7 +3257,7 @@ Una característica muy útil de los arrays es que es muy fácil obtener otro ar
 [4 6]
 ~~~~
 
-### Operaciones matemáticas con arrays
+### Operaciones matemáticas con *arrays*
 Existen dos formas de realizar operaciones matemáticas con arrays: a nivel de elemento y a nivel de array.
 
 Las operaciones a nivel de elemento operan los elementos que ocupan la misma posición en dos arrays. Se necesitan, por tanto, dos arrays con las mismas dimensiones y el resultado es una array de la misma dimensión.
@@ -3840,7 +3856,7 @@ Para crear un DataFrame a partir de una lista de diccionarios con los datos de l
 
 #### Creación de un DataFrame a partir de un array
 Para crear un DataFrame a partir de un array de NumPy se utiliza el siguiente método:
-- *DataFrame(data=array, index=filas, columns=columnas, dtype=tipo)* : Devuelde un objeto del tipo DataFrame cuyas filas y columnas son las del array *array*, los nombres de filas indicados en la lista *filas*, los nombres de columnas indicados en la lista *columnas* y el tipo indicado en *tipo*. La lista *filas* tiene que tener el mismo tamaño que el número de filas del array y la lista *columnas* el mismo tamaño que el número de columnas del array. Si no se pasa la lista de filas se utilizan enteros empezando en 0. Si no se pasa la lista de columnas se utilizan las claves de los diccionarios. Si no se pasa la lista de tipos, se infiere.
+- *DataFrame(data=array, index=filas, columns=columnas, dtype=tipo)* : Devuelde un objeto del tipo DataFrame cuyas filas y columnas son las del array array, los nombres de filas indicados en la lista *filas*, los nombres de columnas indicados en la lista *columnas* y el tipo indicado en *tipo*. La lista *filas* tiene que tener el mismo tamaño que el número de filas del array y la lista *columnas* el mismo tamaño que el número de columnas del array. Si no se pasa la lista de filas se utilizan enteros empezando en 0. Si no se pasa la lista de columnas se utilizan las claves de los diccionarios. Si no se pasa la lista de tipos, se infiere.
 ~~~~ python
 >>> import pandas as pd
 >>> df = pd.DataFrame(np.random.randn(4, 3), columns=['a', 'b', 'c'])
@@ -5681,8 +5697,7 @@ Al asignar un valor a una variable, si solo quisieramos unos valores concretos y
 10
 ~~~~
 
-### Asignar valores demás
-Parecido al caso anterior, si queremos asignar más de un valor (una lista) al declarar una varias variables donde a algunas solo se les pasará un único valor, podemos escribir <*> detrás de una variable para expresar que es un conjunto de valores.
+Si queremos asignar más de un valor (una lista) al declarar una varias variables donde a algunas solo se les pasará un único valor, podemos escribir <*> detrás de una variable para expresar que es un conjunto de valores.
 ~~~~ python
 >>> a, b, *c, d = (1,2,3,4,5,6)
 >>> a
