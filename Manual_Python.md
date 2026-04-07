@@ -2096,12 +2096,58 @@ ZeroDivisionError: division by zero
 #### Tipos de excepciones
 Los principales excepciones definidas en Python son:
 - *TypeError* : Ocurre cuando se aplica una operación o función a un dato del tipo inapropiado.
+~~~~ python
+>>> 1 + '1'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> python = 'HolaMundo'
+>>> python()
+TypeError: 'str' object is not callable
+>>> 1[0]
+TypeError: 'int' object is not subscriptable
+>>> for n in 1234,56:
+TypeError: 'float' object is not iterable
+~~~~
+
 - *ZeroDivisionError* : Ocurre cuando se itenta dividir por cero.
+~~~~ python
+>>> 1 / 0
+ZeroDivisionError: division by zero
+>>> 1 // 0
+ZeroDivisionError: integer division or modulo by zero
+~~~~
 - *OverflowError* : Ocurre cuando un cálculo excede el límite para un tipo de dato numérico.
+~~~~ python
+>>> math.exp(1000)  # Error al intentar calcular el exponencial de un número muy grande.
+OverflowError: math range error
+~~~~
 - *IndexError* : Ocurre cuando se intenta acceder a una secuencia con un índice que no existe.
+~~~~ python
+>>> l = [1, 2, 3]
+>>> l[3]
+IndexError: list index out of range
+>>> l[-4]
+IndexError: list index out of range
+>>> [][0]
+IndexError: list index out of range
+~~~~
 - *KeyError* : Ocurre cuando se intenta acceder a un diccionario con una clave que no existe.
+~~~~ python
+>>> d = {'a': 1, 'b': 2, 'c': 3}
+>>> d['d']
+KeyError: 'd'
+>>> d[1]
+KeyError: 1
+~~~~
 - *FileNotFoundError* : Ocurre cuando se intenta acceder a un fichero que no existe en la ruta indicada.
+~~~~ python
+>>> f = open('fichero.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'fichero.txt'
+~~~~
 - *ImportError* : Ocurre cuando falla la importación de un módulo.
+~~~~ python
+>>> import modulo_inexistente
+ImportError: No module named 'modulo_inexistente'
+~~~~
 
 Consultar la documentación de Python para ver la [lista de exepciones predefinidas](https://docs.python.org/3/library/exceptions.html).
 
