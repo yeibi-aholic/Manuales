@@ -711,10 +711,6 @@ while condición:
 
 Repite la ejecución del bloque de código mientras la expresión lógica *condición* sea cierta.
 
-Se puede interrumpir en cualquier momento la ejecución del bloque de código con la instrucción *break*.
-
-> :warning: El bloque de código debe estar indentado por 4 espacios.
-
 ~~~~ python
 >>> # Pregunta al usuario por un número hasta que introduce 0.
 >>> num = None
@@ -727,20 +723,6 @@ Introduce un número: 0
 >>> 
 ~~~~
 
-Alternativa:
-~~~~ python
->>> # Pregunta al usuario por un número hasta que introduce 0.
->>> while True:
-...     num = int(input('Introduce un número: '))
-...     if num == 0:
-...         break
-...
-Introduce un número: 2
-Introduce un número: 1
-Introduce un número: 0
->>>
-~~~~
-
 ### Bucles iterativos (*for*)
 ~~~~ python
 for i in secuencia:
@@ -748,10 +730,6 @@ for i in secuencia:
 ~~~~
 
 Repite la ejecución del bloque de código para cada elemento de la secuencia *secuencia*, asignado dicho elemento a *i* en cada repetición.
-
-Se puede interrumpir en cualquier momento la ejecución del bloque de código con la instrucción *break* o saltar la ejecución para un determinado elemento de la secuencia con la instrucción *continue*.
-
-> :warning: El bloque de código debe estar indentado por 4 espacios.
 
 Se utiliza fundamentalmente para recorrer colecciones de objetos como cadenas, listas, tuplas o diccionarios.
 
@@ -778,15 +756,63 @@ n
 ...
 1, 3, 5, 7, 9, 
 ~~~~
+
+### Sentencias *break*, *continue* y *pass*
+Se puede controlar la ejecución del bloque de código de un bucle tanto para crear excepciones, saltar a la siguiente iteración o salir.
+- *break* : Interrumpe la ejecución del bloque de código de un bucle.
 ~~~~ python
->>> for i in range(1, 10):
-...     if i == 5:
+>>> while True:
+...     num = int(input('Introduce un número: '))
+...     if num == 0:
+...         print('Fin del bucle')
+...         break
+Introduce un número: 2
+Introduce un número: 1
+Introduce un número: 0
+Fin del bucle
+~~~~
+- *continue* : Salta la ejecución del bloque de código de un bucle para el elemento actual de la secuencia y continúa con el siguiente elemento.
+~~~~ python
+>>> for i in range(15):
+...     if i % 2 == 0:
 ...         continue
-...     if i == 9:
+...     elif i == 13:
 ...         break
 ...     print(i, end=", ")
 ...
-1, 2, 3, 4, 6, 7, 8, 
+1, 3, 5, 7, 9, 11,
+~~~~
+- *pass* : No hace nada, se utiliza para indicar que no se va a ejecutar ningún código en un bloque de código.
+~~~~ python
+>>> for i in range(5):
+...     if i % 2 == 0:
+...         pass
+...     else:
+...         i += 1
+...     print(i, end=", ")
+...
+0, 2, 2, 4, 4,
+~~~~
+
+### Sentencias de control de bucle con *else*
+Se puede añadir un bloque de código después de la ejecución del bucle que se ejecutará si el bucle finaliza de forma normal, es decir, sin interrupciones por *break*.
+~~~~ python
+>>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print(f"{n} = {x} * {n//x}")
+...             break
+...     else:
+...         print(n, "es primo")
+...
+2 es primo
+3 es primo
+4 = 2 * 2
+5 es primo
+6 = 2 * 3
+7 es primo
+8 = 2 * 4
+9 = 3 * 3
 ~~~~
 
 
@@ -837,81 +863,81 @@ Se utilizan los mismos operadores de acceso que para cadenas de caracteres.
 > :exclamation: El índice del primer elemento de la lista es *0*.
 
 ~~~~ python
->>> a = ['P', 'y', 't', 'h', 'o', 'n']
->>> a[0]
+>>> l = ['P', 'y', 't', 'h', 'o', 'n']
+>>> l[0]
 'P'
->>> a[5]
+>>> l[5]
 'n'
->>> a[6]
+>>> l[6]
 IndexError: list index out of range
->>> a[-1]
+>>> l[-1]
 'n'
 ~~~~
 
 #### Sublistas
-- *l[i:j:k]* : Devuelve la sublista desde el elemento de *l* con el índice *i* hasta el elemento anterior al índice *j*, tomando elementos cada *k*.
+- *l[i:j:k]* : Devuelve la sublista desde el elemento de *l* con el índice *i* hasta el elemento anterior al índice *j*, tomando elementos cada salto *k*.
 ~~~~ python
->>> a = ['P', 'y', 't', 'h', 'o', 'n']
->>> a[1:4]
+>>> l = ['P', 'y', 't', 'h', 'o', 'n']
+>>> l[1:4]
 ['y', 't', 'h']
->>> a[1:1]
+>>> l[1:1]
 []
->>> a[:-3]
+>>> l[:-3]
 ['P', 'y', 't']
->>> a[:]
+>>> l[:]
 ['P', 'y', 't', 'h', 'o', 'n']
->>> a[0:6:2]
+>>> l[0:6:2]
 ['P', 't', 'o']
 ~~~~
 
 #### Operaciones que no modifican una lista
 ~~~~ python
->>> a = [1, 2, 2, 3]
+>>> l = [1, 2, 2, 3]
 ~~~~
 - *len(l)* : Devuelve el número de elementos de la lista *l*.
 ~~~~ python
->>> a = [1, 2, 2, 3]
->>> len(a)
+>>> l = [1, 2, 2, 3]
+>>> len(l)
 4
 ~~~~
 - *min(l)* : Devuelve el mínimo elemento de la lista *l*, siempre que los datos sean comparables.
 ~~~~ python
->>> min(a)
+>>> min(l)
 1
 ~~~~
 - *max(l)* : Devuelve el máximo elemento de la lista *l*, siempre que los datos sean comparables.
 ~~~~ python
->>> max(a)
+>>> max(l)
 3
 ~~~~
 - *sum(l)* : Devuelve la suma de los elementos de la lista *l*, siempre que los datos se puedan sumar.
 ~~~~ python
->>> sum(a)
+>>> sum(l)
 8
 ~~~~
 - *dato in l* : Devuelve *\<True>* si el *dato* dato pertenece a la lista *l* y *\<False>* en caso contrario.
 ~~~~ python
->>> 3 in a
+>>> 3 in l
 True
 ~~~~
 - *l.index(dato)* : Devuelve la posición que ocupa en la lista *l* el primer elemento con valor *dato*. Si no encunetra nada devuelve un *ValueError*.
 ~~~~ python
->>> a.index(2)
+>>> l.index(2)
 1
 ~~~~
 - *l.count(dato)* : Devuelve el número de veces que el valor *dato* está contenido en la lista *l*.
 ~~~~ python
->>> a.count(2)
+>>> l.count(2)
 2
 ~~~~
 - *all(l)* : Devuelve *\<True>* si todos los elementos de la lista *l* son *\<True>* y *\<False>* en caso contrario.
 ~~~~ python
->>> all(a)
+>>> all(l)
 True
 ~~~~
 - *any(l)* : Devuelve *\<True>* si algún elemento de la lista *l* es *\<True>* y *\<False>* en caso contrario.
 ~~~~ python
->>> any([0, False, 3<2])
+>>> any([0, False, 3 < 2])
 False
 ~~~~
 - *separador.join(l)* : Devuelve una cadena formada por los datos de la lista *l* con el separador *separador* entre cada uno, siempre que los datos sean del tipo *string*.
@@ -922,54 +948,73 @@ False
 
 #### Operaciones que modifican una lista
 ~~~~ python
->>> a = [1, 3, 5]
->>> b = [2, 4, 6]
+>>> l1 = [1, 3, 5]
+>>> l2 = [2, 4, 6]
 ~~~~
 - *l1 + l2* : Crea una nueva lista concatenando los elementos de la listas *l1* y *l2*.
 ~~~~ python
->>> a + b
+>>> l1 + l2
 [1, 3, 5, 2, 4, 6]
 ~~~~
 - *l.append(dato)* : Añade *dato* al final de la lista *l*.
 ~~~~ python
->>> a.append(7)
+>>> l1.append(7)
 [1, 3, 5, 7]
 ~~~~
 - *l.extend(sequencia)* : Añade los datos de *sequencia* al final de la lista *l*.
 ~~~~ python
->>> a.extend(b)
+>>> l1.extend(l2)
 [1, 3, 5, 2, 4, 6]
 ~~~~
 - *l.insert(índice, dato)* : Inserta *dato* en la posición *índice* de la lista *l* y desplaza los elementos una posición a partir de la posición *índice*. Si la posición *índice* está fuera del rango de la lista *l*, el dato *dato* se insertará en uno de los extremos de la lista *l*.
 ~~~~ python
->>> a.insert(1, 2)
+>>> l1.insert(1, 2)
 [1, 2, 3, 5]
->>> a.insert(6, 8)
+>>> l1.insert(6, 8)
 [1, 2, 3, 5, 8]
->>> a.insert(-6, 0)
+>>> l1.insert(-6, 0)
 [0, 1, 2, 3, 5, 8]
 ~~~~
 - *l.remove(dato)* : Elimina el primer elemento con valor *dato* en la lista *l* y desplaza los que están por detrás de él una posición hacia delante.
 ~~~~ python
->>> a.remove(3)
+>>> l1.remove(3)
 [1, 5]
 ~~~~
 - *l.pop([índice])* : Devuelve el dato en la posición *índice* y lo elimina de la lista *l*, desplazando los elementos por detrás de él una posición hacia delante. Por defecto elimina el último valor de la lista.
 ~~~~ python
->>> b.pop()
-6
+>>> l1.pop()
+5
+>>> l1
+[1, 3]
+>>> l2.pop(1)
+4
+>>> l2
+[2, 6]
+~~~~
+- *del l[i:j]* : Elimina el dato en la posición *i* de la lista *l* y desplaza los elementos por detrás de él una posición hacia delante, hasta el elemento anterior al índice *j* (opcional).
+~~~~ python
+>>> del l1[1]
+[1, 5]
+>>> del l2[0:2]
+[6]
+>>> del l1[:]
+[]
+~~~~
+- *l.clear()* : Elimina todos los elementos de la lista *l*.
+~~~~ python
+>>> l1.clear()
+[]
 ~~~~
 - *l.sort()* : Ordena los elementos de la lista *l* de acuerdo al orden predefinido, siempre que los elementos sean comparables.
 ~~~~ python
->>> c = a + b
->>> c.sort()
+>>> l3 = l1 + l2
+>>> l3.sort()
 [1, 2, 3, 4, 5, 6]
 ~~~~
 - *l.reverse()* : invierte el orden de los elementos de la lista *l*.
-
 ~~~~ python
->>> c = a + b
->>> c.reverse()
+>>> l3 = l1 + l2
+>>> l3.reverse()
 [6, 4, 2, 5, 3, 1]
 ~~~~
 
@@ -977,48 +1022,39 @@ False
 Existen dos formas de copiar listas:
 - **Copia por referencia** *l1 = l2* : Asocia la la variable *l1* la misma lista que tiene asociada la variable *l2*; es decir, ambas variables apuntan a la misma dirección de memoria. Cualquier cambio que hagamos a través de *l1* o *l2* afectará a la misma lista.
 ~~~~ python
->>> a = [1, 2, 3]
->>> # copia por referencia
->>> b = a
->>> b
+>>> l1 = [1, 2, 3]
+>>> l2 = l1 # copia por referencia
 [1, 2, 3]
->>> b.remove(2)
->>> b
+>>> l2.remove(2)
 [1, 3]
->>> a
+>>> l1
 [1, 3]
 ~~~~
 - **Copia por valor** *l1 = list(l2)* : Crea una copia de la lista asociada a *l2* en una dirección de memoria diferente y se la asocia a *l1*. Las variables apuntan a direcciones de memoria diferentes que contienen los mismos datos. Cualquier cambio que hagamos a través de *l1* no afectará a la lista de *l2* y viceversa, salvo que la propia lista tenga una lista como valor. En este último caso, la copia de dicho valor será como una *copia por referencia*. (*l1 = l2.copy()* causará el mismo caso).
 ~~~~ python
->>> a = [1, 2, 3, [4, 5]]
->>> # copia por valor
->>> b = list(a)
->>> b
+>>> l1 = [1, 2, 3, [4, 5]]
+>>> l2 = list(l1) # copia por valor
 [1, 2, 3, [4, 5]]
->>> b.remove(2)
->>> b
+>>> l2.remove(2)
 [1, 3, [4, 5]]
->>> a
+>>> l1
 [1, 2, 3, [4, 5]]
->>> b[2][1] = 6
->>> b
+>>> l2[2][1] = 6
 [1, 3, [4, 6]]
->>> a
+>>> l1
 [1, 2, 3, [4, 6]]
 ~~~~
 
 Para solucionar el sub-problema de referencia de la copia debemos usar *l1 = copy.deepcopy(l2)* de la librería *copy*.
 ~~~~ python
 >>> import copy
->>> a = [1, 2, 3, [4, 5]]
->>> b = copy.deepcopy(a)
->>> b
+>>> l1 = [1, 2, 3, [4, 5]]
+>>> l2 = copy.deepcopy(l1)
 [1, 2, 3, [4, 5]]
->>> b.remove(2)
->>> b[2][1] = 6
->>> b
+>>> l2.remove(2)
+>>> l2[2][1] = 6
 [1, 3, [4, 6]]
->>> a
+>>> l1
 [1, 2, 3, [4, 5]]
 ~~~~
 
@@ -1074,19 +1110,19 @@ El acceso a los elementos de una tupla se realiza del mismo modo que en las list
 Las operaciones de listas que no modifican la lista también son aplicables a las tuplas.
 
 ~~~~ python
->>> a = (1, 2, 3)
->>> a[1]
+>>> t1 = (1, 2, 3)
+>>> t1[1]
 2
->>> len(a)
+>>> len(t1)
 3
->>> a.index(3)
+>>> t1.index(3)
 2
->>> 0 in a
+>>> 0 in t1
 False
->>> b = ((1, 2, 3), (4, 5, 6))
->>> b[1]
+>>> t2 = ((1, 2, 3), (4, 5, 6))
+>>> t2[1]
 (4, 5, 6)
->>> b[1][2]
+>>> t2[1][2]
 6
 ~~~~
 
@@ -1098,11 +1134,11 @@ Las listas son más adecuadas cuando se necesita una colección de datos que pue
 Por este motivo, las tuplas son más eficientes en cuanto a memoria, ya que Python puede asignar el bloque de memoria adecuado que se requiere para los datos. Las listas necesitan memoria adicional en caso de que se necesite modificar su tamaño, lo que puede generar una sobrecarga de memoria.
 ~~~~ python
 >>> import sys
->>> lst = [1, 2, 3, 4, 5]
->>> tup = (1, 2, 3, 4, 5)
->>> f"List size: {sys.getsizeof(lst)} bytes"
+>>> l = [1, 2, 3, 4, 5]
+>>> t = (1, 2, 3, 4, 5)
+>>> f"List size: {sys.getsizeof(l)} bytes"
 List size: 52 bytes
->>> f"Tuple size: {sys.getsizeof(tup)} bytes"
+>>> f"Tuple size: {sys.getsizeof(t)} bytes"
 Tuple size: 40 bytes
 ~~~~
 
@@ -1135,52 +1171,52 @@ Se caracterizan por:
 
 ### Operaciones con conjuntos
 ~~~~ python
->>> A = set(range(4))
+>>> s = set(range(4))
 {0, 1, 2, 3}
 ~~~~
 - *s.add(e)* : Añade un elemento *e* al conjunto *s*. No se garantiza ningún orden.
 ~~~~ python
->>> A.add(4)
+>>> s.add(4)
 {0, 1, 2, 3, 4}
 ~~~~
 - *s.discard(e)* : Intenta eliminar un elemento *e* del conjunto, exista o no.
 - *s.remove(e)* : Intenta eliminar un elemento *e* del conjunto *s*. Si no existe eleva un error.
 ~~~~ python
->>> A.discard(3)
+>>> s.discard(3)
 {0, 1, 2}
->>> A.discard(5)
+>>> s.discard(5)
 {0, 1, 2}
->>> A.remove(5)
+>>> s.remove(5)
 KeyError: 5
 ~~~~
 - *s.pop()* : Devuelve y elimina un elemento arbitrario. Devuelve un error si está vacío.
 ~~~~ python
->>> A.pop()
+>>> s.pop()
 2
->>> A
+>>> s
 {0, 1, 3}
 >>> set().pop()
 KeyError: 'pop from an empty set'
 ~~~~
 - *s.clear()* :	Elimina toda la información del conjunto	*s*.
 ~~~~ python
->>> A.clear()
+>>> s.clear()
 set()
 ~~~~
 - *s.copy()* : Devuelve una copia del conjunto *s* ajena a los cambios.
 ~~~~ python
->>> A_2 = A
+>>> s2 = s
 {0, 1, 2, 3}
->>> A.clear()
+>>> s.clear()
 set()
->>> A_2
+>>> s2
 set()
-
->>> A_2 = A.copy()
+...
+>>> s2 = s.copy()
 {0, 1, 2, 3}
->>> A.clear()
+>>> s.clear()
 set()
->>> A_2
+>>> s2
 {0, 1, 2, 3}
 ~~~~
 
@@ -1291,45 +1327,45 @@ Se caracterizan por:
 
 #### Acceso a los elementos de un diccionario
 ~~~~ python
->>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+>>> d = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 ~~~~
 - *d[clave]* : Devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve un error.
 ~~~~ python
->>> a['nombre']
+>>> d['nombre']
 'Javier'
->>> a['despacho'] = 210
+>>> d['despacho'] = 210
 {'nombre':'Javier', 'despacho': 210, 'email':'jgc4297@gmail.com'}
 ~~~~
 - *d.get(clave, valor)*  : Devuelve el valor del diccionario *d* asociado a la clave *clave*. Si en el diccionario no existe esa clave devuelve valor, y si no se especifica un valor por defecto devuelve *None*.
 ~~~~ python
->>> a.get('email')
+>>> d.get('email')
 'jgc4297@gmail.com'
->>> a.get('universidad', 'ETSIB')
+>>> d.get('universidad', 'ETSIB')
 'ETSIB'
 ~~~~
 
 #### Operaciones que no modifican un diccionario
 ~~~~ python
->>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+>>> d = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 ~~~~
 - *len(d)* : Devuelve el número de elementos del diccionario *d*.
 ~~~~ python
->>> len(a)
+>>> len(d)
 3
 ~~~~
 - *min(d)* : Devuelve la mínima clave del diccionario *d* siempre que las claves sean comparables.
 ~~~~ python
->>> min(a)
+>>> min(d)
 'despacho'
 ~~~~
 - *max(d)* : Devuelve la máxima clave del diccionario *d* siempre que las claves sean comparables.
 ~~~~ python
->>> max(a)
+>>> max(d)
 'nombre'
 ~~~~
 - *sum(d)* : Devuelve la suma de las claves del diccionario *d*, siempre que las claves se puedan sumar.
 ~~~~ python
->>> sum(a)
+>>> sum(d)
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ~~~~
 - *clave in d* : Devuelve *\<True>* si la clave *clave* pertenece al diccionario *d* y *\<False>* en caso contrario.
@@ -1339,84 +1375,80 @@ True
 ~~~~
 - *d.keys()* : Devuelve un iterador sobre las claves de un diccionario.
 ~~~~ python
->>> a.keys()
+>>> d.keys()
 dict_keys(['nombre', 'despacho', 'email'])
 ~~~~
 - *d.values()* : Devuelve un iterador sobre los valores de un diccionario.
 ~~~~ python
->>> a.values()
+>>> d.values()
 dict_values(['Javier', 218, 'jgc4297@gmail.com'])
 ~~~~
 - *d.items()* : Devuelve un iterador sobre los pares clave-valor de un diccionario.
 ~~~~ python
->>> a.items()
+>>> d.items()
 dict_items([('nombre', 'Javier'), ('despacho', 218), ('email', 'jgc4297@gmail.com')])
 ~~~~
 
 #### Operaciones que modifican un diccionario
 ~~~~ python
->>> a = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
+>>> d = {'nombre':'Javier', 'despacho': 218, 'email':'jgc4297@gmail.com'}
 ~~~~
 - *d[clave] = valor* : Añade al diccionario *d* el par formado por la clave *clave* y el valor *valor*.
 ~~~~ python
->>> a['universidad'] = 'ETSIB'
+>>> d['universidad'] = 'ETSIB'
 {'nombre': 'Javier', 'despacho': 218, 'email': 'jgc4297@gmail.com', 'universidad': 'ETSIB'}
 ~~~~
 - *d1.update(d2)* : Añade los pares del diccionario *d2* al diccionario *d1*.
 ~~~~ python
->>> a.update({'trabajo': 'programador'})
+>>> d.update({'trabajo': 'programador'})
 {'nombre': 'Javier', 'despacho': 218, 'email': 'jgc4297@gmail.com', trabajo': 'programador'}
 ~~~~
 - *d.pop(clave, alternativo)* : Devuelve del valor asociado a la clave *clave* del diccionario *d* y lo elimina del diccionario. Si la clave no está devuelve el valor *alternativo*.
 ~~~~ python
->>> a.pop('despacho')
+>>> d.pop('despacho')
 218
 {'nombre': 'Javier', 'email': 'jgc4297@gmail.com'}
->>> a.pop('trabajo', 'No existe la clave')
+>>> d.pop('trabajo', 'No existe la clave')
 'No existe la clave'
 ~~~~
 - *d.popitem()* : Devuelve la tupla formada por la clave y el valor del último par añadido al diccionario *d* y lo elimina del diccionario.
 ~~~~ python
->>> a.popitem()
+>>> d.popitem()
 ('email','jgc4297@gmail.com')
 {'nombre':'Javier', 'despacho': 218}
 ~~~~
 - *del d[clave]* : Elimina del diccionario *d* el par con la clave *clave*.
 ~~~~ python
->>> del a['nombre']
+>>> del d['nombre']
 {'despacho': 218, 'email': 'jgc4297@gmail.com'}
 ~~~~
 - *d.clear()* : Elimina todos los pares del diccionario *d* de manera que se queda vacío.
 ~~~~ python
->>> a.clear()
+>>> d.clear()
 {}
 ~~~~
 
 #### Copia de diccionarios
 Existen dos formas de copiar diccionarios:
 ~~~~ python
->>> a = {1:'A', 2:'B', 3:'C'}
+>>> d = {1:'A', 2:'B', 3:'C'}
 ~~~~
 - **Copia por referencia** *d1 = d2* : Asocia la la variable *d1* el mismo diccionario que tiene asociado la variable *d2*, es decir, ambas variables apuntan a la misma dirección de memoria. Cualquier cambio que hagamos a través de *l1* o *l2* afectará al mismo diccionario.
 ~~~~ python
->>> b = a
->>> b
+>>> d2 = d
 {1:'A', 2:'B', 3:'C'}
->>> b.pop(2)
->>> b
+>>> d2.pop(2)
 {1:'A', 3:'C'}
->>> a
+>>> d
 {1:'A', 3:'C'}
 ~~~~
 - **Copia por valor** *d1 = dict(d2)* : Crea una copia del diccionario asociado a *d2* en una dirección de memoria diferente y se la asocia a *d1*. Las variables apuntan a direcciones de memoria diferentes que contienen los mismos datos. Cualquier cambio que hagamos a través de *l1* no afectará al diccionario de *l2* y viceversa.
 ~~~~ python
->>> b = dict(a)
->>> b
+>>> d2 = dict(d)
 {1:'A', 2:'B', 3:'C'}
->>> b.pop(2)
->>> b
+>>> d2.pop(2)
 {1:'A', 3:'C'}
->>> a
+>>> d
 {1:'A', 2:'B', 3:'C'}
 ~~~~
 
@@ -1730,7 +1762,7 @@ def <nombre-generador>(<parametros>):
 ...                 return False
 ...         return True
 ...     return False
-...  
+...
 >>> numeros = [10 , 20 , 30 , 40 , 50]
 >>> generador = primeros_primos()
 >>> generador.send(None)    # Inicialización de .send()
@@ -1763,7 +1795,7 @@ def generador(elementos):
 >>> def cities(*ciudades):
 ...     for ciudad in ciudades:
 ...         yield from ciudad   # yield sobre letra de cada ciudad de lista ciudades
-
+...
 >>> lista_ciudades = cities("Madrid", "Sevilla", "Barcelona")
 >>> print(next(lista_ciudades))
 'M'
@@ -2107,7 +2139,6 @@ TypeError: 'int' object is not subscriptable
 >>> for n in 1234,56:
 TypeError: 'float' object is not iterable
 ~~~~
-
 - *ZeroDivisionError* : Ocurre cuando se itenta dividir por cero.
 ~~~~ python
 >>> 1 / 0
@@ -2147,6 +2178,15 @@ FileNotFoundError: [Errno 2] No such file or directory: 'fichero.txt'
 ~~~~ python
 >>> import modulo_inexistente
 ImportError: No module named 'modulo_inexistente'
+~~~~
+- *SyntaxError* : Ocurre cuando el código no cumple la sintaxis de Python.
+~~~~ python
+>>> if x > 0
+SyntaxError: expected ':'
+>>> for i range(10):
+SyntaxError: invalid syntax
+>>> [x,x**2 for x in range(5)]
+SyntaxError: did you forget parentheses around the comprehension target?
 ~~~~
 
 Consultar la documentación de Python para ver la [lista de exepciones predefinidas](https://docs.python.org/3/library/exceptions.html).
