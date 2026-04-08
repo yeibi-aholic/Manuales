@@ -2227,6 +2227,7 @@ Esta instrucción ejecuta el primer bloque de código y si se produce un error q
 ...     print(f.read())
 ¡El fichero no existe!
 ~~~~
+> :memo: Si no se especifica ninguna excepción en la cláusula *except* se ejecutará dicho bloque de forma genérica.
 
 #### Generación manual de excepciones
 También se pueden generar manualmente excepciones específicas con la declaración *raise* dentro de una condición. El error de salida puede ser tanto uno predefinido por Python como uno totalmente nuevo.
@@ -2239,7 +2240,7 @@ Si se combina con *except* se puede renombrar un error ya predefinido con nuestr
 ~~~~ python
 try:
     bloque código 1
-except exception as NombreError:
+except excepción as NombreError:
     print(NombreError)
 ~~~~
 
@@ -2258,6 +2259,93 @@ except exception as NombreError:
 ...     print(ErrorNumeroNegativo)
 El número no puede ser negativo
 ~~~~
+
+#### Notas sobre el control de excepciones
+Hay casos en los que es útil añadir información después de que la excepción haya sido capturada.
+~~~~ python
+except:
+    exception.add_note(nota_1)
+    exception.add_note(nota_2)
+    exception.add_note(nota_3)
+    raise
+~~~~
+~~~~ python
+>>> try:
+...     1 / 0
+... except ZeroDivisionError as error:
+...     error.add_note("¡No se puede dividir por cero!")
+...     error.add_note("Revisa los valores de los operandos.")
+...     error.add_note("Si el error persiste, contacta con el soporte técnico.")
+...     raise
+ZeroDivisionError: division by zero
+¡No se puede dividir por cero!
+Revisa los valores de los operandos.
+Si el error persiste, contacta con el soporte técnico.
+~~~~
+
+#### Control de excepciones multiples
+Es posible controlar varias excepciones distintas con la misma instrucción *try* utilizando varias cláusulas *except*.
+~~~~ python
+>>> def division(a, b):
+...     try:
+...         result = a / b
+...     except ZeroDivisionError:
+...         print('¡No se puede dividir por cero!')
+...     except TypeError:
+...         print('¡Los operandos deben ser números!')
+...     else:
+...         print(result)
+...
+>>> division(1, 0)
+¡No se puede dividir por cero!
+>>> division(1, '2')
+¡Los operandos deben ser números!
+>>> division(1, 2)
+0.5
+~~~~
+
+> :memo: Si se quiere controlar varias excepciones distintas con la misma cláusula *except* se pueden agrupar las excepciones en una tupla.
+> ~~~~ python
+> >>> def division(a, b):
+> ...     try:
+> ...         result = a / b
+> ...     except (ZeroDivisionError, TypeError):
+> ...         print('¡Error al realizar la división!')
+> ...     else:
+> ...         print(result)
+> ~~~~
+
+### Cláusula *finally*
+El bloque *finally* se ejecutará siempre al final de la ejecución del bloque *try*, independientemente de que se produzca o no una excepción, y aunque ésta no sea controlada por ningún bloque *except*.
+~~~~ python
+>>> def division(x, y):
+...     try:
+...         result = x / y
+...     except ZeroDivisionError:
+...         print("El divisor es 0")
+...     else:
+...         print("x / y =", result)
+...     finally:
+...         print("Cláusula -finally- ejecutada")
+...     
+>>> division(2, 1)
+x / y = 2.0
+Cláusula -finally- ejecutada
+>>> division(2, 0)
+El divisor es 0
+Cláusula -finally- ejecutada
+>>> division("2", "1")
+Cláusula -finally- ejecutada
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+~~~~
+
+Los siguientes puntos explican casos en los que se produce una excepción:
+- Si ocurre una excepción durante la ejecución de la cláusula *try* y no es gestionada por una cláusula *except*, u ocurre una excepción durante una cláusula *except* o *else*, la excepción es relanzada después de que se ejecute el bloque de la cláusula *finally*.
+- Si ocurre una excepción durante la ejecución de la cláusula *except* o *else*, la excepción es relanzada después de que se ejecute el bloque de la cláusula *finally*.
+- Si la cláusula *finally* ejecuta una sentencia *break*, *continue* o *return*, las excepciones no se relanzan.
+- Si el bloque *try* llega a una sentencia *break*, *continue* o *return*, la cláusula *finally* se ejecutará justo antes de la ejecución de dicha sentencia.
+- Si la cláusula *finally* ejecuta una sentencia *break* o *continue*, el bloque *try* no se reanudará.
+- Si la cláusula *finally* ejecuta una sentencia *return*, el bloque *try* no se reanudará, y el valor devuelto será el de la sentencia *return* de la cláusula *finally*.
 
 
 
