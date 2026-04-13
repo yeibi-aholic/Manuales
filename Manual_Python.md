@@ -3249,6 +3249,35 @@ CLASSES
 ~~~~
 
 
+## Entornos virtuales y gestión de dependencias
+---
+### Entornos virtuales (*venv*)
+Los entornos virtuales en Python crean espacios aislados para cada proyecto, permitiendo gestionar dependencias independientes y evitar conflictos de versiones entre librerías. 
+
+![Entornos virtuales](Fotos/Manual_Python/Entornos_virtuales/venv.jpg)
+
+1. Crear
+~~~~ python
+python -m venv <nombre_entorno>
+~~~~
+2. Activar
+~~~~ python
+.\<nombre_entorno>\Scripts\activate     #Windows
+source <nombre_entorno>/bin/activate    #macOS/Linux
+~~~~
+3. Gestionar
+~~~~ python
+pip install modulo1
+pip install modulo2
+pip install modulo3
+...
+~~~~
+4. Desactivar
+~~~~ python
+deactivate
+~~~~
+
+
 
 ## Librería Datetime
 ---
