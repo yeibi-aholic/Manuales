@@ -615,7 +615,7 @@ Hola Yeibi!
 
 ~~~~
 
-> Si se quiere escribir varios textos seguidos, para no tener que definir la función *print()* por cada línea, se pueden emplear *triples comillas* [*print("""...""")*]. Esto hará que todo lo que se encuentre entre los dos pares de triples comillas se eintrepretene como texto y como salto de línea un nuevo texto en una línea diferente.
+> :memo: Si se quieren escribir varios textos seguidos, para no tener que definir la función *print()* por cada línea, se pueden emplear *triples comillas* [*print(\"\"\"...""")*]. Esto hará que todo lo que se encuentre entre los dos pares de triples comillas se intrepretene como texto y como salto de línea un nuevo texto en una línea diferente.
 > ~~~~ python
 > >>> print("""
 > >>> Aprende a vivir 
@@ -623,7 +623,7 @@ Hola Yeibi!
 > >>> 
 > >>> (Confucio)
 > >>> """)
->
+> ...
 > Aprende a vivir 
 > y sabrás morir bien 
 >  
@@ -3246,6 +3246,34 @@ CLASSES
             timezone
     
 --More--
+~~~~
+
+## Entornos virtuales y gestión de dependencias
+---
+### Entornos virtuales (*venv*)
+Los entornos virtuales en Python crean espacios aislados para cada proyecto, permitiendo gestionar dependencias independientes y evitar conflictos de versiones entre librerías. 
+
+![Entornos virtuales](Fotos/Manual_Python/Entornos_virtuales/venv.jpg)
+
+1. Crear
+~~~~ python
+python -m venv <nombre_entorno>
+~~~~
+2. Activar
+~~~~ python
+.\<nombre_entorno>\Scripts\activate     #Windows
+source <nombre_entorno>/bin/activate    #macOS/Linux
+~~~~
+3. Gestionar
+~~~~ python
+pip install modulo1
+pip install modulo2
+pip install modulo3
+...
+~~~~
+4. Desactivar
+~~~~ python
+deactivate
 ~~~~
 
 
