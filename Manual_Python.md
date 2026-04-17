@@ -18,17 +18,18 @@
 14. **[Excepciones](#excepciones)**
 15. **[Programación Orientada a Objetos](#programación-orientada-a-objetos)**
 16. **[Módulos](#módulos)**
-17. **[Librería Datetime](#librería-datetime)**
-18. **[Librería Numpy](#librería-numpy)**
-19. **[Librería Pandas](#librería-pandas)**
-20. **[Librería Matplotlib](#librería-matplotlib)**
-21. **[Librería itertools](#librería-itertools)**
-22. **[Librería Turtle](#librería-turtle)**
-23. **[Librería Tkinter](#librería-tkinter)**
-24. **[Librería Pygame](#librería-pygame)**
-25. **[Expresiones regulares](#expresiones-regulares)**
-26. **[Depuración de código](#depuración-de-código)**
-27. **[Trucos y consejos](#trucos-y-consejos)**
+17. **[Entornos virtuales y gestión de dependencias](#entornos-virtuales-y-gestión-de-dependencias)**
+18. **[Librería Datetime](#librería-datetime)**
+19. **[Librería Numpy](#librería-numpy)**
+20. **[Librería Pandas](#librería-pandas)**
+21. **[Librería Matplotlib](#librería-matplotlib)**
+22. **[Librería itertools](#librería-itertools)**
+23. **[Librería Turtle](#librería-turtle)**
+24. **[Librería Tkinter](#librería-tkinter)**
+25. **[Librería Pygame](#librería-pygame)**
+26. **[Expresiones regulares](#expresiones-regulares)**
+27. **[Testing](#testing)**
+28. **[Trucos y consejos](#trucos-y-consejos)**
 
 
 
@@ -1593,7 +1594,7 @@ Si en el ámbito local de una función existe una variable que también existe e
 ...
 >>> bienvenida()
 ¡Bienvenido a Python!
->>> print(lenguaje)
+>>> lenguaje
 Java
 ~~~~
 
@@ -1606,7 +1607,7 @@ En Python los argumentos se pasan a una función por asignación, es decir, se a
 ...     curso.append(asignatura)
 ...
 >>> añade_asignatura(primer_curso, 'Química')
->>> print(primer_curso)
+>>> primer_curso
 ['Matemáticas', 'Física', 'Química']
 ~~~~
 
@@ -1731,13 +1732,13 @@ def <nombre-generador>(<parametros>):
 ...
 >>> list = pares()  # lista con los primeros 3 números pares
 [2, 4, 6]
->>> print(next(list))
+>>> next(list)
 2
->>> print(next(list))
+>>> next(list)
 4
->>> print(next(list))
+>>> next(list)
 6
->>> print(next(list , 'Fin de la generación'))
+>>> next(list , 'Fin de la generación')
 'Fin de la generación'
 ~~~~
 
@@ -1797,11 +1798,11 @@ def generador(elementos):
 ...         yield from ciudad   # yield sobre letra de cada ciudad de lista ciudades
 ...
 >>> lista_ciudades = cities("Madrid", "Sevilla", "Barcelona")
->>> print(next(lista_ciudades))
+>>> next(lista_ciudades)
 'M'
->>> print(next(lista_ciudades))
+>>> next(lista_ciudades)
 'a'
->>> print(next(lista_ciudades))
+>>> next(lista_ciudades)
 'd'
 ~~~~
 
@@ -2017,14 +2018,14 @@ Una vez abierto el fichero, se puede leer todo el contenido del fichero o se pue
 - *f.readlines()* : Devuelve una lista de cadenas de caracteres donde cada cadena es una linea del fichero referenciado por *f*.
 ~~~~ python
 >>> f = open('saludo.txt', 'r')
->>> print(f.read())
+>>> f.read()
 ¡Bienvenido a Python!
 ¡Hasta pronto!
 ~~~~
 ~~~~ python
 >>> f = open('saludo.txt', 'r')
 >>> lineas = f.readlines()
->>> print(lineas)
+>>> lineas
 ['Bienvenido a Python!\n', '¡Hasta pronto!']
 ~~~~
 
@@ -2036,11 +2037,11 @@ Para cerrar un fichero se utiliza el siguiente método:
 Cuando se termina de trabajar con un fichero conviene cerrarlo, sobre todo si se abre en modo escritura, ya que mientras está abierto en este modo no se puede abrir por otra aplicación. Si no se cierra explícitamente un fichero, Python intentará cerrarlo cuando estime que ya no se va a usar más.
 ~~~~ python
 >>> f = open('saludo.txt'):
->>> print(f.read())
+>>> f.read()
 ¡Bienvenido a Python!
 ¡Hasta pronto!
 >>> f.close()  # Cierre del fichero
->>> print(f.read())  # Produce un error
+>>> f.read()   # Produce un error
 ValueError: I/O operation on closed file.
 ~~~~
 
@@ -2061,7 +2062,7 @@ Esta estructura abre el fichero con la ruta *ruta* en el modo *modo* (*'w'* para
 ...     print(f.read())
 ... 
 Hola de nuevo
->>> print(f.read())  # Produce un error al estar el fichero cerrado
+>>> f.read()    # Produce un error al estar el fichero cerrado
 ValueError: I/O operation on closed file.
 ~~~~
 
@@ -2105,7 +2106,7 @@ Para leer un fichero de internet hay que utilizar la función *urlopen* del mód
 >>> from urllib import request
 >>> f = request.urlopen('https://raw.githubusercontent.com/asalber/asalber.github.io/master/README.md')
 >>> datos = f.read()
->>> print(datos.decode('utf-8'))
+>>> datos.decode('utf-8')
 Manuales de Yeibi
 ===============
 
@@ -2121,7 +2122,7 @@ Python utiliza un objeto especial llamado **excepción** para controlar cualquie
 
 Cuando ocurre un error durante la ejecución de un programa, Python crea una excepción. Si no se controla esta excepción la ejecución del programa se detiene y se muestra el error (*traceback*).
 ~~~~ python
->>> print(1 / 0)  # Error al intentar dividir por 0.
+>>> 1 / 0   # Error al intentar dividir por 0.
 ZeroDivisionError: division by zero
 ~~~~
 
@@ -2380,7 +2381,7 @@ En Python los tipos de datos primitivos son también objetos que tienen asociado
 > **Ejemplo.** Las cadenas tienen un método *upper* que convierte la cadena en mayúsculas. Para aplicar este método a la cadena *c* se utiliza la instrucción *c.upper()*.
 ~~~~ python
 >>> c = 'Python'
->>> print(c.upper())    # Llamada al método upper del objeto c (cadena)
+>>> c.upper()    # Llamada al método upper del objeto c (cadena)
 PYTHON
 ~~~~
 > **Ejemplo.** Las listas tienen un método *append* que convierte añade un elemento al final de la lista. Para aplicar este método a la lista *l* se utiliza la instrucción *l.append(<elemento>)*.
@@ -2423,7 +2424,7 @@ Los atributos se definen igual que las variables mientras que los métodos se de
 >>> class Saludo:
 ...     pass        # Clase vacía sin atributos ni métodos
 ...
->>> print(Saludo)
+>>> Saludo
 <class '__main__.Saludo'>
 ~~~~
  > :bulb: Es una buena práctica comenzar el nombre de una clase con mayúsculas.
@@ -2527,13 +2528,13 @@ Los atributos que se crean dentro del método *\_\_init__* se conocen como atrib
 ... 
 >>> c1 = Circulo(2)
 >>> c2 = Circulo(3)
->>> print(c1.area())
+>>> c1.area()
 12.56636
->>> print(c2.area())
+>>> c2.area()
 28.27431
->>> print(c1.pi)
+>>> c1.pi
 3.14159
->>> print(c2.pi)
+>>> c2.pi
 3.14159
 ~~~~
 
@@ -2548,14 +2549,14 @@ Entre los atributos de instancia pueden crearse atributos "protegidos" o "privad
 ...         self.__password = password  # Atributo privado
 ...
 >>> u = Usuario('yeibi', '1234')
->>> print(u._usuario)       # Se puede acceder al atributo protegido
+>>> u._usuario      # Se puede acceder al atributo protegido
 yeibi
->>> print(u.__password)     # No se puede acceder al atributo privado
+>>> u.__password    # No se puede acceder al atributo privado
 AttributeError: 'Usuario' object has no attribute '__password'
 ~~~~
 > :memo: Aunque no se puede acceder directamente a un atributo privado, sí se puede acceder a él con la sintaxis *objeto._Clase__atributo*.
 > ~~~~ python
-> >>> print(u._Usuario__password)
+> >>> u._Usuario__password
 > 1234
 > ~~~~
 
@@ -2569,9 +2570,9 @@ Los métodos especiales son métodos que tienen un nombre especial y se invocan 
 ...         self.saldo = cantidad
 ...
 >>> t = Tarjeta('0123456789', 1000)
->>> print(t.numero)
+>>> t.numero
 0123456789
->>> print(t.saldo)
+>>> t.saldo
 1000
 ~~~~
 - *\_\_str__* : Se invoca cada vez que se llama a la función *print()* con un objeto de la clase y debe devolver una cadena.
@@ -2585,7 +2586,7 @@ Los métodos especiales son métodos que tienen un nombre especial y se invocan 
 ...         return 'Tarjeta número {} con saldo {:.2f}€'.format(self.numero, str(self.saldo))
 ...
 >>> t = Tarjeta('0123456789', 1000) 
->>> print(t)
+>>> t
 Tarjeta número 0123456789 con saldo 1000.00€
 ~~~~
 > :bulb: Se suele utilizar para dar una descripción informal del objeto.
@@ -2665,7 +2666,7 @@ mappingproxy({'__module__': '__main__', '__init__': <function Tarjeta.__init__ a
 ...
 >>> t = Tarjeta('0123456789', 1000)
 >>> t(500)
->>> print(t.saldo)
+>>> t.saldo
 1500
 ~~~~
 
@@ -3052,7 +3053,7 @@ Python permite importar un módulo completo o sólo algunas partes de él. Cuand
 > :warning: Cuando se importen módulos de esta manera hay que tener cuidado de que no haya coincidencias en los nombres de funciones, variables u otros objetos.
 ~~~~ python
 >>> import calendar
->>> print(calendar.month(2019, 4))
+>>> calendar.month(2019, 4)
 April 2019
 Mo Tu We Th Fr Sa Su
  1  2  3  4  5  6  7
@@ -3276,33 +3277,41 @@ pip install modulo3
 deactivate
 ~~~~
 
+### Gestión de dependencias (*pip*)
+En Python *pip* (Pip Installs Packages) es el sistema oficial de gestión de paquetes, que permite la publicación y compartición de herramientas mediante una **plataforma en línea conectada a un repositorio global** y gestión de paquetes, versiones y dependencias específicas del proyecto con **líneas de comando**.
 
-## Entornos virtuales y gestión de dependencias
----
-### Entornos virtuales (*venv*)
-Los entornos virtuales en Python crean espacios aislados para cada proyecto, permitiendo gestionar dependencias independientes y evitar conflictos de versiones entre librerías. 
+#### Requerimientos de un proyecto (*requirements.txt*)
+A su vez, *pip* se apoya en un archivo llamado *requirements.txt* que lo utiliza para registrar y especificar las dependencias del proyecto.  
+Contiene una lista de los paquetes de Python necesarios, junto con sus versiones específicas o restricciones de versión.
 
-![Entornos virtuales](Fotos/Manual_Python/Entornos_virtuales/venv.jpg)
+Para capturar las dependencias de un proyecto y sus versiones, se puede usar el siguiente comando:
+~~~~ python
+pip freeze > requirements.txt
+~~~~
+~~~~ python
+# requirements.txt
+numpy==1.19.5
+pandas==1.1.5
+matplotlib==3.1.4
+scipy==1.5.0
+~~~~
+> :bulb: Es una buena práctica ejecutar el comando *pip freeze* para actualizar el archivo *requirements.txt* cada vez que instalas una nueva dependencia o actualizas una existente en tu entorno de desarrollo.
 
-1. Crear
 ~~~~ python
-python -m venv <nombre_entorno>
-~~~~
-2. Activar
-~~~~ python
-.\<nombre_entorno>\Scripts\activate     #Windows
-source <nombre_entorno>/bin/activate    #macOS/Linux
-~~~~
-3. Gestionar
-~~~~ python
-pip install modulo1
-pip install modulo2
-pip install modulo3
-...
-~~~~
-4. Desactivar
-~~~~ python
-deactivate
+>>> pip install -r requirements.txt
+Collecting numpy==1.19.5
+  Downloading numpy-1.19.5-cp38-cp38-win_amd64.whl (13.0 MB)
+     |████████████████████████████████| 13.0 MB 1.2 MB/s
+Collecting pandas==1.1.5
+  Downloading pandas-1.1.5-cp38-cp38-win_amd64.whl (9.5 MB)
+     |████████████████████████████████| 9.5 MB 1.2 MB/s
+Collecting matplotlib==3.1.4
+  Downloading matplotlib-3.1.4-cp38-cp38-win_amd64.whl (8.7 MB)
+     |████████████████████████████████| 8.7 MB 1.2 MB/s
+Collecting scipy==1.5.0
+  Downloading scipy-1.5.0-cp38-cp38-win_amd64.whl (32.8 MB)
+     |████████████████████████████████| 32.8 MB 1.2 MB/s
+Successfully installed matplotlib-3.1.4 numpy-1.19.5 pandas-1.1.5 scipy-1.5.0
 ~~~~
 
 
@@ -3329,7 +3338,7 @@ datetime.date(2020, 12, 25)
 datetime.time(13, 30, 5)
 >>> datetime(2020, 12, 25, 13, 30, 5)
 datetime.datetime(2020, 12, 25, 13, 30, 5)
->>> print(datetime(2020, 12, 25, 13, 30, 5))
+>>> datetime(2020, 12, 25, 13, 30, 5)
 2020-12-25 13:30:05
 ~~~~
 
@@ -3346,7 +3355,7 @@ datetime.datetime(2020, 12, 25, 13, 30, 5)
 - *t.microsecond* : Devuelve los microsegundos del tiempo *t*, que puede ser del tipo *time* o *datetime*.
 ~~~~ python
 >>> from datetime import date, time, datetime
->>> print(date.today())
+>>> date.today()
 2020-04-11
 >>> dt = datetime.now()
 >>> dt.year
@@ -3385,13 +3394,13 @@ datetime.datetime(2020, 12, 25, 13, 30, 5)
 ~~~~ python
 >>> from datetime import date, time, datetime
 >>> d = datetime.now()
->>> print(d.strftime('%d-%m-%Y'))
+>>> d.strftime('%d-%m-%Y')
 13-04-2020
->>> print(d.strftime('%A, %d %B, %y'))
+>>> d.strftime('%A, %d %B, %y')
 Monday, 13 April, 20
->>> print(d.strftime('%H:%M:%S'))
+>>> d.strftime('%H:%M:%S')
 20:55:53
->>> print(d.strftime('%H horas, %M minutos y %S segundos'))
+>>> d.strftime('%H horas, %M minutos y %S segundos')
 20 horas, 55 minutos y 53 segundos
 ~~~~
 
@@ -3483,25 +3492,51 @@ Las dimensiones de un array también se conocen como **ejes**.
 Otras funciones útiles que permiten generar *arrays* son:
 
 - *np.empty(dimensiones)* : Crea y devuelve una referencia a un array vacío con las dimensiones especificadas en la tupla *dimensiones*.
-- *np.zeros(dimensiones)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son todos ceros.
-- *np.ones(dimensiones)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son todos unos.
-- *np.full(dimensiones, valor)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son todos *valor*.
-- *np.identity(n)* : Crea y devuelve una referencia a la matriz identidad de dimensión *n*.
-- *np.arange(inicio, fin, salto)* : Crea y devuelve una referencia a un array de una dimensión cuyos elementos son la secuencia desde *inicio* hasta *fin* tomando valores cada *salto*.
-- *np.linspace(inicio, fin, n)* : Crea y devuelve una referencia a un array de una dimensión cuyos elementos son la secuencia de *n* valores equidistantes desde *inicio* hasta *fin*.
-- *np.random.random(dimensiones)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son aleatorios.
 ~~~~ python
->>> print(np.zeros(3,2))
+>>> np.empty((2,3))
+[[1.e-323 0.e+000 0.e+000]
+ [0.e+000 0.e+000 0.e+000]]
+~~~~
+- *np.zeros(dimensiones)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son todos ceros.
+~~~~ python
+>>> np.zeros((2,3))
 [[0. 0. 0.]
  [0. 0. 0.]]
->>> print(np.idendity(3))
+~~~~
+- *np.ones(dimensiones)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son todos unos.
+~~~~ python
+>>> np.ones((2,3))
+[[1. 1. 1.]
+ [1. 1. 1.]]
+~~~~
+- *np.full(dimensiones, valor)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son todos *valor*.
+~~~~ python
+>>> np.full((2,3), 7)
+[[7 7 7]
+ [7 7 7]]
+~~~~
+- *np.identity(n)* : Crea y devuelve una referencia a la matriz identidad de dimensión *n*.
+~~~~ python
+>>> np.identity(3)
 [[1. 0. 0.]
  [0. 1. 0.]
  [0. 0. 1.]]
->>> print(np.arange(1, 10, 2))
+~~~~
+- *np.arange(inicio, fin, salto)* : Crea y devuelve una referencia a un array de una dimensión cuyos elementos son la secuencia desde *inicio* hasta *fin* tomando valores cada *salto*.
+~~~~ python
+>>> np.arange(1, 10, 2)
 [1 3 5 7 9]
->>> print(np.linspace(0, 10, 5))
+~~~~
+- *np.linspace(inicio, fin, n)* : Crea y devuelve una referencia a un array de una dimensión cuyos elementos son la secuencia de *n* valores equidistantes desde *inicio* hasta *fin*.
+~~~~ python
+>>> np.linspace(0, 10, 5)
 [ 0.   2.5  5.   7.5 10. ]
+~~~~
+- *np.random.random(dimensiones)* : Crea y devuelve una referencia a un array con las *dimensiones* especificadas en la tupla dimensiones cuyos elementos son aleatorios.
+~~~~ python
+>>> np.random.random((2,3))
+[[0.41025077 0.25002617 0.34353135]
+ [0.7524476  0.42865079 0.20260551]]
 ~~~~
 
 ### Atributos de un array
@@ -3519,11 +3554,11 @@ Al igual que para listas, los índices de cada dimensión comienzan en 0.
 También es posible obtener subarrays con el operador dos puntos *:* indicando el índice inicial y el siguiente al final para cada dimensión, de nuevo separados por comas.
 ~~~~ python
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
->>> print(a[1, 0])  # Acceso al elemento de la fila 1 columna 0
+>>> a[1, 0]     # Acceso al elemento de la fila 1 columna 0
 4
->>> print(a[1][0])  # Otra forma de acceder al mismo elemento
+>>> a[1][0]     # Otra forma de acceder al mismo elemento
 4
->>> print(a[:, 0:2])  # Declaración de subarrays desde la primera columna hasta la segunda
+>>> a[:, 0:2]   # Declaración de subarrays desde la primera columna hasta la segunda
 [[1 2]
  [4 5]]
  ~~~~
@@ -3533,9 +3568,9 @@ Una característica muy útil de los arrays es que es muy fácil obtener otro ar
 - *a[condicion]* : Devuelve una lista con los elementos del array *a* que cumplen la condición *condicion*.
 ~~~~ python
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
->>> print(a[(a % 2 == 0)])
+>>> a[(a % 2 == 0)]
 [2 4 6]
->>> print(a[(a % 2 == 0) &  (a > 2)])
+>>> a[(a % 2 == 0) & (a > 2)]
 [4 6]
 ~~~~
 
@@ -3548,13 +3583,13 @@ Los operadores mamemáticos *+*, *-*, *\**, */*, *%*, *\*\** se utilizan para la
 ~~~~ python
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[1, 1, 1], [2, 2, 2]])
->>> print(a + b)
+>>> a + b
 [[2 3 4]
  [6 7 8]]
->>> print(a / b)
+>>> a / b
 [[1.  2.  3. ]
  [2.  2.5 3. ]]
->>> print(a ** 2)
+>>> a ** 2
 [[ 1  4  9]
  [16 25 36]]
  ~~~~
@@ -3569,9 +3604,9 @@ Para realizar el producto escalar de dos vectores se utiliza el operador *@* o e
 >>> import numpy as np
 >>> a = np.array([1, 2, 3])
 >>> b = np.array([1, 0, 1])
->>> print(a @ b)
+>>> a @ b
 4
->>> print(a.dot(b))
+>>> a.dot(b)
 4
 ~~~~
 
@@ -3581,7 +3616,7 @@ Para calcular el módulo de un vector se utiliza el siguiente método:
 ~~~~ python
 >>> import numpy as np
 >>> a = np.array([3, 4])
->>> print(np.linalg.norm(a))
+>>> np.linalg.norm(a)
 5.0
 ~~~~
 
@@ -3592,10 +3627,10 @@ Para realizar el producto matricial se utiliza el mismo operador *@* y método q
 >>> import numpy as np
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[1, 1], [2, 2], [3, 3]])
->>> print(a @ b)
+>>> a @ b
 [[14 14]
  [32 32]]
->>> print(a.dot(b))
+>>> a.dot(b)
 [[14 14]
  [32 32]]
 ~~~~
@@ -3606,7 +3641,7 @@ Para trasponer una matriz se utiliza el método
 ~~~~ python
 >>> import numpy as np
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
->>> print(a.T)
+>>> a.T
 [[1 4]
  [2 5]
  [3 6]]
@@ -3618,7 +3653,7 @@ La traza de una matriz cuadrada se calcula con el siguiente método:
 ~~~~ python
 >>> import numpy as np
 >>> a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
->>> print(a.trace())
+>>> a.trace()
 15
 ~~~~
 
@@ -3628,7 +3663,7 @@ El determinante de una matriz cuadrada se calcula con la siguiente función:
 ~~~~ python
 >>> import numpy as np
 >>> a = np.array([[1, 2], [3, 4]])
->>> print(np.linalg.det(a))
+>>> np.linalg.det(a)
 -2.0
 ~~~~
 
@@ -3638,7 +3673,7 @@ La inversa de una matriz se calcula con la siguiente función:
 ~~~~ python
 >>> import numpy as np
 >>> a = np.array([[1, 2], [3, 4]])
->>> print(np.linalg.inv(a))
+>>> np.linalg.inv(a)
 [[-2.   1. ]
  [ 1.5 -0.5]]
 ~~~~
@@ -3649,7 +3684,7 @@ Los autovalores de una matriz cuadrada se calculan con la siguiente función:
 ~~~~ python
 >>> import numpy as np
 >>> a = np.array([[1, 1, 0], [1, 2, 1], [0, 1, 1]])
->>> print(np.linalg.eigvals(a))
+>>> np.linalg.eigvals(a)
 [ 3.00000000e+00  1.00000000e+00 -3.36770206e-17]
 ~~~~
 
@@ -3659,7 +3694,7 @@ Los autovectores de una matriz cuadrada se calculan con la siguiente función:
 ~~~~ python
 >>> import numpy as np
 >>> a = np.array([[1, 1, 0], [1, 2, 1], [0, 1, 1]])
->>> print(np.linalg.eig(a))
+>>> np.linalg.eig(a)
 (array([ 3.00000000e+00,  1.00000000e+00, -3.36770206e-17]), 
  array([[-4.08248290e-01,  7.07106781e-01,  5.77350269e-01],
         [-8.16496581e-01,  2.61239546e-16, -5.77350269e-01],
@@ -3676,7 +3711,7 @@ Para resolver un sistema de ecuaciones lineales se utiliza la función siguiente
 # 3x + 5y = 2 
 >>> a = np.array([[1, 2], [3, 5]])
 >>> b = np.array([1, 2])
->>> print(np.linalg.solve(a, b))
+>>> np.linalg.solve(a, b)
 [-1.  1.]
 ~~~~
 
@@ -3849,8 +3884,7 @@ Dispone de un índice que asocia un nombre a cada elemento del la serie, a trav�
 - *Series(data=lista, index=indices, dtype=tipo)* : Devuelve un objeto de tipo Series con los datos de la lista *lista*, las filas especificados en la lista *indices* y el tipo de datos indicado en *tipo*. Si no se pasa la lista de índices se utilizan como índices los enteros del *0* al *n-1*, done  es el tamaño de la serie. Si no se pasa el tipo de dato se infiere.
 ~~~~ python
 >>> import pandas as pd
->>> s = pd.Series(['Matemáticas', 'Historia', 'Economía', 'Programación', 'Inglés'], dtype='string')
->>> print(s)
+>>> pd.Series(['Matemáticas', 'Historia', 'Economía', 'Programación', 'Inglés'], dtype='string')
 0     Matemáticas
 1        Historia
 2        Economía
@@ -3863,8 +3897,7 @@ dtype: string
 - *Series(data=diccionario, index=indices)* : Devuelve un objeto de tipo Series con los valores del diccionario *diccionario* y las filas especificados en la lista *indices*. Si no se pasa la lista de índices se utilizan como índices las claves del diccionario.
 ~~~~ python
 >>> import pandas as pd
->>> s = pd.Series({'Matemáticas': 6.0,  'Economía': 4.5, 'Programación': 8.5})
->>> print(s)
+>>> pd.Series({'Matemáticas': 6.0,  'Economía': 4.5, 'Programación': 8.5})
 Matemáticas     6.0
 Economía        4.5
 Programación    8.5
@@ -4030,7 +4063,7 @@ Para filtrar una serie y quedarse con los valores que cumplen una determinada co
 ~~~~ python
 >>> import pandas as pd
 >>> s = pd.Series({'Matemáticas': 6.0,  'Economía': 4.5, 'Programación': 8.5})
->>> print(s[s > 5])
+>>> s[s > 5]
 Matemáticas     6.0
 Programación    8.5
 dtype: float64
@@ -4043,12 +4076,12 @@ Para ordenar una serie se utilizan los siguientes métodos:
 ~~~~ python
 >>> import pandas as pd
 >>> s = pd.Series({'Matemáticas': 6.0,  'Economía': 4.5, 'Programación': 8.5})
->>> print(s.sort_values())
+>>> s.sort_values()
 Economía        4.5
 Matemáticas     6.0
 Programación    8.5
 dtype: float64
->>> print(s.sort_index(ascending = False))
+>>> s.sort_index(ascending = False)
 Programación    8.5
 Matemáticas     6.0
 Economía        4.5
@@ -4100,8 +4133,7 @@ Para crear un DataFrame a partir de un diccionario cuyas claves son los nombres 
 ... 'grado':['Economía', 'Medicina', 'Arquitectura', 'Economía'],
 ... 'correo':['maria@gmail.com', 'luis@yahoo.es', 'carmen@gmail.com', 'antonio@gmail.com']
 ... }
->>> df = pd.DataFrame(datos)
->>> print(df)
+>>> pd.DataFrame(datos)
     nombre  edad         grado             correo
 0    María    18      Economía    maria@gmail.com
 1     Luis    22      Medicina      luis@yahoo.es
@@ -4115,8 +4147,7 @@ Para crear un DataFrame a partir de una lista de listas con los datos de las col
 > :warning: Si las listas anidadas en *listas* no tienen el mismo tamaño, las listas menores se rellenan con valores *NaN*.
 ~~~~ python
 >>> import pandas as pd
->>> df = pd.DataFrame([['María', 18], ['Luis', 22], ['Carmen', 20]], columns=['Nombre', 'Edad'])
->>> print(df)
+>>> pd.DataFrame([['María', 18], ['Luis', 22], ['Carmen', 20]], columns=['Nombre', 'Edad'])
    Nombre   Edad
 0   María     18
 1    Luis     22
@@ -4129,8 +4160,7 @@ Para crear un DataFrame a partir de una lista de diccionarios con los datos de l
 > :warning: Si los diccionarios no tienen las mismas claves, las claves que no aparecen en el diccionario se rellenan con valores *NaN*.
 ~~~~ python
 >>> import pandas as pd
->>> df = pd.DataFrame([{'Nombre':'María', 'Edad':18}, {'Nombre':'Luis', 'Edad':22}, {'Nombre':'Carmen'}])
->>> print(df)
+>>> pd.DataFrame([{'Nombre':'María', 'Edad':18}, {'Nombre':'Luis', 'Edad':22}, {'Nombre':'Carmen'}])
 0   María  18.0
 1    Luis  22.0
 2  Carmen   NaN
@@ -4141,8 +4171,7 @@ Para crear un DataFrame a partir de un array de NumPy se utiliza el siguiente m�
 - *DataFrame(data=array, index=filas, columns=columnas, dtype=tipo)* : Devuelde un objeto del tipo DataFrame cuyas filas y columnas son las del array array, los nombres de filas indicados en la lista *filas*, los nombres de columnas indicados en la lista *columnas* y el tipo indicado en *tipo*. La lista *filas* tiene que tener el mismo tamaño que el número de filas del array y la lista *columnas* el mismo tamaño que el número de columnas del array. Si no se pasa la lista de filas se utilizan enteros empezando en 0. Si no se pasa la lista de columnas se utilizan las claves de los diccionarios. Si no se pasa la lista de tipos, se infiere.
 ~~~~ python
 >>> import pandas as pd
->>> df = pd.DataFrame(np.random.randn(4, 3), columns=['a', 'b', 'c'])
->>> print(df)
+>>> pd.DataFrame(np.random.randn(4, 3), columns=['a', 'b', 'c'])
           a         b         c
 0 -1.408238  0.644706  1.077434
 1 -0.279264 -0.249229  1.019137
@@ -4159,7 +4188,7 @@ Dependiendo del tipo de fichero, existen distintas funciones para importar un Da
 >>> # Importación del fichero datos-colesteroles.csv
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesteroles.csv', sep=';', decimal=',')
->>> print(df.head())
+>>> df.head()
                               nombre  edad sexo    peso    altura  colesterol
 0       José Luis Martínez Izquierdo    18    H    85.0    1.79         182.0
 1                     Rosa Díaz Díaz    32    M    65.0    1.73         232.0
@@ -4226,7 +4255,7 @@ Para cambiar el nombre de las filas y las columnas de un DataFrame se utiliza el
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.rename(columns={'nombre':'nombre y apellidos', 'altura':'estatura'}, index={0:1000, 1:1001, 2:1002}))
+>>> df.rename(columns={'nombre':'nombre y apellidos', 'altura':'estatura'}, index={0:1000, 1:1001, 2:1002})
                     nombre y apellidos  edad sexo    peso  estatura    colesterol
 1000      José Luis Martínez Izquierdo    18    H    85.0      1.79         182.0
 1001                    Rosa Díaz Díaz    32    M    65.0      1.73         232.0
@@ -4243,7 +4272,7 @@ Aunque el índice de un DataFrame suele fijarse en la creación del mismo, en oc
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.set_index("nombre").head())
+>>> df.set_index("nombre").head()
                               edad sexo  peso  altura  colesterol
 nombre                                                           
 José Luis Martínez Izquierdo    18    H  85.0    1.79       182.0
@@ -4261,7 +4290,7 @@ Para reordenar los índices de las filas y las columnas de un DataFrame, así co
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.reindex(index=[4, 3, 1], columns=['nombre', 'tensión', 'colesterol']))
+>>> df.reindex(index=[4, 3, 1], columns=['nombre', 'tensión', 'colesterol'])
                   nombre  tensión  colesterol
 4   Marisa López Collado      NaN       148.0
 3    Carmen López Pinzón      NaN       200.0
@@ -4279,9 +4308,9 @@ El acceso a los datos de un DataFrame se puede hacer a través de posiciones o t
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.iloc[1, 3])
+>>> df.iloc[1, 3]
 65
->>> print(df.iloc[1, :2])
+>>> df.iloc[1, :2]
 nombre     Rosa Díaz Díaz
 edad                   32
 ~~~~
@@ -4295,14 +4324,14 @@ edad                   32
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.loc[2, 'colesterol'])
+>>> df.loc[2, 'colesterol']
 191
->>> print(df.loc[:3, ('colesterol','peso')])
+>>> df.loc[:3, ('colesterol','peso')]
      colesterol    peso
 1         232.0    65.0
 2         191.0     NaN
 3         200.0    65.0
->>> print(df['colesterol'])
+>>> df['colesterol']
 0     182.0
 1     232.0
 2     191.0
@@ -4320,7 +4349,7 @@ El procedimiento para añadir una nueva columna a un DataFrame es similar al de 
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
 >>> df['diabetes'] = pd.Series([False, False, True, False, True])
->>> print(df)
+>>> df
                               nombre  edad sexo    peso  altura    colesterol diabetes
 0       José Luis Martínez Izquierdo    18    H    85.0    1.79         182.0    False
 1                     Rosa Díaz Díaz    32    M    65.0    1.73         232.0    False
@@ -4337,13 +4366,13 @@ Puesto que los datos de una misma columna de un DataFrame son del mismo tipo, es
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df['altura']*100)
+>>> df['altura']*100
 0     179
 1     173
 2     181
 ...
 
->>> print(df['sexo']=='M')
+>>> df['sexo']=='M'
 0     False
 1      True
 2     False
@@ -4358,7 +4387,7 @@ Para aplicar funciones a todos los elementos de una columna se utiliza el siguie
 >>> from math import log
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df['altura'].apply(log))
+>>> df['altura'].apply(log)
 0     0.582216
 1     0.548121
 2     0.593327
@@ -4371,7 +4400,7 @@ A menudo una columna contiene cadenas que representan fechas. Para convertir est
 ~~~~ python
 >>> import pandas as pd
 >>> df = pd.DataFrame({'Name': ['María', 'Carlos', 'Carmen'], 'Nacimiento':['05-03-2000', '20-05-2001', '10-12-1999']})
->>> print(pd.to_datetime(df.Nacimiento, format = '%d-%m-%Y'))
+>>> pd.to_datetime(df.Nacimiento, format = '%d-%m-%Y')
 0   2000-03-05
 1   2001-05-20
 2   1999-12-10
@@ -4397,11 +4426,11 @@ Al igual que para las series, los siguientes métodos permiten resumir la inform
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
 >>>df.edad.count()  # Tamaño muestral
 14
->>> print(df.edad.mean())  # Media
+>>> df.edad.mean()  # Media
 38.214285714285715
->>> print(df.edad.var())  # Varianza
+>>> df.edad.var()   # Varianza
 244.02747252747255
->>> print(df.edad.std())  # Desviación típica
+>>> df.edad.std()   # Desviación típica
 15.62137870123737
 >>> df.cov()  # Matriz de covarianzas
                   edad        peso    altura   colesterol
@@ -4415,7 +4444,7 @@ edad        1.000000 -0.276185 -0.181774    0.452391
 peso       -0.276185  1.000000  0.918984   -0.003621
 altura     -0.181774  0.918984  1.000000    0.122694
 colesterol  0.452391 -0.003621  0.122694    1.000000
->>> print(df.describe())  # Resumen descriptivo
+>>> df.describe()   # Resumen descriptivo
             edad        peso     altura  colesterol
 count  14.000000   13.000000  14.000000   13.000000
 mean   38.214286   70.923077   1.768571  220.230769
@@ -4425,7 +4454,7 @@ min    18.000000   51.000000   1.580000  148.000000
 50%    35.000000   65.000000   1.755000  210.000000
 75%    49.750000   78.000000   1.840000  249.000000
 max    68.000000  109.000000   1.980000  280.000000
->>> print(df.describe(include='object'))
+>>> df.describe(include='object')
                           nombre sexo
 count                         14   14
 unique                        14    2
@@ -4442,7 +4471,7 @@ Para eliminar columnas de un DataFrame se utilizan los siguientes métodos:
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
 >>> edad = df.pop('edad')
->>> print(df)
+>>> df
                               nombre    sexo  peso  altura    colesterol
 0       José Luis Martínez Izquierdo     H    85.0    1.79         182.0
 1                     Rosa Díaz Díaz     M    65.0    1.73         232.0
@@ -4465,7 +4494,7 @@ Para añadir una fila a un DataFrame se utiliza el siguiente método:
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
 >>> df = df.append(pd.Series(['Carlos Rivas', 28, 'H', 89.0, 1.78, 245.0], index=['nombre','edad','sexo','peso','altura','colesterol']), ignore_index=True)
->>> print(df.tail())
+>>> df.tail()
                               nombre  edad sexo    peso  altura    colesterol
 10             Macarena Álvarez Luna    53    M    55.0    1.62         262.0
 11        José María de la Guía Sanz    58    H    78.0    1.87         198.0
@@ -4481,7 +4510,7 @@ Para eliminar filas de un DataFrame se utilizan el siguiente método:
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.drop([1, 3]))
+>>> df.drop([1, 3])
                               nombre  edad sexo   peso  altura  colesterol
 0       José Luis Martínez Izquierdo    18    H   85.0    1.79       182.0
 2              Javier García Sánchez    24    H    NaN    1.81       191.0
@@ -4496,7 +4525,7 @@ Una operación bastante común con un DataFrame es obtener las filas que cumplen
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df[(df['sexo']=='H') & (df['colesterol'] > 260)])
+>>> df[(df['sexo']=='H') & (df['colesterol'] > 260)]
                      nombre  edad sexo    peso  altura    colesterol
 6   Antonio Fernández Ocaña    51    H    62.0    1.72         276.0
 9   Santiago Reillo Manzano    46    H    75.0    1.85         280.0
@@ -4510,7 +4539,7 @@ Para ordenar un DataFrame de acuerdo a los valores de una determinada columna se
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.sort_values('colesterol'))
+>>> df.sort_values('colesterol')
                               nombre  edad sexo   peso  altura  colesterol
 4               Marisa López Collado    46    M   51.0    1.58       148.0
 0       José Luis Martínez Izquierdo    18    H   85.0    1.79       182.0
@@ -4526,7 +4555,7 @@ Para eliminar las filas de un DataFrame que contienen datos desconocidos *NaN* o
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.dropna())
+>>> df.dropna()
                               nombre  edad sexo   peso  altura  colesterol
 0       José Luis Martínez Izquierdo    18    H   85.0    1.79       182.0
 1                     Rosa Díaz Díaz    32    M   65.0    1.73       232.0
@@ -4547,9 +4576,9 @@ Para dividir un DataFrame en grupos se utiliza el siguiente método:
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.groupby('sexo').groups)
+>>> df.groupby('sexo').groups
 {'H': Int64Index([0, 2, 5, 6, 8, 9, 11, 12], dtype='int64'), 'M': Int64Index([1, 3, 4, 7, 10, 13], dtype='int64')}
->>> print(df.groupby(['sexo','edad']).groups)
+>>> df.groupby(['sexo','edad']).groups
 {('H', 18): Int64Index([0], dtype='int64'), ('H', 24): Int64Index([2], dtype='int64'), ('H', 27): Int64Index([12], dtype='int64'), ('H', 35): Int64Index([8], dtype='int64'), ('H', 46): Int64Index([9], dtype='int64'), ('H', 51): Int64Index([6], dtype='int64'), ('H', 58): Int64Index([11], dtype='int64'), ('H', 68): Int64Index([5], dtype='int64'), ('M', 20): Int64Index([13], dtype='int64'), ('M', 22): Int64Index([7], dtype='int64'), ('M', 32): Int64Index([1], dtype='int64'), ('M', 35): Int64Index([3], dtype='int64'), ('M', 46): Int64Index([4], dtype='int64'), ('M', 53): Int64Index([10], dtype='int64')}
 ~~~~
 
@@ -4559,7 +4588,7 @@ Para obtener un grupo concreto se utiliza el siguiente método:
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.groupby('sexo').get_group('M'))
+>>> df.groupby('sexo').get_group('M')
                     nombre  edad sexo    peso   altura    colesterol
 1           Rosa Díaz Díaz    32    M    65.0     1.73         232.0
 3      Carmen López Pinzón    35    M    65.0     1.70         200.0
@@ -4584,7 +4613,7 @@ Una función de agregación toma como argumento una lista y devuelve una único 
 >>> import pandas as pd
 >>> df = pd.read_csv(
 'https://raw.githubusercontent.com/asalber/manual-python/master/datos/colesterol.csv')
->>> print(df.groupby('sexo').agg(np.mean))
+>>> df.groupby('sexo').agg(np.mean)
            edad       peso    altura  colesterol
 sexo                                            
 H     40.875000  80.714286  1.837500     228.375
@@ -4608,7 +4637,7 @@ Para convertir un DataFrame de formato ancho a formato largo (columnas a filas) 
 ... 'Programación':[6.5, 4, 9]}
 >>> df = pd.DataFrame(datos)
 >>> df1 = df.melt(id_vars=['nombre', 'edad'], var_name='asignatura', value_name='nota')
->>> print(df1)
+>>> df1
    nombre  edad    asignatura  nota
 0   María    18   Matemáticas   8.5
 1    Luis    22   Matemáticas   7.0
@@ -4626,7 +4655,7 @@ Para convertir un DataFrame de formato largo a formato ancho (filas a columnas) 
 - *df.pivot(index=filas, columns=columna, values=valores)* : Devuelve el DataFrame que resulta de convertir el DataFrame *df* de formato largo a formato ancho. Se crean tantas columnas nuevas como valores distintos haya en la columna *columna*. Los nombres de estas nuevas columnas son los valores de la columna *columna* mientras que sus valores se toman de la columna *valores*. Los nombres del índice del nuevo DataFrame se toman de los valores de la columna *filas*.
 ~~~~ python
 # Continuación del código anterior
->>> print(df1.pivot(index='nombre', columns='asignatura', values='nota'))
+>>> df1.pivot(index='nombre', columns='asignatura', values='nota')
 asignatura  Economía  Matemáticas  Programación
 nombre                                  
 Carmen           5.0          3.5           9.0
@@ -4696,7 +4725,7 @@ El tipo de mezcla puede ser
 >>> df1 = pd.DataFrame({"Nombre":["Carmen", "Luis", "María"],  "Sexo":["Mujer", "Hombre", "Mujer"]})
 >>> df2 = pd.DataFrame({"Nombre":["María", "Pedro", "Luis"], "Edad":[25, 30, 18]]})
 >>> df = pd.merge(df1, df2, on="Nombre")
->>> print(df)
+>>> df
   Nombre    Sexo  Edad
 0   Luis  Hombre    18
 1  María   Mujer    25
@@ -4708,7 +4737,7 @@ El tipo de mezcla puede ser
 >>> df1 = pd.DataFrame({"Nombre":["Carmen", "Luis", "María"],  "Sexo":["Mujer", "Hombre", "Mujer"]})
 >>> df2 = pd.DataFrame({"Nombre":["María", "Pedro", "Luis"], "Edad":[25, 30, 18]]})
 >>> df = pd.merge(df1, df2, on="Nombre", how="outer")
->>> print(df)
+>>> df
    Nombre    Sexo  Edad
 0  Carmen   Mujer   NaN
 1    Luis  Hombre  18.0
@@ -4722,7 +4751,7 @@ El tipo de mezcla puede ser
 >>> df1 = pd.DataFrame({"Nombre":["Carmen", "Luis", "María"],  "Sexo":["Mujer", "Hombre", "Mujer"]})
 >>> df2 = pd.DataFrame({"Nombre":["María", "Pedro", "Luis"], "Edad":[25, 30, 18]]})
 >>> df = pd.merge(df1, df2, on="Nombre", how="left")
->>> print(df)
+>>> df
    Nombre    Sexo  Edad
 0  Carmen   Mujer   NaN
 1    Luis  Hombre  18.0
@@ -4735,7 +4764,7 @@ El tipo de mezcla puede ser
 >>> df1 = pd.DataFrame({"Nombre":["Carmen", "Luis", "María"],  "Sexo":["Mujer", "Hombre", "Mujer"]})
 >>> df2 = pd.DataFrame({"Nombre":["María", "Pedro", "Luis"], "Edad":[25, 30, 18]]})
 >>> df = pd.merge(df1, df2, on="Nombre", how="right")
->>> print(df)
+>>> df
   Nombre    Sexo  Edad
 0  María   Mujer    25
 1  Pedro     NaN    30
@@ -5846,43 +5875,144 @@ None
 
 
 
-## Depuración de código
+## Testing
 ---
-### Depuración de programas
-La depuración es una técnica que permite *trazar* un programa, es decir, seguir el flujo de ejecución de un programa paso a paso, ejecutando una instrucción en cada paso, y observar el estado de sus variables.
+Testear cualquier código es una parte fundamental del desarrollo de software, ya que ayuda a garantizar que el código funcione correctamente y cumpla con los requisitos establecidos.  
+Existen diferentes tipos de pruebas: unitarias, de integración, de sistema,  de aceptación, etc. Cada una con un enfoque específico para evaluar diferentes aspectos del software.
 
-Cuando un programa tiene cierta complejidad, la depuración es imprescindible pare detectar posibles errores.
+- **Test manual** : Test realizados por una persona que ejecuta el software y verifica su comportamiento. Este tipo de pruebas puede ser útil para detectar problemas de usabilidad o errores que no se pueden detectar mediante pruebas automatizadas, pero puede ser lento y propenso a errores humanos.
+- **Test automátizado** : Test realizados mediante *scripts* o herramientas que ejecutan el software y verifican su comportamiento de manera automática. Este tipo de pruebas puede ser más rápido y consistente que las pruebas manuales, pero puede requerir más esfuerzo inicial para configurar y mantener los *scripts* de prueba.
 
-Python dispone del módulo *pyd* para depurar programas, pero es mucho más cómodo utilizar algún entorno de desarrollo que incorpore la depuración, como por ejemplo Visual Studio Code.
+### *assert*
+La función *assert* es una herramienta de depuración que se utiliza para verificar si una condición es verdadera. Si la condición es falsa, se genera una excepción *AssertionError* y el programa se detiene.
+~~~~ python
+assert condition, "Mensaje de error"
+~~~~
+> :exclamation: El mensaje de error es opcional, pero es recomendable incluirlo para facilitar la depuración.
 
-#### Comandos de depuración
-- **Establecer punto de parada**: Detiene la ejecución del programa en una línea concreta de código.
-- **Continuar la ejecución**: Continúa la ejecución del programa hasta el siguiente punto de parada o hasta que finalice.
-- **Próximo paso**: Ejecuta la siguiente línea de código y para la ejecución.
-- **Próximo paso con entrada en función**: Ejecuta la siguiente línea de código. Si se trata de una llamada a una función entonces ejecuta la primera instrucción de la función y para la ejecución.
-- **Próximo paso con salida de función**: Ejecuta lo que queda de la función actual y para la ejecución.
-- **Terminar la depuración**: Termina la depuración.
+~~~~ python
+def es_triangulo(a, b, c):
+    if a < b + c and b < a + c and c < a + b:
+        return True
+    else:
+        return False
+~~~~
+~~~~ python
+>>> assert es_triangulo(3, 4, 5)==True
+>>> assert es_triangulo(1, 2, 3)==False
+>>> assert es_triangulo(1, 1, 2)==False
+>>> assert es_triangulo(0, 1, 2)==True
+AssertionError
+~~~~
 
-#### Depuración en Visual Studio Code
-Antes de iniciar la depuración de un programa en VSCode hay que establecer algún punto de parada. Para ello basta con hacer click en le margen izquierdo de la ventana con del código a la altura de la línea donde se quiere parar la ejecución del programa.
+### *unittest*
+La librería [unittest](https://docs.python.org/3/library/unittest.html) es una herramienta de pruebas unitarias que se incluye en la biblioteca estándar de Python. Permite crear y ejecutar pruebas para verificar el correcto funcionamiento de las funciones y métodos de un programa.
+~~~~ python
+import unittest
+~~~~
 
-![](Fotos/Manual_Python/Depuracion_Codigo/BreakPoint.PNG)
+A diferencia de *assert*, *unittest* ofrece un abanico de opciones de verificación de resultados:
+- *.assertEqual(a, b)* : Verifica la igualdad de ambos valores.
+- *.assertTrue(x)* : Verifica que el valor es \<True>.
+- *.assertFalse(x)* : Verifica que el valor es \<False>.
+- *.assertIs(a, b)* : Verifica que ambas variables tienen la misma memoria.
+- *.assertIsNone(x)* : Verifica que el valor es \<None>.
+- *.assertIn(a, b)* : Verifica que *a* pertenece al iterable *b*.
+- *.assertIsInstance(a, b)* : Verifica que *a* es una instancia de *b*.
+- *.assertRaises(x)* : Verifica que se lanza una excepción.
+> :memo: Algunas opciones tienen un versión "inversa" con la palabra *Not*: *.assertNotIn()*
 
-Para iniciar la depuración de un programa en VSCode hay que hacer clic sobre el botón ![](https://aprendeconalf.es/docencia/python/manual/img/debug-button.png) o pulsar la combinación de teclas (Ctr+Shift+D).
+~~~~ python
+class TestPrueba(unittest.TestCase): # 1. Creamos una clase que hereda de unittest.TestCase.
+    # 2. Definimos varios tests como métodos de la clase.
+    def test_1(self):
+        self.assertXXXXX(f, x) # 3. En cada test ejecutamos las comprobaciones necesarias, usando assertEqual() en vez de assert, pero su comportamiento es totalmente análogo.
+    def test_2(self):
+        self.assertYYYYY(f, y)
+    def test_3(self):
+        self.assertZZZZZ(f)
+# 4. Incluimos el siguiente bloque de código para ejecutar los tests.
+if __name__ == '__main__': 
+    unittest.main()
+~~~~
+~~~~ python
+>>> TestPrueba
+Ran 3 tests in 0.006s
 
-La primera vez que depuremos un programa tendremos que crear un fichero de configuración del depurador (*launch.json*). Para ello hay que hacer clic en el botón *Run and Debug*. VSCode mostrará los distintos ficheros de configuración disponibles y debe seleccionarse el más adecuado para el tipo de programa a depurar. Para programas simples se debe seleccionar *Python file*.
+OK
+~~~~
+~~~~ python
+>>> python -m unittest -v tests
+test_1 (tests.TestPrueba) ... ok
+test_2 (tests.TestPrueba) ... ok
+test_3 (tests.TestPrueba) ... ok
 
-La depuración comenzará iniciando la ejecución del programa desde el inicio hasta el primer punto de parada que encuentre.
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
 
-Una vez iniciado el proceso de depuración, se puede avanzar en la ejecución del programa haciendo uso de la barra de depuración que contiene botones con los principales comandos de depuración.
+OK
+~~~~
 
-![](Fotos/Manual_Python/Depuracion_Codigo/DebbugerBar.PNG)
+### pytest
+Mediante la librería [pytest](https://docs.pytest.org/en/stable/) se pueden realizar pruebas unitarias de manera sencilla y rápida.
+~~~~ python
+pip install pytest
+~~~~
+![](Fotos/Manual_Python/Testing/Pytest_logo.svg)
 
-Durante la ejecución del programa, se puede ver el contenido de las variables del programa en la ventana del estado de las variables.
+A veces, es posible querer aislar algunas pruebas para obtener información rápida y puntual, ignorando las pruebas ya testeadas o que no nos interesan.  
+Pytest tiene tres formas de aislar las pruebas: 
+1. Nombre
+2. Directorio 
+3. Categoria
 
-El usuario también puede introducir expresiones y ver cómo se evalúan durante la ejecución del programa en la ventana de vista de expresiones.
+Pytest sólo requiere que defina una función *test_nombre* / *nombre_test* y *assert* dentro de ella.
+~~~~ python
+def test_funcion():
+    assert f(x) == y
+~~~~
 
-![](Fotos/Manual_Python/Depuracion_Codigo/DebbugerEstadoVariables.PNG)
+Para ejecutar los tests, tan solo hay que escribir el comando *pytest* en la terminal, y se ejecutarán todos los tests de la carpeta actual y subcarpetas.
+~~~~ python
+>>> pytest
+============================= test session starts ==============================
+collected 3 items
+tests/test_prueba.py::test_1 PASSED                                      [ 33%]
+tests/test_prueba.py::test_2 PASSED                                      [ 66%]
+tests/test_prueba.py::test_3 PASSED                                      [100%]
+============================== 3 passed in 0.006s ==============================
+~~~~
+
+> :exclamation: Si no se especifican argumentos, se comenzará en *testpaths* (testpaths es una lista de directorios en los que pytest buscará cuando no se proporcionen directorios, archivos o ids de prueba específicos) si están configurados.  
+> En esos archivos, pytest recogería los elementos de prueba en el siguiente orden:
+> 1. Funciones o métodos de prueba prefijados fuera de clase
+> 2. Funciones o métodos de prueba prefijados dentro de clases de prueba prefijadas que no tienen un método *\_\_init__*. 
+
+Si fallan los tests, pytest muestra un mensaje de error con información sobre el test que ha fallado y el motivo del fallo.
+~~~~ python
+>>> def f(x):
+...     return x + 1
+...
+>>> def test_funcion():
+...     assert f(0) == 1
+...     assert f(1) == 3
+...
+>>> pytest -k test_funcion
+============================= test session starts ==============================
+collected 1 item
+test_funcion.py::test_funcion FAILED                                      [100%]
+=================================== FAILURES ===================================
+_________________________________ test_funcion __________________________________
+    def test_funcion():
+        assert f(0) == 1
+>       assert f(1) == 3
+E       assert 2 == 3
+E        +  where 2 = f(1)
+test_funcion.py:3: AssertionError
+=========================== short test summary info ============================
+FAILED test_funcion.py::test_funcion - assert 2 == 3
+============================== 1 failed in 0.012s ==============================
+~~~~
 
 
 
@@ -5912,7 +6042,7 @@ Así que podemos o expresar todo el número seguido (*123456789*) o separlo de l
 >>> num2 = 100_000_000
 >>> total = num1 + num2
 10100000000
->>> print(f'{total:,}')
+>>> f'{total:,}'
 10,100,000,000
 ~~~~
 
