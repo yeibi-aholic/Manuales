@@ -5280,10 +5280,10 @@ plt.show()
 ![](Fotos/Manual_Python/Libreria_Matplotlib/MatplotlibPandas_2.PNG)
 
 > :bulb: La librería Seaborn es una interfaz de alto nivel para crear imágenes estadísticas estéticamente atractivas.
-> ![](Fotos/Manual_Python/Libreria_Matplotlib/Seaborn.PNG)
+> ![](Fotos/Manual_Python/Libreria_Matplotlib/Seaborn.png)
 
 > :bulb: La librería Ploty permite crear visualizaciones de datos interactivas o gráficos similares a paneles de control.
-> ![](Fotos/Manual_Python/Libreria_Matplotlib/Ploty.PNG)
+> ![](Fotos/Manual_Python/Libreria_Matplotlib/Ploty.png)
 
 
 
