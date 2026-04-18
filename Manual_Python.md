@@ -22,6 +22,7 @@
 18. **[Librería Datetime](#librería-datetime)**
 19. **[Librería Numpy](#librería-numpy)**
 20. **[Librería Pandas](#librería-pandas)**
+21. **[Librería SciPy](#librería-scipy)**
 21. **[Librería Matplotlib](#librería-matplotlib)**
 22. **[Librería itertools](#librería-itertools)**
 23. **[Librería Turtle](#librería-turtle)**
@@ -542,11 +543,15 @@ Las siguientes funciones convierten un dato de un tipo en otro, siempre y cuando
 > bool('Hola') => True
 
 ### Variables
-Una variable es un identificador ligado a algún valor.
+Una variable es un identificador (al igual que una función, clase u otro objeto) ligado a algún valor.
 
 Reglas para nombrarlas:
-- Comienzan siempre por una letra, seguida de otras letras o números.
-- No se pueden utilizarse palabras reservadas del lenguaje.
+- Deben comenzar con una letra (a-z, A-Z) o un guion bajo (_), números y símbolos no están permitidos.
+> ✅ variable, ✅ _variable, ❌ 0variable, ❌ $variable 
+- Pueden contener letras, dígitos (0-9) y guiones bajos después del primer carácter.
+> ✅ variable1, ✅ variable_2, ❌ variable-3, ❌ variable 4
+- No pueden ser palabras reservadas del lenguaje (*if*, *for*, *while*, *print*, etc.).
+- Son sensibles a mayúsculas y minúsculas (*Variable* y *variable* son identificadores diferentes).
 
 A diferencia de otros lenguajes no tienen asociado un tipo y no es necesario declararlas antes de usarlas (tipado dinámico).
 
@@ -567,6 +572,25 @@ x -= 1
 x = None
 del x
 ~~~~
+> :bulb: Python no tiene un tipo de dato específico para constantes, pero por convención se suelen escribir en mayúsculas para indicar que su valor no debe cambiar a lo largo del programa.
+> ~~~~ python
+> PI = 3.1416
+> TE_QUIERO = 3000 
+> LENGUAJE = 'Python'
+> PLANETAS = ['Mercurio', 'Venus', 'Tierra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Neptuno']
+> ~~~~
+
+#### Tipado
+Python es un lenguaje de tipado dinámico, lo que significa que el tipo de una variable se determina en tiempo de ejecución y puede cambiar a lo largo del programa. Esto permite una gran flexibilidad pero también requiere cuidado para evitar errores de tipo.
+
+Aunque no es necesario declarar el tipo de una variable, se pueden usar anotaciones de tipo para indicar el tipo esperado de una variable, lo que puede ayudar a mejorar la legibilidad del código y a detectar errores de tipo.
+~~~~ python
+nombre: str = 'Yeibi'
+edad: int = 30
+altura: float = 1.72
+es_dev: bool = True
+~~~~
+> :warning: Las anotaciones de tipo son opcionales y no afectan al comportamiento del programa, pero pueden ser útiles para la documentación y para herramientas de análisis estático de código.
 
 
 
@@ -757,6 +781,19 @@ n
 ...
 1, 3, 5, 7, 9, 
 ~~~~
+
+> :warning: Si durante una iteración de una lista se manipula ésta, puede afectar a la lectura de los siguientes elementos, haciendo que se salten o se repitan.
+> ~~~~ python
+> >>> lista =list(range(5))
+> >>> for i, n in enumerate(lista):
+> ...     print(f'lista[{i}] = {n})
+> ...     if n != 2:
+> ...         lista.remove(n)
+> ...
+> lista[0] = 0 # [0, 1, 2, 3, 4] --> [1, 2, 3, 4]
+> lista[1] = 2 # [1, 2, 3, 4] --> [1, 2, 3, 4]
+> lista[2] = 3 # [1, 2, 3, 4] --> [1, 2, 4]
+> ~~~~
 
 ### Sentencias *break*, *continue* y *pass*
 Se puede controlar la ejecución del bloque de código de un bucle tanto para crear excepciones, saltar a la siguiente iteración o salir.
@@ -1806,6 +1843,13 @@ def generador(elementos):
 'd'
 ~~~~
 
+### Tipado
+Para definir el tipo de retorno de una función, debemos escribir entre el cierre de paréntesis y los dos puntos "->" seguido del tipo de dato que se va a devolver.
+~~~~ python
+def media(cuenta: list, personas: int) -> float:
+    return sum(cuenta) / personas
+~~~~
+
 ### Documentación de funciones
 Una práctica muy recomendable cuando se define una función es describir lo que la función hace en un comentario.
 
@@ -2518,7 +2562,7 @@ Los atributos que se crean dentro del método *\_\_init__* se conocen como atrib
 > :warning: En general, no deben usarse atributos de clase, excepto para almacenar valores constantes.
 ~~~~ python
 >>> class Circulo:
-...     pi = 3.14159                     # Atributo de clase
+...     PI = 3.14159                     # Atributo de clase
 ...
 ...     def __init__(self, radio):
 ...         self.radio = radio           # Atributo de instancia
@@ -2532,9 +2576,9 @@ Los atributos que se crean dentro del método *\_\_init__* se conocen como atrib
 12.56636
 >>> c2.area()
 28.27431
->>> c1.pi
+>>> c1.PI
 3.14159
->>> c2.pi
+>>> c2.PI
 3.14159
 ~~~~
 
@@ -2559,6 +2603,21 @@ AttributeError: 'Usuario' object has no attribute '__password'
 > >>> u._Usuario__password
 > 1234
 > ~~~~
+
+#### @dataclass
+El decorador *@dataclass* se utiliza para simplificar la definición de clases que se utilizan principalmente para almacenar datos, es decir, clases que tienen muchos atributos y pocos métodos. Este decorador genera automáticamente el método *\_\_init__* y otros métodos especiales como *\_\_repr__* o *\_\_eq__* a partir de los atributos definidos en la clase.
+~~~~ python
+>>> from dataclasses import dataclass
+>>> @dataclass
+... class Persona:
+...     _nombre: str
+...     edad: int
+...     altura: float
+...
+>>> p = Persona('Yeibi', 20, 1.72)
+>>> p
+Persona(_nombre='Yeibi', edad=20, altura=1.72)
+~~~~
 
 #### Métodos especiales
 Los métodos especiales son métodos que tienen un nombre especial y se invocan automáticamente en determinadas situaciones. Estos métodos permiten personalizar el comportamiento de los objetos de una clase en esas situaciones.
@@ -4772,6 +4831,75 @@ El tipo de mezcla puede ser
 ~~~~ 
 
 
+## Librería SciPy
+---
+[SciPy](https://scipy.org/es/) es el paquete científico más completo, que incluye interfases a librerías científicas muy conocidas como LAPACK, BLAS u ODR entre muchas otras. 
+
+Amplia [NumPy](#librería-numpy) proporcionando herramientas adicionales para la computación de matrices y proporciona estructuras de datos especializadas, como matrices dispersas y árboles de dimensión k mediante algoritmos de:
+- optimización
+- integración
+- interpolación
+- problemas de valor propio
+- ecuaciones algebraicas
+- ecuaciones diferenciales
+- estadística
+
+![](Fotos/Manual_Python/Libreria_SciPy/SciPy_logo.svg)
+
+~~~~ python
+>>> from scipy import constants as C
+>>> C.c     # Velocidad de la luz en m/s
+299792458.0
+>>> C.e     # Carga del electrón
+1.602176565e-19
+>>> C.atmosphere
+101325.0
+>>> C.mmHg
+133.32236842105263
+>>> C.Julian_year
+31557600.0
+>>> C.Avogadro
+6.02214129e+23
+>>> C.parsec
+3.0856775813057292e+16
+>>> C.Stefan_Boltzmann
+5.670373e-08
+>>> C.convert_temperature(np.array([0, 100.0]), 'Celsius', 'Kelvin')
+array([ 273.15,  373.15])
+>>> C.day   # Segundos en un día
+86400.0
+>>> C.pico  # Prefijos del SI
+1e-12
+>>> C.oz
+0.028349523124999998
+>>> C.find('atm')
+['standard atmosphere']
+>>> C.physical_constants['standard atmosphere']
+(101325.0, 'Pa', 0.0)
+~~~~
+
+Este paquete científico está organizado en sublibrerías que deberán ser importados de forma explícita para poder acceder a su funcionalidad:
+
+|Sublibrería|Descripción|
+| :- | :- |
+|cluster|Sublibrería que ofrece algoritmos de clustering. Está dividida en otras dos:<ul><li>cluster.vq: para la cuantización vectorial y clustering K-means</li><li>cluster.hierachy: para clustering jerárquico aglomerativo</li></ul>|
+|constants|Contiene constantes físicas y matemáticas como pi o e
+|fftpack|Transformadas de Fourier
+|integrate|Herramientas de resolución de ecuaciones diferenciales
+|interpolate|Funciones de interpolación y suavizado
+|io|Contiene funciones de entrada/salida para la creación de "streams" de datos binarios, de texto, etc. y su lectura y escritura en disco
+|linalg|Esta sublibrería contiene rutinas de álgebra lineal: matrices, resolución de sistemas lineales, cálculo de determinantes, descomposición de matrices, etc.
+|misc|Tal y como indica la documentación de SciPy, conjunto de herramientas que no tienen cabida en otras sublibrerías
+|ndimage|Funciones para el procesamiento de imágenes multidimensional
+|odr|Orthogonal distance regression
+|optimize|Optimización de funciones
+|signal|Funciones y rutinas para el procesamiento de señales
+|sparse|Funciones para la gestión de matrices dispersas 2D para datos numéricos
+|spatial|Ofrece estructuras de datos y algoritmos espaciales
+|special|Funciones especiales
+|stats|Distribuciones y funciones estadísticas
+
+
 
 ## Librería Matplotlib
 ---
@@ -5150,6 +5278,12 @@ plt.show()
 ~~~~
 
 ![](Fotos/Manual_Python/Libreria_Matplotlib/MatplotlibPandas_2.PNG)
+
+> :bulb: La librería Seaborn es una interfaz de alto nivel para crear imágenes estadísticas estéticamente atractivas.
+> ![](Fotos/Manual_Python/Libreria_Matplotlib/Seaborn.PNG)
+
+> :bulb: La librería Ploty permite crear visualizaciones de datos interactivas o gráficos similares a paneles de control.
+> ![](Fotos/Manual_Python/Libreria_Matplotlib/Ploty.PNG)
 
 
 
