@@ -4883,21 +4883,21 @@ Este paquete científico está organizado en sublibrerías que deberán ser impo
 |Sublibrería|Descripción|
 | :- | :- |
 |cluster|Sublibrería que ofrece algoritmos de clustering. Está dividida en otras dos:<ul><li>cluster.vq: para la cuantización vectorial y clustering K-means</li><li>cluster.hierachy: para clustering jerárquico aglomerativo</li></ul>|
-|constants|Contiene constantes físicas y matemáticas como pi o e
-|fftpack|Transformadas de Fourier
-|integrate|Herramientas de resolución de ecuaciones diferenciales
-|interpolate|Funciones de interpolación y suavizado
-|io|Contiene funciones de entrada/salida para la creación de "streams" de datos binarios, de texto, etc. y su lectura y escritura en disco
-|linalg|Esta sublibrería contiene rutinas de álgebra lineal: matrices, resolución de sistemas lineales, cálculo de determinantes, descomposición de matrices, etc.
-|misc|Tal y como indica la documentación de SciPy, conjunto de herramientas que no tienen cabida en otras sublibrerías
-|ndimage|Funciones para el procesamiento de imágenes multidimensional
-|odr|Orthogonal distance regression
-|optimize|Optimización de funciones
-|signal|Funciones y rutinas para el procesamiento de señales
-|sparse|Funciones para la gestión de matrices dispersas 2D para datos numéricos
-|spatial|Ofrece estructuras de datos y algoritmos espaciales
-|special|Funciones especiales
-|stats|Distribuciones y funciones estadísticas
+|constants|Contiene constantes físicas y matemáticas|
+|fftpack|Transformadas de Fourier|
+|integrate|Herramientas de resolución de ecuaciones diferenciales|
+|interpolate|Funciones de interpolación y suavizado|
+|io|Contiene funciones de entrada/salida para la creación de "streams" de datos binarios, de texto, etc. y su lectura y escritura en disco|
+|linalg|Esta sublibrería contiene rutinas de álgebra lineal: matrices, resolución de sistemas lineales, cálculo de determinantes, descomposición de matrices, etc.|
+|misc|Tal y como indica la documentación de SciPy, conjunto de herramientas que no tienen cabida en otras sublibrerías|
+|ndimage|Funciones para el procesamiento de imágenes multidimensional|
+|odr|Orthogonal distance regression|
+|optimize|Optimización de funciones|
+|signal|Funciones y rutinas para el procesamiento de señales|
+|sparse|Funciones para la gestión de matrices dispersas 2D para datos numéricos|
+|spatial|Ofrece estructuras de datos y algoritmos espaciales|
+|special|Funciones especiales|
+|stats|Distribuciones y funciones estadísticas|
 
 
 
