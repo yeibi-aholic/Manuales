@@ -116,13 +116,19 @@ Poner entre acentos circunflejos (\^[  ]^) el texto deseado sin espacios ni al p
 - ### Subrayado
 Escribir **\<ins>** y **\</ins>** entre el texto que se quiere subrayar: <ins>subrayado</ins>
 
+- ### Tachada
+Escribir **\<del>** y **\</del>** entre el texto que se quiere tachar: <del>tachado</del>
+
+- ### Resaltado
+Poner entre dos signos de igual (\==[  ]==) el texto deseado sin espacios ni al principio ni al final: ==Resaltado==
+
 - ### Color
 Escribir **\<p style="color:*'color (en inglés)'*">** y **\</p>** entre el texto al que se quiere aplicar el color: 
-<p style="color:red">rojo</p>/<p style="color:blue">azul</p>/<p style="color:green">verde</p>/<p style="color:orange">naranja</p>/<p style="color:purple">morado</p>
+<p style="color:red">rojo</p> <p style="color:blue">azul</p> <p style="color:green">verde</p> <p style="color:orange">naranja</p> <p style="color:purple">morado</p>
 
 - ### Tipografía
 Escribir **\<p style="font-family:*'tipografía'*">** y **\</p>** entre el texto al que se le quiere cambiar la tipografía: 
-<p style = "font-family:Papyrus">Papyrus</p> / <p style="font-family:Georgia">Georgia</p> / <p style="font-family:Arial Black">Arial Black</p> / <p style="font-family:Calibri">Calibri</p> / <p style="font-family:Script">Script</p>
+<p style = "font-family:Papyrus">Papyrus</p> <p style="font-family:Georgia">Georgia</p> <p style="font-family:Arial Black">Arial Black</p> <p style="font-family:Calibri">Calibri</p> <p style="font-family:Script">Script</p>
 
 ## 5. LISTAS
 ---
